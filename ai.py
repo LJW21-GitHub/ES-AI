@@ -4,51 +4,52 @@ class elementClass:
 		self.name = name
 		self.masmol = masmol
 
-elementDictionnary = ["helium", "oxygene"]
-variablesBeginning = ["masse"]
-variablesEnd = ["molaire"]
-variablesDictionnary = ["masse molaire"]
-
 helium = elementClass("Hélium", 23)
 oxygene = elementClass("Oxygène", 50)
 
-def normalize(name):
-	name = name.lower()
-	name = name.replace("é", "e")
-	name = name.replace("è", "e")
+elementsDictionary = ["helium", "oxygene"]
+instancesDictionary = [helium, oxygene]
+variablesBeginning = ["masse"]
+variablesEnd = ["molaire"]
+variablesDictionary = ["masse molaire"]
+
+def normalize(x):
+	x = x.lower()
+	x = x.replace("é", "e")
+	x = x.replace("è", "e")
+	return x
 
 print("Nyaah~~ uwu")
 
 while True:
+	elementsInQues = []
+	variablesInQues = []
+	valuesInQues = []
 	question = input("")
 	question = normalize(question)
-	questionalnum = list([val for val in question if (val.isalnum() or val == " " or val == "." or val == ".")])
 	splitQues = question.split(" ")
 	for index, word in enumerate(splitQues):
 		try:
-			if word.index(elementDictionnary):
+			if elementsDictionary.index(word) > -1:
 				elementsInQues.append(word)
-		finally:
+		except ValueError:
 			pass
-		try:
 			if word.isnumeric():
 				valuesInQues.append(word)
-		finally:
-			pass
 		try:
-			if word.index(variablesBeginning):
-				nextWord = index+1
-				if index+1.index(variablesEnd) = word.index(variablesBeginning):
-				#if splitQues([word + 1]) in variablesEnd:
-					variablesInQues.append(variablesDictionnary[index])
-		finally:
+			if variablesBeginning.index(word) > -1:
+				if variablesEnd.index(splitQues[index+1]) == variablesBeginning.index(word):
+					variablesInQues.append(variablesDictionary[index])
+		except ValueError:
 			pass
-
-	if elementsInQues.len() > 0 and variablesInQues.len() > 0 and valuesInQues.len() = 0:
+	print(elementsInQues)
+	print(variablesInQues)
+	print(valuesInQues)
+	print(question)
+	print(splitQues)
+	if len(elementsInQues) > 0 and len(variablesInQues) > 0 and len(valuesInQues) == 0:
 		for variable in variablesInQues:
 			for element in elementsInQues:
-				return f"la {variable} de {getattr(element, name, 'elementNameError')} est {getattr(element, variable, 'variableValueError')}"
+				print(f"la {variable} de {getattr(element, 'name', 'elementNameError')} est {getattr(element, variable, 'variableValueError')}")
 			for value in valuesInQues:
-        return f"l'élément avec une {variable} de {value} est {getattr(element, variable, 'variableValueError')}"
-
-next((x for x in test_list if x.value == value), None)
+				print(f"l'élément avec une {variable} de {value} est {''.join(x.name for x in instancesDictionary if x.variable == value)}")
