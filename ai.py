@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class element:
 	def __init__(self, name, masmol):
 		self.name = name
@@ -5,7 +6,7 @@ class element:
 
 elementDictionnary = ["helium", "oxygene"]
 variablesBeginning = ["masse"]
-variableEnd = ["molaire"]
+variablesEnd = ["molaire"]
 
 helium = element("Hélium", 23)
 oxygene = element("Oxygène", 50)
@@ -19,19 +20,26 @@ print("Nyaah~~ uwu")
 
 while True:
 	question = input("")
-	questionalnum = list([val for val in question if val.isalnum()])
+	questionalnum = list([val for val in question if (val.isalnum() or val == " " or val == "." or val == ".")])
 	splitQues = question.split(" ")
-	elementsInQues = []
-	valuesInQues = []
-	variablesInQues =[]
 	for word in splitQues:
-		isElement = word.index(elementDictionnary)
-		isVariable = word.index(elementBeginning)
-		isValue = isValue.isnumeric()
-		if isElement == True:
-			elementsInQues.append(word) 
-		if isValue == True:
-			valuesInQues.append(word) 
-		if isVariable == True:
-			variablesInQues.append(word) 
-	for 
+		try:
+			if word.index(elementDictionnary):
+				elementsInQues.append(word)
+		finally:
+			pass
+		try:
+			if word.isnumeric():
+				valuesInQues.append(word)
+		finally:
+			pass
+		try:
+			if word.index(variablesBeginning):
+				if splitQues([word + 1]) in variablesEnd:
+					variablesInQues.append(" ".join(splitQues[word], splitQues[word + 1]))
+		finally:
+			pass
+
+#	if elementsInQues.len() > 0 and variablesInQues.len() > 0 and valuesInQues.len() = 0:
+#		for element in elementsInQues:
+#			return ""
