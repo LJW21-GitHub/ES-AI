@@ -24,7 +24,7 @@ while True:
 	question = normalize(question)
 	questionalnum = list([val for val in question if (val.isalnum() or val == " " or val == "." or val == ".")])
 	splitQues = question.split(" ")
-	for word in splitQues:
+	for index, word in enumerate(splitQues):
 		try:
 			if word.index(elementDictionnary):
 				elementsInQues.append(word)
@@ -37,14 +37,18 @@ while True:
 			pass
 		try:
 			if word.index(variablesBeginning):
-				nextWord =
-				if word+1.index(variablesEnd)
+				nextWord = index+1
+				if index+1.index(variablesEnd) = word.index(variablesBeginning):
 				#if splitQues([word + 1]) in variablesEnd:
-					variablesInQues.append(" ".join(splitQues[word], splitQues[word + 1]))
+					variablesInQues.append(variablesDictionnary[index])
 		finally:
 			pass
 
 	if elementsInQues.len() > 0 and variablesInQues.len() > 0 and valuesInQues.len() = 0:
-		for element in elementsInQues:
-			for variable in variablesInQues:
-				return f"la {variable} de {getattr(element, name, )} est {getattr(element, variable, 'error')}"
+		for variable in variablesInQues:
+			for element in elementsInQues:
+				return f"la {variable} de {getattr(element, name, 'elementNameError')} est {getattr(element, variable, 'variableValueError')}"
+			for value in valuesInQues:
+        return f"l'élément avec une {variable} de {value} est {getattr(element, variable, 'variableValueError')}"
+
+next((x for x in test_list if x.value == value), None)
