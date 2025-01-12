@@ -50,6 +50,6 @@ while True:
 	if len(elementsInQues) > 0 and len(variablesInQues) > 0 and len(valuesInQues) == 0:
 		for variable in variablesInQues:
 			for element in elementsInQues:
-				print(f"la {variable} de {getattr(element, 'name', 'elementNameError')} est {getattr(element, variable, 'variableValueError')}")
+				print(f"la {variable} de {getattr({element}, 'name', 'elementNameError')} est {getattr({element}, variable, 'variableValueError')}")
 			for value in valuesInQues:
 				print(f"l'élément avec une {variable} de {value} est {''.join(x.name for x in instancesDictionary if x.variable == value)}")
