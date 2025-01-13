@@ -25,23 +25,18 @@ while True:
 	elementsInQues = []
 	variablesInQues = []
 	valuesInQues = []
-	question = input("")
+	question = "masse molaire de l'hélium"
 	question = normalize(question)
 	splitQues = question.split(" ")
-	for index, word in enumerate(splitQues):
-		try:
-			if elementsDictionary.index(word) > -1:
-				elementsInQues.append(word)
-		except ValueError:
-			pass
-			if word.isnumeric():
-				valuesInQues.append(word)
-		try:
-			if variablesBeginning.index(word) > -1:
-				if variablesEnd.index(splitQues[index+1]) == variablesBeginning.index(word):
-					variablesInQues.append(variablesDictionary[index])
-		except ValueError:
-			pass
+	for i, word in enumerate(splitQues):
+		if word in elementsDictionary:
+			elementsInQues.append(word)
+		if word.isnumeric():
+			valuesInQues.append(word)
+		if word in variablesBeginning:
+		    if splitQues[i+1] in variablesEnd:
+		    	if variablesEnd.index(splitQues[i+1]) == variablesBeginning.index(word):
+			    	variablesInQues.append(variablesDictionary[i])
 	print(elementsInQues)
 	print(variablesInQues)
 	print(valuesInQues)
@@ -49,7 +44,9 @@ while True:
 	print(splitQues)
 	if len(elementsInQues) > 0 and len(variablesInQues) > 0 and len(valuesInQues) == 0:
 		for variable in variablesInQues:
+			if variable == "masse molaire":
+				variable = "masmol"
 			for element in elementsInQues:
-				print(f"la {variable} de {getattr({element}, 'name', 'elementNameError')} est {getattr({element}, variable, 'variableValueError')}")
+				print(f"la {variable} de {getattr(element, 'name', 'elementNameError')} est {getattr(element, variable, 'variableValueError')}")
 			for value in valuesInQues:
 				print(f"l'élément avec une {variable} de {value} est {''.join(x.name for x in instancesDictionary if x.variable == value)}")
