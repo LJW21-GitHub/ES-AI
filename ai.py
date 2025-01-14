@@ -4,14 +4,14 @@ class elementClass:
 		self.name = name
 		self.masmol = masmol
 
+
 helium = elementClass("Hélium", 23)
 oxygene = elementClass("Oxygène", 50)
 
 elementsDictionary = ["helium", "oxygene"]
 instancesDictionary = [helium, oxygene]
-variablesBeginning = ["masse"]
-variablesEnd = ["molaire"]
 variablesDictionary = ["masse molaire"]
+
 
 def normalize(x):
 	x = x.lower()
@@ -21,22 +21,29 @@ def normalize(x):
 
 print("Nyaah~ uwu")
 
+
 while True:
 	elementsInQues = []
 	variablesInQues = []
 	valuesInQues = []
-	question = "masse molaire de l'hélium"
+	question = input("")
 	question = normalize(question)
+	for i, c in enumerate(question):
+		if (
+			c == ","
+			and ((question[i-1]).isnumeric() if i-1 > -1)
+			and ((question[i+1]).isnumeric() if i < len(question))
+		)
+			question = question.replace(x, ".")
+	
 	splitQues = question.split(" ")
 	for i, word in enumerate(splitQues):
 		if word in elementsDictionary:
 			elementsInQues.append(word)
-		if word.isnumeric():
+		if any((c in "0123456789.") for c in word):
 			valuesInQues.append(word)
-		if word in variablesBeginning:
-		    if splitQues[i+1] in variablesEnd:
-		    	if variablesEnd.index(splitQues[i+1]) == variablesBeginning.index(word):
-			    	variablesInQues.append(variablesDictionary[i])
+		if ("".join(word, (splitQues[i+1] if i < len(splitQues)) in variablesDictionary:
+			variablesInQues.append(variablesDictionary[i])
 	print(elementsInQues)
 	print(variablesInQues)
 	print(valuesInQues)
