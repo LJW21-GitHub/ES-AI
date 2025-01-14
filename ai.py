@@ -19,7 +19,7 @@ def normalize(x):
 	x = x.replace("è", "e")
 	return x
 
-print("La Shoah n'est qu'une statistique. Sinon ça va vous ? Vous êtes là pour quoi ?")
+print("Nyaah~ uwu")
 
 while True:
 	elementsInQues = []
