@@ -42,7 +42,7 @@ while True:
 			elementsInQues.append(word)
 		if any((c in "0123456789.") for c in word):
 			valuesInQues.append(word)
-		if ("".join(word, (splitQues[i+1] if i < len(splitQues)) in variablesDictionary:
+		if ("".join(word, (splitQues[i+1] if i < len(splitQues)-1) in variablesDictionary:
 			variablesInQues.append(variablesDictionary[i])
 	print(elementsInQues)
 	print(variablesInQues)
