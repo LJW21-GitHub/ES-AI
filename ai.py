@@ -31,8 +31,8 @@ while True:
 	for i, c in enumerate(question):
 		if (
 			c == ","
-			and ((question[i-1]).isnumeric() if i-1 > -1)
-			and ((question[i+1]).isnumeric() if i < len(question))
+			and ((question[i-1]).isnumeric() if i > 0 else False)
+			and ((question[i+1]).isnumeric() if i < len(question)-1 else False)
 		):
 			question = question.replace(x, ".")
 	
@@ -42,7 +42,7 @@ while True:
 			elementsInQues.append(word)
 		if any((c in "0123456789.") for c in word):
 			valuesInQues.append(word)
-		if ("".join(word, (splitQues[i+1] if i < len(splitQues)-1) in variablesDictionary:
+		if ("".join(list((word, splitQues[i+1] if i < len(splitQues)-1 else ""))) in variablesDictionary):
 			variablesInQues.append(variablesDictionary[i])
 	print(elementsInQues)
 	print(variablesInQues)
