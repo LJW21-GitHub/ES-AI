@@ -33,7 +33,7 @@ while True:
 			c == ","
 			and ((question[i-1]).isnumeric() if i-1 > -1)
 			and ((question[i+1]).isnumeric() if i < len(question))
-		)
+		):
 			question = question.replace(x, ".")
 	
 	splitQues = question.split(" ")
