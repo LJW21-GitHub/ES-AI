@@ -25,10 +25,10 @@ def normalize(x):
 	for i, c in enumerate(x):
 		if (
 			c == ","
-			and ((x[i-1]).isnumeric() if i > 0 else False)
-			and ((x[i+1]).isnumeric() if i < len(question)-1 else False)
+			and ((x[i-1]) in "0123456789" if i > 0 else False)
+			and ((x[i+1]) in "0123456789" if i < len(question)-1 else False)
 		):
-			c = c.replace(",", ".")
+			x = x.replace(c, ".")
 	return x
 
 
@@ -39,18 +39,22 @@ while True:
 	elementsInQues = []
 	variablesInQues = []
 	valuesInQues = []
-	question = "masse molaire hélium"
+	question = input("")
 	question = normalize(question)
 	splitQues = question.split(" ")
 	for i, word in enumerate(splitQues):
 		if word in elementsDictionary:
 			elementsInQues.append(word)
-		if any((c in "0123456789.") for c in word):
-			valuesInQues.append(word)
+		try:
+			tryFloat = float(word)
+			valuesInQues.append(tryFloat)
+		except ValueError:
+			pass
 		wordAndNext = \
-			" ".join(list(word, splitQues[i+1] if i < len(splitQues)-1 else ""))
+			"".join(list(word + " " + splitQues[i+1] if i < len(splitQues)-1 else ""))
+		print(f"wordAndNext = {wordAndNext}")
 		if wordAndNext in variablesDictionary:
-			variablesInQues.append(variablesDictionary[wordAndNext])
+			variablesInQues.append(wordAndNext)
 	print(elementsInQues)
 	print(variablesInQues)
 	print(valuesInQues)
@@ -62,13 +66,17 @@ while True:
 		and len(valuesInQues) == 0
 	):
 		for variable in variablesInQues:
-			variable = variablesDictionary[variable]
 			for element in elementsInQues:
 				element = elementsDictionary[element]
-				print(f"la {variable} de \
-					{getattr(element, 'name', 'elementNameError')}\
-					est {getattr(element, variable, 'variableValueError')}")
+				print(
+					f"la {variable} de "
+					f"{getattr(element, 'name', 'elementNameError')} est "
+					f"{getattr(
+						element, variablesDictionary[variable], 'variableValueError'
+					)}")
 			for value in valuesInQues:
-				print(f"l'élément avec une {variable} de {value} est \
-					{''.join(x.name for x
-						in list(elementsDictionary.values()) if x.variable == value)}")
+				print(
+					f"l'élément avec une {variable} de {value} est"
+					f"{''.join(
+						x.name for x in list(elementsDictionary.values()) if x.variable == value
+					)}")
