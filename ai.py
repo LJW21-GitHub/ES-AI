@@ -22,6 +22,7 @@ def normalize(x):
 	x = x.lower()
 	x = x.replace("é", "e")
 	x = x.replace("è", "e")
+	x = x.replace("'", " ")
 	for i, c in enumerate(x):
 		if (
 			c == ","
