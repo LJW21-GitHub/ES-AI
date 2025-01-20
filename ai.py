@@ -14,7 +14,7 @@ elementsDictionary = {
 }
 
 variablesDictionary = {
-	"masse molaire": "masmol"
+	"masse molaire": ["masmol", "g/mol"]
 }
 
 
@@ -74,11 +74,12 @@ while True:
      					f"{"d'" if element[0] in "aeiouyh" else "de "}"
 					f"{getattr(elementInst, 'name', 'elementNameError')} est "
 					f"{getattr(
-						elementInst, variablesDictionary[variable], 'variableValueError'
-					)}")
+						elementInst, variablesDictionary[variable][0], 'variableValueError'
+					)} "
+					f"{variablesDictionary[variable][1]}")
 			for value in valuesInQues:
 				print(
-					f"l'élément avec une {variable} de {value} est"
+					f"l'élément avec une {variable} de {value} est de"
 					f"{''.join(
 						x.name for x in list(elementsDictionary.values()) if x.variable == value
 					)}")
