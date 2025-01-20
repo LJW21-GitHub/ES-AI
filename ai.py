@@ -68,12 +68,13 @@ while True:
 	):
 		for variable in variablesInQues:
 			for element in elementsInQues:
-				element = elementsDictionary[element]
+				elementInst = elementsDictionary[element]
 				print(
-					f"la {variable} de "
-					f"{getattr(element, 'name', 'elementNameError')} est "
+					f"la {variable} "
+     					f"{"d'" if element[0] in "aeiouyh" else "de "}"
+					f"{getattr(elementInst, 'name', 'elementNameError')} est "
 					f"{getattr(
-						element, variablesDictionary[variable], 'variableValueError'
+						elementInst, variablesDictionary[variable], 'variableValueError'
 					)}")
 			for value in valuesInQues:
 				print(
