@@ -1,36 +1,27 @@
 #!/usr/bin/python3
-class elementClass:
-	def __init__(self, name, masmol):
-		self.name = name
-		self.masmol = masmol
-
-
-helium = elementClass("Hélium", 23)
-oxygene = elementClass("Oxygène", 50)
-
 elementsDictionary = {
-	"helium": helium,
-	"oxygene": oxygene
+    "helium": ["Hélium", 23],
+    "oxygene": ["Oxygène", 50]
 }
 
 variablesDictionary = {
-	"masse molaire": ["masmol", "g/mol"]
+    "masse molaire": ["masmol", "g/mol", 1]
 }
 
 
 def normalize(x):
-	x = x.lower()
-	x = x.replace("é", "e")
-	x = x.replace("è", "e")
-	x = x.replace("'", " ")
-	for i, c in enumerate(x):
-		if (
-			c == ","
-			and ((x[i-1]) in "0123456789" if i > 0 else False)
-			and ((x[i+1]) in "0123456789" if i < len(question)-1 else False)
-		):
-			x = x.replace(c, ".")
-	return x
+    x = x.lower()
+    x = x.replace("é", "e")
+    x = x.replace("è", "e")
+    x = x.replace("'", " ")
+    for i, c in enumerate(x):
+        if (
+            c == ","
+            and ((x[i-1]) in "0123456789" if i > 0 else False)
+            and ((x[i+1]) in "0123456789" if i < len(question)-1 else False)
+        ):
+            x = x.replace(c, ".")
+    return x
 
 
 print("Nyaah~ uwu")
@@ -51,35 +42,30 @@ while True:
 			valuesInQues.append(tryFloat)
 		except ValueError:
 			pass
-		wordAndNext = \
-			"".join(list(word + " " + splitQues[i+1] if i < len(splitQues)-1 else ""))
-		print(f"wordAndNext = {wordAndNext}")
-		if wordAndNext in variablesDictionary:
-			variablesInQues.append(wordAndNext)
+		if word in variablesDictionary:
+			variablesInQues.append(word)
+		else:
+			wordAndNext = \
+				"".join(list(word + " " + splitQues[i+1] if i < len(splitQues)-1 else ""))
+			print(f"wordAndNext = {wordAndNext}")
+			if wordAndNext in variablesDictionary:
+				variablesInQues.append(wordAndNext)
 	print(elementsInQues)
 	print(variablesInQues)
 	print(valuesInQues)
 	print(question)
 	print(splitQues)
-	if (
-		len(elementsInQues) > 0
-		and len(variablesInQues) > 0
-		and len(valuesInQues) == 0
-	):
-		for variable in variablesInQues:
-			for element in elementsInQues:
-				elementInst = elementsDictionary[element]
-				print(
-					f"la {variable} "
-     					f"{"d'" if element[0] in "aeiouyh" else "de "}"
-					f"{getattr(elementInst, 'name', 'elementNameError')} est "
-					f"{getattr(
-						elementInst, variablesDictionary[variable][0], 'variableValueError'
-					)} "
-					f"{variablesDictionary[variable][1]}")
-			for value in valuesInQues:
-				print(
-					f"l'élément avec une {variable} de {value} est de"
-					f"{''.join(
-						x.name for x in list(elementsDictionary.values()) if x.variable == value
-					)}")
+	for variable in variablesInQues:
+        for element in elementsInQues:
+            print(
+                f"la {variable} "
+                + ("d'" if element[0] in "aeiouyh" else "de ")
+                + f"{elementsDictionary[element][0]} est "
+                f"{elementsDictionary[element][variablesDictionary[variable][2]]} "
+                f"{variablesDictionary[variable][1]}"
+            )
+		for value in valuesInQues:
+			print(
+				f"l'élément avec une {variable} de {value} est de"
+				f"{elementsDictionary[x][0] if elementsDictionary[x][variablesDictionary[variable][2]] == value else "meow"}"
+			)
