@@ -56,16 +56,22 @@ while True:
 	print(question)
 	print(splitQues)
 	for variable in variablesInQues:
-        for element in elementsInQues:
-            print(
-                f"la {variable} "
-                + ("d'" if element[0] in "aeiouyh" else "de ")
-                + f"{elementsDictionary[element][0]} est "
-                f"{elementsDictionary[element][variablesDictionary[variable][2]]} "
-                f"{variablesDictionary[variable][1]}"
-            )
-		for value in valuesInQues:
-			print(
-				f"l'élément avec une {variable} de {value} est de"
-				f"{elementsDictionary[x][0] if elementsDictionary[x][variablesDictionary[variable][2]] == value else "meow"}"
-			)
+		for variable in variablesInQues:
+			for element in elementsInQues:
+				print(
+					f"la {variable} "
+					+ ("d'" if element[0] in "aeiouyh" else "de ")
+					+ f"{elementsDictionary[element][0]} est "
+					f"{elementsDictionary[element][variablesDictionary[variable][2]]} "
+					f"{variablesDictionary[variable][1]}"
+				)
+			for value in valuesInQues:
+				print(
+					f"l'élément avec une {variable} de {value} est de"
+					f"{
+				        elementsDictionary[x][0]
+				        for x in elementDictionary
+					    if elementsDictionary[x][variablesDictionary[variable][2]] == value
+					    else 'meow'
+					}"
+				)
