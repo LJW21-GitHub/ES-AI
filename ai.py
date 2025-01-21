@@ -21,6 +21,7 @@ def normalize(x):
 			and ((x[i+1]) in "0123456789" if i < len(question)-1 else False)
 		):
 			x = x.replace(c, ".")
+	return x
 
 
 print("Nyaah~ uwu")
@@ -59,7 +60,7 @@ while True:
 			for element in elementsInQues:
 				print(
 					f"la {variable} "
-					+ ("d'" if element[0] in "aeiouyh" else "de ")
+					+ ("de l'" if element[0] in "aeiouyh" else "du ")
 					+ f"{elementsDictionary[element][0]} est "
 					f"{elementsDictionary[element][variablesDictionary[variable][2]]} "
 					f"{variablesDictionary[variable][1]}"
@@ -73,4 +74,11 @@ while True:
 						for x in elementDictionary
 						else 'meow'
 					}"
+					f"l'élément avec une {variable} de {value} est le"
+					+ (
+						elementsDictionary[x][0]
+						for x in elementDictionary
+						if elementsDictionary[x][variablesDictionary[variable][2]] == value
+						else 'meow'
+					)
 				)
