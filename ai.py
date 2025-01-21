@@ -1,27 +1,28 @@
 #!/usr/bin/python3
 elementsDictionary = {
-    "helium": ["Hélium", 23],
-    "oxygene": ["Oxygène", 50]
+	"helium": ["Hélium", 23],
+	"oxygene": ["Oxygène", 50]
 }
 
 variablesDictionary = {
-    "masse molaire": ["masmol", "g/mol", 1]
+	
+	"masse molaire": ["masmol", "g/mol", 1]
 }
 
 
 def normalize(x):
-    x = x.lower()
-    x = x.replace("é", "e")
-    x = x.replace("è", "e")
-    x = x.replace("'", " ")
-    for i, c in enumerate(x):
-        if (
-            c == ","
-            and ((x[i-1]) in "0123456789" if i > 0 else False)
-            and ((x[i+1]) in "0123456789" if i < len(question)-1 else False)
-        ):
-            x = x.replace(c, ".")
-    return x
+	x = x.lower()
+	x = x.replace("é", "e")
+	x = x.replace("è", "e")
+	x = x.replace("'", " ")
+	for i, c in enumerate(x):
+		if (
+			c == ","
+			and ((x[i-1]) in "0123456789" if i > 0 else False)
+			and ((x[i+1]) in "0123456789" if i < len(question)-1 else False)
+		):
+			x = x.replace(c, ".")
+	return x
 
 
 print("Nyaah~ uwu")
@@ -69,9 +70,9 @@ while True:
 				print(
 					f"l'élément avec une {variable} de {value} est de"
 					f"{
-				        elementsDictionary[x][0]
-				        for x in elementDictionary
-					    if elementsDictionary[x][variablesDictionary[variable][2]] == value
-					    else 'meow'
+						elementsDictionary[x][0]
+				        	for x in elementDictionary
+						if elementsDictionary[x][variablesDictionary[variable][2]] == value
+						else 'meow'
 					}"
 				)
