@@ -61,18 +61,18 @@ while True:
 			for element in elementsInQues:
 				print(
 					f"la {variable} "
-					+ ("d'" if element[0] in "aeiouyh" else "de ")
+					+ ("de l'" if element[0] in "aeiouyh" else "du ")
 					+ f"{elementsDictionary[element][0]} est "
 					f"{elementsDictionary[element][variablesDictionary[variable][2]]} "
 					f"{variablesDictionary[variable][1]}"
 				)
 			for value in valuesInQues:
 				print(
-					f"l'élément avec une {variable} de {value} est de"
-					f"{
+					f"l'élément avec une {variable} de {value} est le"
+					+ (
 						elementsDictionary[x][0]
 				        	for x in elementDictionary
 						if elementsDictionary[x][variablesDictionary[variable][2]] == value
 						else 'meow'
-					}"
+					)
 				)
