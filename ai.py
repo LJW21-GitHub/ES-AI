@@ -6,8 +6,8 @@ elementsDictionary = {
 }
 
 variablesDictionary = {
-	"masse molaire": ["g/mol", 1],
-	"numero atomique": ["", 2]
+	"masse molaire": ["masse molaire", "g/mol", 1, "f"],
+	"numero atomique": ["numéro atomique", "", 2, "m"]
 }
 
 
@@ -45,7 +45,6 @@ def analyze(x):
 		else:
 			wordAndNext = \
 				"".join(list(word + " " + splitQues[i+1] if i < len(splitQues)-1 else ""))
-			print(f"wordAndNext = {wordAndNext}")
 			if wordAndNext in variablesDictionary:
 				analysis["variables"].append(wordAndNext)
 	if len(analysis["variables"]) and (
@@ -67,22 +66,29 @@ while True:
 		for variable in question["variables"]:
 			for element in question["elements"]:
 				print(
-					f"la {variable} "
+				    ("la " if variablesDictionary[variable][3] == "f" else "le ")
+					+ f"{variablesDictionary[variable][0]} "
 					+ ("de l'" if element[0] in "aeiouyh" else "du ")
 					+ f"{elementsDictionary[element][0]} est "
-					f"{elementsDictionary[element][variablesDictionary[variable][1]]} "
-					+ (variablesDictionary[variable][0])
+					f"{elementsDictionary[element][variablesDictionary[variable][2]]} "
+					+ (variablesDictionary[variable][1])
 				)
 			for value in question["values"]:
-				diff = []
+				diff = {}
 				for i, x in elementsDictionary.items():
-					diff.append(
-						abs(elementsDictionary[i][variablesDictionary[variable][1]] - value)
-						+ "/"
-						+ x
+					diff[str(i)] = abs(
+					    x[variablesDictionary[variable][2]]
+					    - value
 					)
-				if 0 in diff:
+				print(diff)
+				if 0 in diff.values():
 					print(
-						f"l'élément avec une {variable} de {value} est le "
-						+ diff[diff.index(0)][diff.index(0).index("/")]
+						f"l'élément avec une "
+						+ variable
+						+ " de "
+						+ value
+						+ " est le "
+						+ (
+						    "".join(list(i)) for i, x in diff.items() if min(diff.values()) == x
+						)
 					)
