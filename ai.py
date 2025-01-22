@@ -66,7 +66,7 @@ while True:
 		for variable in question["variables"]:
 			for element in question["elements"]:
 				print(
-				    ("la " if variablesDictionary[variable][3] == "f" else "le ")
+					("la " if variablesDictionary[variable][3] == "f" else "le ")
 					+ f"{variablesDictionary[variable][0]} "
 					+ ("de l'" if element[0] in "aeiouyh" else "du ")
 					+ f"{elementsDictionary[element][0]} est "
@@ -77,18 +77,18 @@ while True:
 				diff = {}
 				for i, x in elementsDictionary.items():
 					diff[str(i)] = abs(
-					    x[variablesDictionary[variable][2]]
-					    - value
+						x[variablesDictionary[variable][2]]
+						- value
 					)
 				print(diff)
 				if 0 in diff.values():
 					print(
-						f"l'élément avec une "
+						"l'élément avec une "
 						+ variable
 						+ " de "
 						+ value
 						+ " est le "
 						+ (
-						    "".join(list(i)) for i, x in diff.items() if min(diff.values()) == x
+							"".join(list(i)) for i, x in diff.items() if min(diff.values()) == x
 						)
 					)
