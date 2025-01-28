@@ -1,0 +1,18 @@
+# Specify the build system for the project.
+[build-system]
+requires = ["sip >=6.9, <7", "PyQt-builder >=1.17, <2"]
+build-backend = "sipbuild.api"
+
+[project]
+name = "PyQt6"
+version = "6.8.0"
+description = "Python bindings for the Qt cross platform application toolkit"
+readme = "README.md"
+urls.homepage = "https://www.riverbankcomputing.com/software/pyqt/"
+dependencies = []
+requires-python = ">=3.9"
+license = {text = "GPL v3"}
+
+[[project.authors]]
+name = "Riverbank Computing Limited"
+email = "info@riverbankcomputing.com"

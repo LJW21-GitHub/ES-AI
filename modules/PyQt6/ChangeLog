@@ -1,0 +1,4334 @@
+2024-12-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file.
+	[80def5a26747] [6.8.0]
+
+2024-12-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, test/metaobject/test_pyqtproperty.py:
+	Updated the tests to account for the meta-object fixes in Qt v6.8.1.
+	[338054985d31]
+
+2024-11-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the QDnsLookup.typeChanged() signal for Qt v6.8.
+	[cfc05a9f6986]
+
+2024-11-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the QNetworkInformation.reachabilityChanged() signal for Qt
+	v6.8. Fixed the QNetworkInformation.transportMediumChanged() signal
+	for Qt v6.7.
+	[345f687a2f3e]
+
+2024-10-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* config-tests/cfgtest_QtGui.cpp, qpy/QtGui/qpygui_vulkan.sip:
+	Fixed the Vulkan support on Linux.
+	[649ac26a3fd3]
+
+	* qpy/QtGui/qpygui_vulkan.sip:
+	Fixed an undefined type in the Vulkan support.
+	[6d307191525c]
+
+	* test/metaobject/test_pyqtproperty.py:
+	Updated the tests for Qt v6.8.0.
+	[8285838401b1]
+
+2024-10-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, config-tests/cfgtest_QtGui.cpp,
+	qpy/QtGui/qpygui_vulkan.sip:
+	Added QWindow.setVulkanInstance(), QWindow.vulkanInstance(),
+	QVulkanExtension, QVulkanInstance and QVulkanLayer.
+	[88406afe153a]
+
+	* qpy/QtOpenGL/qpyopengl_value_array.cpp:
+	Fixed PYQT_OPENGL_ARRAY and PYQT_OPENGL_BOUND_ARRAY when converting
+	from a buffer object.
+	[ad6569a16120]
+
+2024-10-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyproject.toml:
+	Updated the build system requirements to SIP v6.9 and PyQt-builder
+	v1.17.
+	[c711b031e0d0]
+
+	* PyQt6.msp:
+	Fixed a missed type hint change.
+	[c67928635135]
+
+	* PyQt6.msp:
+	Updated required type hints for PEP 585 compatibility.
+	[7b74e77311d8]
+
+2024-10-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h,
+	qpy/QtCore/qpycore_enums_flags.cpp,
+	qpy/QtCore/qpycore_enums_flags.h,
+	qpy/QtCore/qpycore_enums_flags_metatype.cpp,
+	qpy/QtCore/qpycore_enums_flags_metatype.h,
+	qpy/QtCore/qpycore_qmetaobjectbuilder.h,
+	qpy/QtCore/qpycore_types.cpp:
+	User defined Python enums are now registered with their own meta-
+	type.
+	[2c9d82dd9c39]
+
+2024-10-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed regressions when building against versions of Qt prior to
+	v6.8.
+	[f285576aa2f6]
+
+2024-10-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed regressions when comparing QByteArray and Python strings.
+	[093669e2f673]
+
+	* PyQt6.msp:
+	Completed the updates for Qt v6.8.
+	[792d64838a77]
+
+	* PyQt6.msp:
+	Updated QtQuick and QtSvg for Qt v6.8.
+	[ac6429146ac5]
+
+	* NEWS, PyQt6.msp:
+	Updated QtNfc, QtPdf, QtSql and QtXml for Qt v6.8.
+	[3e5321920e20]
+
+2024-10-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, mksccode/QtNetwork.versions:
+	Updated QtNetwork for Qt v6.8.
+	[e44b2fb13816]
+
+	* NEWS, PyQt6.msp, mksccode/QtMultimedia.versions:
+	Updated QtMultimedia for Qt v6.8.
+	[f29f6c2b7c79]
+
+	* PyQt6.msp, mksccode/QtHelp.versions:
+	Updated QtTest for Qt v6.8.
+	[e37a290a9fe5]
+
+	* NEWS, PyQt6.msp, qpy/QtCore/qchar.sip:
+	Completed the Qt v6.8 support for QtGui.
+	[fe905bc84e8d]
+
+2024-09-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updated QtGui for Qt v6.8.
+	[095e5bf71d7b]
+
+	* PyQt6.msp:
+	Updated QtTest for Qt v6.8.
+	[5b4c6a582aca]
+
+	* PyQt6.msp, project.py, qpy/QtCore/qbytearrayview.sip:
+	Completed the Qt v6.8 support for QtCore.
+	[757fca2e0e31]
+
+	* PyQt6.msp:
+	More work on QtCore for Qt v6.8.
+	[cf994cef28fb]
+
+	* PyQt6.msp, project.py:
+	Sufficient updates to QtCore for Qt v6.8 to allow it to compile.
+	[b4af57f5a89b]
+
+2024-09-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* Merged the 6.7-maint branch.
+	[b48fd9f4a7b3]
+
+2024-08-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Add /Transfer/ to all QNetworkAccessManager methods that return a
+	QNetworkReply.
+	[375b4a576754] <6.7-maint>
+
+2024-07-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.7.1 for changeset 910298597934
+	[36e0161a75d6] <6.7-maint>
+
+2024-07-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Added /ReleaseGIL/ to the setSource() and setSourceDevice() methods
+	of QMediaPlayer to avoid a deadlock when using the ffmpeg backend.
+	[910298597934] [6.7.1] <6.7-maint>
+
+2024-07-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtQml/qpyqmlmodel.cpp, qpy/QtQml/qpyqmlmodel.h:
+	Added missing files to the repository.
+	[29a13d682f01] <6.7-maint>
+
+	* NEWS, project.py, pyproject.toml:
+	SIP v6.8.6 and PyQt6-sip v13.8 are now required for Python v3.13
+	support and for Linux on ARM.
+	[ac3d16987f8d] <6.7-maint>
+
+	* NEWS, qpy/QtQml/qpyqml_register_type.cpp,
+	qpy/QtQml/qpyqmlobject.cpp, qpy/QtQml/qpyqmlobject.h,
+	qpy/QtQml/qpyqmlvalidator.cpp:
+	Refactored the support for qml models to separate it from simple
+	objects.
+	[eb61a1dc0a2b] <6.7-maint>
+
+	* qpy/QtCore/qpycore_types.cpp:
+	Fixed a confusing comment.
+	[756b2ed96d7b] <6.7-maint>
+
+2024-06-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/designer/pluginloader.cpp,
+	extras/qmlscene/pluginloader.cpp:
+	The QML and Designer plugin loaders now use the modern
+	initialisation API.
+	[f04d37bf7419] <6.7-maint>
+
+2024-06-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/uic/enum_map.py, extras/uic/properties.py:
+	Fix pyuic to handle fully scoped enum names in .ui files created by
+	Qt v6.7.0.
+	[f0ab9eec4b70] <6.7-maint>
+
+2024-04-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.7.0 for changeset 9ba237216b30
+	[f23656235645]
+
+2024-04-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Implemented QBluetoothUuid.__hash__ (but why isn't it inherited from
+	QUuid?)
+	[9ba237216b30] [6.7.0]
+
+2024-04-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Ignore QProcess::failChildProcessModifier().
+	[7b66fd047770]
+
+2024-04-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, qpy/QtCore/qpycore_std_optional.sip:
+	Completed the outstanding TODOs got Qt v6.7.0.
+	[108ee7a23de4]
+
+2024-04-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated for Qt v6.7.0.
+	[2816f663c39e]
+
+2024-03-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtQml/qpyqmlobject.cpp:
+	Changed the destruction of Qml proxy objects to avoid a crash. No
+	real understanding of what's going on but the changes seem fairly
+	insignificant.
+	[b6838cbe38fc]
+
+2024-03-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Updated for Qt v6.7.0rc2.
+	[d427253bbcc0]
+
+2024-03-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added Qt v6.7 support for QtWidgets and QtXml.
+	[07cbcd458f67]
+
+	* NEWS, PyQt6.msp:
+	Added Qt v6.7 support for QtRemoteObjects, QtSensors, QtSerialPort,
+	QtSpatialAudio, QtSql, QtSvg, QtSvgWidgets, QtTest, QtTextToSpeech,
+	QtWebChannel and QtWebSockets.
+	[c363bb334e37]
+
+	* NEWS, PyQt6.msp:
+	Added Qt v6.7 support for QtPdf, QtPdfWidgets, QtPositioning,
+	QtPrintSupport, QtQml, QtQuick, QtQuick3D and QtQuickWidgets.
+	[6366aec70b11]
+
+2024-03-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added Qt v6.7 support for QtHelp, QtMultimedia, QtMultimediaWidgets,
+	QtNetwork, QtNfc, QtOpenGL and QtOpenGLWidgets.
+	[40fc53721837]
+
+	* NEWS, PyQt6.msp:
+	Completed QtGui and added QtDBus and QtDesigner.
+	[b96b5b1afbc3]
+
+2024-03-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added initial support for Qt v6.7. (QtBluetooth, QtCore and a
+	minimal QtGui.)
+	[c170ac865591]
+
+2024-02-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* README.md:
+	Tweaked README.md
+	[bca936c8497c]
+
+	* NEWS, README, README.md, pyproject.toml:
+	Migrated from [sip.tool.metadata] to [project] in pyproject.toml.
+	[3a30c2e42184]
+
+	* Merged the 6.6-maint branch.
+	[fc392a680ee9]
+
+2024-02-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_qlist.sip:
+	Removed a couple of warning messages.
+	[42af8ed6c3c1] <6.6-maint>
+
+2024-01-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* rb-product.toml:
+	Removed the product file.
+	[bba46b17f46b] <6.6-maint>
+
+	* NEWS, extras/uic/Compiler/qtproxies.py, extras/uic/widget-
+	plugins/qtopenglwidgets.py:
+	Fixed the use of QOpenGLWidget in pyuic6.
+	[0c98a2419f89] <6.6-maint>
+
+2023-11-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.6.1 for changeset 68ad2464c85f
+	[e870c02ce799] <6.6-maint>
+
+2023-11-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fix QWidgetAction ownership annotations.
+	[68ad2464c85f] [6.6.1] <6.6-maint>
+
+2023-10-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.6.0 for changeset 7bd79ffe5e44
+	[cb763c7290c3]
+
+2023-10-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fix the handling og QSqlResult::boundValues() when protected is not
+	public.
+	[7bd79ffe5e44] [6.6.0]
+
+	* NEWS, PyQt6.msp:
+	The new UNIX process parameters handlign aren't available on
+	Windows.
+	[18d970a9100e]
+
+2023-10-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_qmap.sip:
+	Fixed the type hints for QMultiMap.
+	[9b2e6df9277f]
+
+	* PyQt6.msp, mksccode/QtMultimedia.versions, mksccode/QtPdf.versions,
+	mksccode/QtPdfWidgets.versions,
+	qpy/QtBluetooth/qpybluetooth_quint128.sip:
+	Completed the updates for Qt v6.6.
+	[b0ef6ec6e196]
+
+	* PyQt6.msp:
+	Updated QtBluetooth and QtSql for Qt v6.6.
+	[cad379a69f92]
+
+	* PyQt6.msp:
+	Updated QtNetwork and QtWidgets for Qt v6.6.
+	[b29ec1fc1b40]
+
+	* PyQt6.msp:
+	Updated QtGui for Qt v6.6.
+	[f3e4b6a773ae]
+
+	* NEWS, PyQt6.msp:
+	Updated QtCore for Qt v6.6.
+	[bbfe66e440ed]
+
+2023-10-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* Merged the 6.5-maint branch.
+	[780f6d92465c]
+
+2023-10-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.5.3 for changeset 8b5b0c663207
+	[797b2a52c678] <6.5-maint>
+
+	* NEWS, qpy/QtCore/qpycore_types.cpp:
+	Removed a compiler warning message.
+	[8b5b0c663207] [6.5.3] <6.5-maint>
+
+2023-10-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* project.py:
+	Removed a debugging flag.
+	[686cadf4b1bc] <6.5-maint>
+
+	* PyQt6.msp, project.py:
+	Changed the default values of the findData() and findText() methods
+	of QComboBox so that they make sensible docstrings.
+	[36c3449ca18e] <6.5-maint>
+
+	* NEWS, project.py, qpy/QtCore/qpycore_types.cpp:
+	Properly fix the use of PyType_GetDict(). ABI v13.6 is now needed.
+	[a34537999cce] <6.5-maint>
+
+2023-10-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_types.cpp:
+	Fixed the memory leak related to sipPyTypeDict() and Python v3.12.
+	[f862a6f9f3bb] <6.5-maint>
+
+2023-09-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed a v6.5 regression where /PyInt/ was missng from qint8 and
+	quint8.
+	[9803964f9421] <6.5-maint>
+
+2023-09-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtDBus/qpydbus_post_init.cpp:
+	Fixed the convertion of QDBusVariant (and others) to QVariant.
+	[ae560099c875] <6.5-maint>
+
+2023-08-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added the /__len__/ annotation to QModelRoleDataSpan.length().
+	[1fc886013a86] <6.5-maint>
+
+2023-08-27  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, qpy/QtCore/qpycore_qlist.sip:
+	Added the missing QAbstractItemModel.multiData() method and
+	QModelRoleDataSpan class.
+	[f0ffbea6c75e] <6.5-maint>
+
+2023-07-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.5.2 for changeset 38c17a29338d
+	[156ab803c346] <6.5-maint>
+
+	* NEWS, extras/lupdate/python_source.py:
+	Fixed an exception in pylupdate.
+	[38c17a29338d] [6.5.2] <6.5-maint>
+
+2023-07-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qstring.sip:
+	Fixed a regression in using None as a QString.
+	[6089948fc034] <6.5-maint>
+
+2023-07-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the type hints for all ellipsis arguments.
+	[dc5cc8a6f07d] <6.5-maint>
+
+2023-07-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qstring.sip:
+	Further fix fro QString's type hint.
+	[5c0f11c46cb1] <6.5-maint>
+
+	* NEWS, qpy/QtCore/qstring.sip:
+	Fixed the type hint for QString.
+	[2857fd3946c7] <6.5-maint>
+
+2023-07-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Another type hint fix for QObject.findChild().
+	[dd57f73873eb] <6.5-maint>
+
+	* PyQt6.msp:
+	Fixed the type hints fro QObject.findChild() and
+	QObject.findChildren().
+	[b088d75e77d6] <6.5-maint>
+
+2023-07-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed PYQT_SLOT for the QtCore module.
+	[f5cb0b97d94e] <6.5-maint>
+
+2023-07-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/python_source.py:
+	pylupdate will now look for tr() and translate() as a function as
+	well as a method.
+	[a0230e25929a] <6.5-maint>
+
+	* PyQt6.msp:
+	Fixed the type hint for pyqtSlot().
+	[b8e51995b3c5] <6.5-maint>
+
+	* PyQt6.msp:
+	Fixed the type hint for PYQT_SLOT.
+	[8c73a0c3dd1f] <6.5-maint>
+
+	* NEWS, PyQt6.msp, qpy/QtCore/qbytearrayview.sip:
+	Fixed the type hints for QByteArray and QByteArrayView.
+	[f631f8e6cc3e] <6.5-maint>
+
+2023-06-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, project.py:
+	Added the missing QEvent.Type.EnterEditFocus and
+	QEvent.Type.LeaveEditFocus enum members.
+	[a8d9583f33d9] <6.5-maint>
+
+	* NEWS, PyQt6.msp:
+	Added the missing QEvent.Type.NativeGesture and QEvent.Type.Quit
+	enum members.
+	[ebd0738bb268] <6.5-maint>
+
+2023-06-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file.
+	[6590e301a19c] <6.5-maint>
+
+	* config-tests/cfgtest_QtCore.cpp:
+	Fixed building against Qt older than v6.5.
+	[4860e1d699d4] <6.5-maint>
+
+2023-06-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.5.1 for changeset 443f350df939
+	[9d6e72a95cae] <6.5-maint>
+
+2023-05-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_pyqtboundsignal.cpp:
+	Fixed a regression that broke pyqtSlot arguments that where
+	typedefs.
+	[443f350df939] [6.5.1] <6.5-maint>
+
+2023-05-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, project.py:
+	Ensure the permission plugins are built in.
+	[dea56beea30d] <6.5-maint>
+
+2023-05-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed the conversion of QPermission.
+	[ba763ef07730] <6.5-maint>
+
+2023-05-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, config-tests/cfgtest_QtCore.cpp:
+	Fixed build issues with the permissions support.
+	[04c3b8f59a6c] <6.5-maint>
+
+	* NEWS, PyQt6.msp, config-tests/cfgtest_QtCore.cpp:
+	Added support for QPermission et al.
+	[f673353b1366] <6.5-maint>
+
+2023-04-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/pyuic.py:
+	pyuic6 doesn't, for consistency reasons, recurse when compiling a
+	directory.
+	[7f0f1196edd6] <6.5-maint>
+
+	* NEWS, extras/uic/compile_ui.py, extras/uic/pyuic.py:
+	compileUiDir() can now compile muliple .ui files in parallel. pyuic6
+	can now compile a directory contents.
+	[09ca845e4626] <6.5-maint>
+
+2023-04-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.5.0 for changeset db2b0386d4f1
+	[a2256de71810]
+
+	* NEWS, qpy/QtCore/qpycore_chimera.cpp:
+	Fixed a regression in the handling of QFlags as signal arguments.
+	[db2b0386d4f1] [6.5.0]
+
+2023-04-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, project.py, pyproject.toml:
+	Added the QtSpatialAudio module.
+	[077c776029a6]
+
+2023-04-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Updated for Qt v6.5.0.
+	[729660e6fc61]
+
+2023-03-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updated QtWidgets for Qt v6.5.0rc.
+	[626287dd0ed1]
+
+	* NEWS, PyQt6.msp:
+	Updated QtRemoteObjects, QtSensors, QtSql, QtSvg, QtSvgWidgets,
+	QtTest, QtTextToSpeech, QtWebChannel, QtWebSockets and QtXml for Qt
+	v6.5.0rc.
+	[161ffed7ef69]
+
+2023-03-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updated QtQml, QtQuick, QtQuick3D and QtQuickWidgets for Qt
+	v6.5.0rc.
+	[8ae811bd2c98]
+
+	* NEWS, PyQt6.msp:
+	Updated QtNetwork, QtNfc, QtOpenGL, QtOpenGLWidgets, QtPdf,
+	QtPdfWidgets, QtPoitioning and QtPrintSupport for Qt v6.5.0rc.
+	[b4b6ff5dc2d6]
+
+	* PyQt6.msp, mksccode/QtMultimedia.versions:
+	Updated the sub-class convertor code for QtMultimedia.
+	[5fbc985e8383]
+
+	* PyQt6.msp, qpy/QtCore/qpycore_qlist.sip:
+	Updated QtDBus, QtDesigner, QtGui, QtHelp, QtMultimedia and
+	QtMultimediaWidgets for Qt v6.5.0rc.
+	[a721ab062d44]
+
+2023-03-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Updated QtBluetooth and QtCore for Qt v6.5.0rc.
+	[8f2a4645ecca]
+
+	* Merged the 6.4-maint branch.
+	[43d0515da1a2]
+
+2023-03-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h:
+	Ensure Qt property getters and setters handle user-defined enums
+	properly. Note that Designer still requires enums to be registered.
+	[1765171f142d] <6.4-maint>
+
+	* NEWS, PyQt6.msp:
+	Improved the error checking when writing an enum property.
+	[8432953b3600] <6.4-maint>
+
+2023-03-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed QMetaProperty.write() to handle values of unregistered enums.
+	[2064a87dba00] <6.4-maint>
+
+2023-03-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h:
+	Further improvements to reading user-defined Enum properties.
+	[be6f382a1f57] <6.4-maint>
+
+	* NEWS, qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h,
+	qpy/QtCore/qpycore_enums_flags.cpp, qpy/QtCore/qpycore_types.cpp,
+	test/metaobject/test_pyqtproperty.py:
+	Fixed QMetaProperty.read() for user-defined enums.
+	[9ef37f530e08] <6.4-maint>
+
+2023-03-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_pyqtboundsignal.cpp:
+	When comparing types of a decorated slot, use the name of the C++
+	type rather rather than the meta-type (which may have changed).
+	[9d77aaabfdff] <6.4-maint>
+
+2023-02-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.4.2 for changeset 0cf0f5deb862
+	[6008d812dbde] <6.4-maint>
+
+2023-01-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/lupdate/lupdate.py:
+	Fixed a regression in pylupdate.
+	[0cf0f5deb862] [6.4.2] <6.4-maint>
+
+2023-01-27  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.4.1 for changeset f633ac74eeef
+	[ffbaf766f709] <6.4-maint>
+
+	* NEWS, qpy/QtCore/qpycore_qt_conf.cpp:
+	Fixed the embedded qt.conf on Windows where there are non-ASCII
+	characters in the pathname of the installation directory.
+	[f633ac74eeef] [6.4.1] <6.4-maint>
+
+2023-01-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_qvariant_value.cpp:
+	Fixed the implementation of QSettings.value() for a list of strings.
+	[a4b3ad49321b] <6.4-maint>
+
+	* NEWS, PyQt6.msp:
+	Fixed the base types of the QPdfBookmarkModel.Role and
+	QPdfSearchModel.Role enums.
+	[78cd78751823] <6.4-maint>
+
+2023-01-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	More Windows build fixes.
+	[557383d31eef] <6.4-maint>
+
+	* NEWS, PyQt6.msp:
+	Fixed build errors on Windows.
+	[2c160e7075fb] <6.4-maint>
+
+2023-01-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed the base type of the QPdfDocument.PageModelRole enum.
+	[c31b80437d87] <6.4-maint>
+
+	* extras/uic/Compiler/compiler.py,
+	extras/uic/Compiler/qobjectcreator.py,
+	extras/uic/Compiler/qtproxies.py, extras/uic/Loader/loader.py,
+	extras/uic/Loader/qobjectcreator.py, extras/uic/icon_cache.py,
+	extras/uic/objcreator.py, extras/uic/properties.py,
+	extras/uic/uiparser.py:
+	Refactored pyuic so that parent objects are specified as keyword
+	arguments when possible so that custom widgets can have additional,
+	preceding optional arguments.
+	[5e44e8a15f2a] <6.4-maint>
+
+	* NEWS, pyproject.toml, qpy/QtCore/qpycore_chimera.cpp:
+	Backout the removal of support for unregistered enums as we still
+	have to support protected enums and classes without a QMetaObject.
+	[77ec5687a5fc] <6.4-maint>
+
+2023-01-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyproject.toml, qpy/QtCore/qpycore_chimera.cpp:
+	Require SIP v6.7.6 so that all enums are registered with Qt.
+	Simplify the enum support when converting types now that all will be
+	registered.
+	[79807338ba98] <6.4-maint>
+
+2023-01-11  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_chimera.cpp:
+	Fixed regressions related to the handling of global enums in
+	connections.
+	[4f773319fd9a] <6.4-maint>
+
+2022-12-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_chimera.cpp:
+	Fixed the handling of Qt properties when the type was a Python enum.
+	[255ebf0c8996] <6.4-maint>
+
+2022-12-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added toHBITMAP(), fromHBITMAP(), toHICON() and fromHICON() to
+	QImage.
+	[1a471b580467] <6.4-maint>
+
+2022-10-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/lupdate.py:
+	plupdate will now properly exclude subdirectories.
+	[ccf01ff6a08e] <6.4-maint>
+
+	* extras/lupdate/lupdate.py:
+	pylupdate will ignore hidden files and directories when reading a
+	directory.
+	[301190b67f05] <6.4-maint>
+
+	* NEWS, extras/uic/compile_ui.py:
+	Fixed uic.compileUiDir() when the default system encoding is not
+	UTF8.
+	[9d65afef0172] <6.4-maint>
+
+2022-10-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed QBoxLayout.insertItem() ownership bug.
+	[ed33831448da] <6.4-maint>
+
+2022-10-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added allocationLimit() and setAllocationLimit() to QImageReader.
+	[aec5200df9d5] <6.4-maint>
+
+2022-09-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.4.0 for changeset 72aaf7b1fea2
+	[e028d20626d7]
+
+	* NEWS, PyQt6.msp:
+	Updated for Qt v6.4.0.
+	[72aaf7b1fea2] [6.4.0]
+
+2022-09-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the base type of the QTextDocument.ResourceType enum.
+	[97cfbe3484d8]
+
+2022-09-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added a missing enum annotation.
+	[333d7ba4f471]
+
+2022-09-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, project.py:
+	Added the QtPdfWidgets module.
+	[04542ff1a3b4]
+
+	* NEWS, PyQt6.msp, project.py:
+	Added the QtPdf module.
+	[8520491f7511]
+
+	* PyQt6.msp:
+	Updated the rest of the modules fro Qt v6.4.0rc.
+	[b3a74e3fcad6]
+
+	* PyQt6.msp:
+	Updated QtOpenGL, QtOpenGLWidgets, QtPositioning and QtPrintSupport
+	for Qt v6.4.0rc.
+	[2e5315bc05d2]
+
+	* PyQt6.msp, mksccode/QtNetwork.versions:
+	Updated QtNetwork and QtNfc for Qt v6.4.0rc.
+	[c625c73c833a]
+
+	* PyQt6.msp:
+	Updated QtMultimedia and QtMultimediaWidgets for Qt v6.4.0rc.
+	[7343cfb4cce7]
+
+	* PyQt6.msp:
+	Updated QtBluetooth, QtDBus, QtDesigner, QtHelp and QtXML for Qt
+	v6.4.0rc.
+	[50664878b4ff]
+
+	* NEWS, PyQt6.msp:
+	Updated QtWidgets for Qt v6.4.0rc.
+	[b44e64308188]
+
+2022-09-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updated QtGui for Qt v6.4.0rc.
+	[aae1f9b46109]
+
+	* NEWS, PyQt6.msp, qpy/QtCore/qanystringview.sip:
+	Updated QtCore for Qt v6.4.0rc.
+	[0532498dffc2]
+
+2022-09-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file.
+	[dcf4f7a92812]
+
+	* Merged the 6.3-maint branch.
+	[7a20935c2832]
+
+2022-09-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_qobject_helpers.cpp:
+	Fixed calling QObject::inherits() from C++ on instances that were
+	created by Python (and so was an instance of a generated derived
+	class), had it's ownership transfered to C++ and the Python object
+	garbage collected. This broke all sub-class converter code.
+	[5f7909b6c1e3] <6.3-maint>
+
+2022-09-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, test/pyuic/QWidget/Widget03.ui:
+	Fixed an incorrect test that breaks on Python v3.11.
+	[bbfa52dc5e6f] <6.3-maint>
+
+2022-08-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the base type of FocusPolicy.
+	[0215c2d5adbf] <6.3-maint>
+
+2022-07-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* misc/pyqt-commercial.sip:
+	Backed out changeset d3417110f23a as we can now fix universal wheels
+	on Linux.
+	[c6e64811b96a] <6.3-maint>
+
+2022-07-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, qpy/QtWidgets/qpywidgets_post_init.cpp,
+	qpy/QtWidgets/qpywidgets_qaction_helpers.cpp,
+	qpy/QtWidgets/qpywidgets_qaction_helpers.h:
+	Added QAction.menu() and QAction.setMenu().
+	[b8ba8efcf473] <6.3-maint>
+
+	* NEWS, extras/lupdate/translation_file.py:
+	Fixed pylupdate when restoring vanished messages.
+	[8969d2e77bff] <6.3-maint>
+
+2022-07-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* misc/pyqt-commercial.sip:
+	Fixed the license check in commercial wheels for macOS.
+	[d3417110f23a] <6.3-maint>
+
+2022-06-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/uic/enum_map.py:
+	Fixed pyuic's handling of Qt.ShortcutContext.
+	[6b3e1d8bc7ec] <6.3-maint>
+
+2022-06-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, config-tests/cfgtest_QtNetwork.cpp:
+	Fixed building against Qt installations with SSL support but no DTLS
+	support.
+	[613ea495ccce] <6.3-maint>
+
+2022-06-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_chimera.cpp:
+	Fixed the handling of enums when they haven't been registered with
+	Qt's meta-type system.
+	[3e79aeb5464d] <6.3-maint>
+
+2022-06-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.3.1 for changeset 247d2c1d453c
+	[e666010cdfc4] <6.3-maint>
+
+	* NEWS, qpy/QtCore/qpycore_chimera.cpp,
+	qpy/QtCore/qpycore_chimera_storage.cpp:
+	Fixed issues when emitting signals with enum arguments.
+	[247d2c1d453c] [6.3.1] <6.3-maint>
+
+2022-06-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added qRegisterResourceData() and qUnregisterResourceData.
+	[4302c2940491] <6.3-maint>
+
+2022-06-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Reordered QPainter methods so that QPolygon[F] are not handled as
+	sequences.
+	[eeab18cf3dc2] <6.3-maint>
+
+2022-06-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_chimera.cpp:
+	Fixed the handling of char* slot arguments.
+	[d367df954b70] <6.3-maint>
+
+2022-05-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Refactored the QPainter draw methods to exploit sip.array objects.
+	[c6715cccc537] <6.3-maint>
+
+2022-05-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file for sip.array.
+	[1adefd1499a6] <6.3-maint>
+
+2022-05-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, project.py:
+	v13.4 of the sip ABI is now required (for the missing enum member
+	support). Reverted the support for using an int instead of a
+	Qt.GestureType. Deprecated (rather than removed) the QEvent ctor
+	that takes an int argument.
+	[d2ec9265d699] <6.3-maint>
+
+2022-05-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixes for building against a debug version of Python.
+	[94918729af61] <6.3-maint>
+
+2022-04-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added resize() to QPolygon, QPolygonF and QXmlStreamAttributes.
+	[b6869cdce5ce] <6.3-maint>
+
+2022-04-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.3.0 for changeset 373bc2a6447e
+	[22bcfae615cd]
+
+2022-04-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixes for when building without protected being public.
+	[373bc2a6447e] [6.3.0]
+
+	* NEWS, project.py, qpy/QtCore/qpycore_post_init.cpp,
+	qpy/QtCore/qpycore_post_init.cpp.in:
+	Removed some legacy SIP v4 support.
+	[184d70406908]
+
+2022-03-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updated the remaining modules for Qt v6.3.0rc.
+	[1c4354d61062]
+
+	* PyQt6.msp:
+	Updated QtHelp, QtMultimedia, QtMultimediaWidgets and QtNetwork for
+	Qt v6.3.0rc.
+	[0566b82df55b]
+
+	* PyQt6.msp, qpy/QtBluetooth/qpybluetooth_qmultihash.sip:
+	Updated QtBluetooth, QtDBus, QtDesigner and QtGui for Qt v6.3.0rc.
+	[cd140f0de691]
+
+	* NEWS, PyQt6.msp:
+	Updated QtCore for Qt v6.3.0rc.
+	[a87a5ea93c97]
+
+2022-03-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Merged the 6.2-maint branch.
+	[962af9bda6d0]
+
+2022-03-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_pyqtslot.cpp:
+	Keep a strong reference to methods when they are used as slots.
+	[d70742ec07e0] <6.2-maint>
+
+2022-02-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtQml/qpyqml_listdata.cpp:
+	Fixed a bug in the tidying up of QQmlListProperty.
+	[3ce5cad6fbfe] <6.2-maint>
+
+2022-02-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.2.3 for changeset bf840012bc47
+	[76ccb7cf3d45] <6.2-maint>
+
+	* qpy/QtCore/qpycore_pyqtpyobject.cpp,
+	qpy/QtCore/qpycore_pyqtpyobject.h:
+	Explicitly support comparisons of Python objects wrapped in a
+	QVariant.
+	[bf840012bc47] [6.2.3] <6.2-maint>
+
+	* PyQt6.msp:
+	Release the GIL when calling the QThreadPool dtor.
+	[1e096bc898df] <6.2-maint>
+
+	* NEWS, PyQt6.msp:
+	Fixed the QLocale.FloatingPointPrecisionOption enum.
+	[76db78226e19] <6.2-maint>
+
+2022-01-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Removed a couple of undocumented operators introduced in Qt v6.2.
+	[f07068587ea8] <6.2-maint>
+
+2022-01-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the QFont.Stretch enum.
+	[28de6ce508ce] <6.2-maint>
+
+2022-01-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the usage of Qt.GestureType to account for Qt returning custom
+	values.
+	[2d2edf8288be] <6.2-maint>
+
+2022-01-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the QSizePolicy.PolicyFlag enum. However currently it can only
+	be used in combinations represented by the Policy enum.
+	[1b9d11f650ad] <6.2-maint>
+
+2022-01-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the QTableWidgetItem.ItemType enum.
+	[5d1e04945454] <6.2-maint>
+
+2021-12-11  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtNetwork/qpynetwork_qmap.sip:
+	Fixed the handling of the result of
+	QSslCertificate.subjectAlternativeNames().
+	[31743f3a2aec] <6.2-maint>
+
+2021-12-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.2.2 for changeset dd1923cdf995
+	[4f95f58edfec] <6.2-maint>
+
+	* NEWS, PyQt6.msp:
+	Added the missing QMediaPlayer loop-related methods.
+	[dd1923cdf995] [6.2.2] <6.2-maint>
+
+2021-11-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed the toString(), toDisplayString() and toEncoded() methods of
+	QUrl to accept QUrl.ComponentFormattingOptions flags.
+	[94ac53ce9297] <6.2-maint>
+
+	* NEWS, PyQt6.msp:
+	Use a dedicated QEventLoop in the event hook as Qt6 seems to hide
+	windows when the main event loop exits.
+	[0b618767ac61] <6.2-maint>
+
+2021-11-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the QListWidgetItem.ItemType and QTreeWidgetItem.ItemType
+	enums.
+	[fc30342b6025] <6.2-maint>
+
+2021-11-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added /Constrained/ to the QVariant serialiser so that it doesn't
+	act as a catchall and bypass all subsequent serialisers (including
+	slot extenders).
+	[ce7d2be67940] <6.2-maint>
+
+2021-11-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* project.py:
+	Update the minimum ABI version of the sip module.
+	[6e81d758b971] <6.2-maint>
+
+	* PyQt6.msp:
+	Qt.FocusPolicy members are now flags.
+	[6f4ebc7b30e4] <6.2-maint>
+
+	* NEWS, PyQt6.msp, pyproject.toml:
+	Fixed the QStyle enums that have a custom base value so that the
+	value is unsigned and can be added to.
+	[8cd2a8c92b07] <6.2-maint>
+
+2021-11-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/uic/uiparser.py:
+	Fixed pyuic handling of alignment flags.
+	[2c1990da7bb3] <6.2-maint>
+
+2021-11-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added the missing QBluetoothUuid ctors.
+	[a26c8d542c4a] <6.2-maint>
+
+2021-11-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the QBluetoothDeviceDiscoveryAgent.DiscoveryMethod enum.
+	[a3c9210b471e] <6.2-maint>
+
+2021-11-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/uic/enum_map.py:
+	Fixes for pyuic handling of QFormLayout enums.
+	[3c3c854f3f80] <6.2-maint>
+
+2021-10-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.2.1 for changeset a2c450b78bfa
+	[cda76ceff903] <6.2-maint>
+
+	* NEWS, PyQt6.msp:
+	Added the QLowEnergyController.mtuChanged() signal which is now
+	documented in Qtv v6.2.1.
+	[a2c450b78bfa] [6.2.1] <6.2-maint>
+
+2021-10-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/Compiler/qtproxies.py:
+	Generate typing information to ignore connect() in pyuic generated
+	code.
+	[9c0e41c7ff2e] <6.2-maint>
+
+	* NEWS, PyQt6.msp, pyproject.toml:
+	Fixed pickling of QByteArray with Python v3.10.
+	[a0e71847dd24] <6.2-maint>
+
+	* test/classes/test_QByteArray.py:
+	Added the QByteArray pickle test.
+	[5030955cccde] <6.2-maint>
+
+2021-10-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Remove QObject.__getattr__() from QtCore.pyi as it hides
+	missing/mistyped attribute names.
+	[57b7422b71ce] <6.2-maint>
+
+2021-10-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/uic/enum_map.py:
+	Fixed pyuic's handling of QAction::MenuRole.
+	[8810cca5e9b4] <6.2-maint>
+
+2021-10-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyproject.toml:
+	SIP v6.3.2 is required to fix the /KeepReference/ in QImage ctors.
+	[cb499c4af6b0] <6.2-maint>
+
+2021-10-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/lupdate/python_source.py:
+	Fixed QCoreApplication.translate() when the third argument is None.
+	[5133bf2070f2] <6.2-maint>
+
+2021-09-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.2.0 for changeset 0bb49dbf5c8b
+	[15bf52145355]
+
+	* NEWS, PyQt6.msp:
+	Updated for Qt v6.2.0.
+	[0bb49dbf5c8b] [6.2.0]
+
+2021-09-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	QCoreApplication.exit() is a slot from Qt v6.1.
+	[7c555d2bd771]
+
+2021-09-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, qpy/QtCore/qpycore_pyqtmethodproxy.cpp:
+	Fixed the invocation of meta-type methods so that the result is
+	available.
+	[ca7422fddf5a]
+
+2021-09-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* unsupported/PyQt6-Purchasing/NEWS,
+	unsupported/PyQt6-Purchasing/PyQt6-Purchasing.msp,
+	unsupported/PyQt6-Purchasing/README,
+	unsupported/PyQt6-Purchasing/pyproject.toml:
+	Removed the 'unsupported' directory.
+	[b4df868a6b6d]
+
+	* NEWS, PyQt6.msp, rb-product.toml:
+	Fixed the problem with QtRemoteObjects.
+	[127c837acbdf]
+
+2021-09-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Completed the port of QtNfc.
+	[512a66074830]
+
+	* NEWS, PyQt6.msp, qpy/QtBluetooth/qpybluetooth_qlist.sip,
+	qpy/QtBluetooth/qpybluetooth_qmultihash.sip,
+	qpy/QtBluetooth/qpybluetooth_quint128.sip:
+	Completed the port of QtBluetooth.
+	[307d01aee62e]
+
+	* project.py:
+	Added QtBluetooth and QtNfc to project.py.
+	[b2fe08777621]
+
+	* PyQt6.msp:
+	Initial port of QtNfc.
+	[4ca5c5f2750d]
+
+	* PyQt6.msp:
+	Initial port of QtBluetooth.
+	[60f45c3128bc]
+
+	* modules/QAxContainer/qaxobject.sip:
+	Updated the sub-class convertor code for QAxContainer.
+	[de79cd0d7580]
+
+	* PyQt6.msp, unsupported/PyQt6-Connectivity/PyQt6-Connectivity.msp:
+	Add QtBluetooth and QtNfc from PyQt5 to the project file.
+	[9aed3a4f9e43]
+
+	* unsupported/PyQt6-Purchasing/PyQt6-Purchasing.msp,
+	unsupported/PyQt6-Unsupported.msp, unsupported/PyQt6-WebEngine/NEWS,
+	unsupported/PyQt6-WebEngine/README,
+	unsupported/PyQt6-WebEngine/pyproject.toml:
+	Tidies up the 'unsupported' directory.
+	[fdaad46be1d2]
+
+	* modules/QAxContainer/QAxContainermod.sip,
+	modules/QAxContainer/qaxbase.sip,
+	modules/QAxContainer/qaxobject.sip,
+	modules/QAxContainer/qaxobjectinterface.sip,
+	modules/QAxContainer/qaxwidget.sip:
+	Ported QAxContainer to Qt6.
+	[04a550de425a]
+
+	* NEWS, project.py, rb-product.toml:
+	Enable the build of QAxContainer.
+	[10b014f1c5ff]
+
+2021-09-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Updated for Qt v6.2.0rc.
+	[190b41cab26f]
+
+2021-09-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the QNetworkInformation.reachabilityChanged() signal.
+	[a63b3cecae2c]
+
+2021-08-27  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added the missing QMouseEvent.pos() which is now documented.
+	[23e7523010e8]
+
+2021-08-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed the QUrl.ComponentFormattingOption and
+	QUrl.UrlFormattingOption enums.
+	[3dc0b4d025d1]
+
+	* rb-product.toml:
+	Disable QtRemoteObjects in the build system as the workaround
+	doesn't seem to be reliable.
+	[b89426d33166]
+
+2021-08-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, project.py:
+	Worked around the problem with QtRemoteObjects.
+	[6537839dd6fa]
+
+2021-08-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, project.py:
+	Updated for Qt v6.2.0beta3.
+	[12e1add66527]
+
+2021-08-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* project.py:
+	Disable QtRemoteObjects because of apparent problems with Qt
+	v6.2.0beta2.
+	[4e2cdf6d8481]
+
+2021-08-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyproject.toml:
+	Updated the SIP and PyQt-builder version dependencies.
+	[41fe621c64d7]
+
+2021-08-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Ignore multi-data in QtRemoteObjects.
+	[3a85941675c1]
+
+	* NEWS, PyQt6.msp, project.py:
+	Added QtWebSockets.
+	[83f7983dc69d]
+
+	* NEWS, PyQt6.msp, project.py:
+	Added QtWebChannel.
+	[4f1ded0754d6]
+
+	* NEWS, PyQt6.msp, project.py:
+	Added QtSensors.
+	[222091df778d]
+
+	* NEWS, PyQt6.msp, project.py:
+	Added QtRemoteObjects.
+	[b204f04c9a0c]
+
+	* NEWS, PyQt6.msp, project.py:
+	Added QtPositioning.
+	[b38d5aae7842]
+
+	* NEWS, PyQt6.msp, project.py:
+	Added the QtSerialPort module.
+	[cf48cdf5c172]
+
+	* project.py:
+	Removed QtBluetooth and QtNfc from the build system.
+	[17e5bf532a8d]
+
+	* PyQt6.msp:
+	Removed QtBluetooth and QtNfc from the project.
+	[b9b06ad7df34]
+
+	* unsupported/PyQt6-Connectivity/PyQt6-Connectivity.msp:
+	Added PyQt6-Connectivity as an unsupported project.
+	[2790e860c346]
+
+2021-08-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* examples/multimediawidgets/camera/camera.py,
+	examples/multimediawidgets/camera/camera.ui,
+	examples/multimediawidgets/camera/images/shutter.svg,
+	examples/multimediawidgets/camera/imagesettings.ui,
+	examples/multimediawidgets/camera/ui_camera.py,
+	examples/multimediawidgets/camera/ui_imagesettings.py,
+	examples/multimediawidgets/camera/ui_videosettings.py,
+	examples/multimediawidgets/camera/videosettings.ui:
+	Added the camera example although it has a number of issues.
+	[16f0c36a9f19]
+
+	* PyQt6.msp:
+	Added QMediaRecorder.captureSession().
+	[74855b5a7487]
+
+	* qpy/QtMultimedia/qpymultimedia_qlist.sip:
+	Added the QList mapped types for the QMediaFormat enums.
+	[f36b6bf9c145]
+
+	* qpy/QtMultimedia/qpymultimedia_qlist.sip:
+	Implemented the mapped type for QList<QImageCapture::FileFormat>.
+	[80046bdc1f87]
+
+	* PyQt6.msp:
+	Added the FileFormat related methods to QImageCapture.
+	[b69357b96fec]
+
+	* PyQt6.msp:
+	Fixed the QMediaRecorder signals.
+	[9c49ecdb1195]
+
+2021-07-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Added static methods to QMediaFormat.
+	[524ea52f51b9]
+
+	* PyQt6.msp:
+	Updated for Qt v6.2.0beta2.
+	[643d1fc97e09]
+
+	* examples/multimediawidgets/videographicsitem.py,
+	examples/multimediawidgets/videowidget.py:
+	Added the videographicsitem and videowidget QtMultimediaWidgets
+	examples.
+	[e6ecf20ffc28]
+
+	* PyQt6.msp:
+	Added QMediaMetaData.keys().
+	[d46d3083187b]
+
+	* NEWS, PyQt6.msp:
+	Added QMediaMetaData.insert().
+	[cda59a750906]
+
+2021-07-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added the data() and constData() methods to QAudioBuffer.
+	[500bc39c2cb2]
+
+	* PyQt6.msp:
+	Fixed the QMediaPlayer signals.
+	[4fbc54197a4b]
+
+2021-07-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, examples/multimedia/audiodevices/audiodevices.py,
+	examples/multimedia/audiodevices/audiodevicesbase.ui,
+	examples/multimedia/audiodevices/ui_audiodevicesbase.py,
+	examples/multimedia/audiooutput.py:
+	Ported the QtMultimedia examples from PyQt5.
+	[136a95203f5c]
+
+2021-07-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, project.py:
+	Added the QtMultimediaWidgets module.
+	[a189c0448865]
+
+	* NEWS, PyQt6.msp, project.py,
+	qpy/QtMultimedia/qpymultimedia_qlist.sip:
+	Completed the initial support for QtMultimedia.
+	[005a5a6f2279]
+
+2021-07-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtMultimedia/qpymultimedia_qlist.sip:
+	Completed the first pass through QtMultimedia.
+	[47189280cc1a]
+
+2021-07-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Started work on QtMultimedia.
+	[f2b2d9c9fa52]
+
+2021-07-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp, mksccode/QtOpenGL.versions,
+	qpy/QtOpenGL/qpyopengl_qlist.sip:
+	Fixed building against Qt configured for OpenGL ES2.
+	[95a652ce2d96]
+
+2021-07-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_std_pair.sip:
+	Added the std::pair<qreal, qreal> mapped type needed by
+	PyQt6-Charts.
+	[92db4a18d792]
+
+	* qpy/QtCore/qpycore_qlist.sip:
+	Fixed an exception message un the QList<float> convertor.
+	[e6453b26c219]
+
+	* PyQt6.msp:
+	Completed the support for Qt v6.2.0beta1.
+	[163831f2aae3]
+
+	* NEWS, PyQt6.msp:
+	Initial pass through Qt v6.2.0beta1.
+	[1a6569729dc9]
+
+	* Merged the 6.1-maint branch.
+	[2e3463b0829c]
+
+2021-07-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the ordering of the QCompleter ctors so that a
+	QAbstractItemModel argument doesn't get interpreted as a parent
+	QObject argument.
+	[1eed874dbae5] <6.1-maint>
+
+2021-06-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.1.1 for changeset 4a8c6ec34804
+	[248b4a679303] <6.1-maint>
+
+	* NEWS, PyQt6.msp:
+	Fixed a v6.1.0 regression in QImage.fill().
+	[4a8c6ec34804] [6.1.1] <6.1-maint>
+
+2021-06-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the base type of the QFileSystemModel.Roles enum.
+	[87985eec2ed8] <6.1-maint>
+
+2021-05-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/translation_file.py:
+	The pylupdate6 summary is now created with one print statement to
+	reduce the chance it gets mixed up with other parallel output.
+	[daf3e2fbfb6f] <6.1-maint>
+
+	* extras/lupdate/translation_file.py:
+	pylupdate6 bug fix.
+	[b5519af5a1bc] <6.1-maint>
+
+	* extras/lupdate/translation_file.py:
+	Always use POSIX line endings in the .ts file.
+	[c7f2160e2cf7] <6.1-maint>
+
+	* NEWS, extras/lupdate/python_source.py:
+	pylupdate6 now handles PEP 263 embedded source encodings in .py
+	files.
+	[b42c29091f7a] <6.1-maint>
+
+2021-05-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/lupdate/lupdate.py, extras/lupdate/pylupdate.py:
+	Added the --exclude command line option to pylupdate6 and the
+	corresponding Python API.
+	[4b85ca61b80f] <6.1-maint>
+
+2021-05-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_qmap.sip:
+	Completed the full implementation of the QMultiMap mapped type.
+	[f2ea0ac13dfe] <6.1-maint>
+
+	* NEWS, PyQt6.msp:
+	Fixed the conversion of QHostAddress.SpecialAddress.
+	[e16e11b73278] <6.1-maint>
+
+2021-05-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the conversion of bytes objects with embedded zeros to
+	QByteArray.
+	[0d9a294fd927] <6.1-maint>
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h:
+	Fixed the handling of char* in signal and slot signatures.
+	[82d5a4a5e954] <6.1-maint>
+
+	* qpy/QtCore/qpycore_decorators.cpp:
+	Improved an error message.
+	[00929c4e1a2a] <6.1-maint>
+
+2021-05-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Restored the QtCore.QXmlStreamAttributes class from PyQt5.
+	[a9c3a332ca56] <6.1-maint>
+
+2021-05-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added the missing QtQml.QQmlExtensionPlugin class.
+	[e55eb8b00533] <6.1-maint>
+
+2021-05-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.1.0 for changeset 596ddcf79bcb
+	[8694eb36e6e3]
+
+2021-05-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Added support for QJSPrimitiveValue etc.
+	[596ddcf79bcb] [6.1.0]
+
+	* NEWS, PyQt6.msp, mksccode/QtNetwork.versions:
+	Added support for QNetworkInformation.
+	[fc63e614aaaf]
+
+2021-05-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Updated for Qt v6.1.0rc2.
+	[2b64a149a6ac]
+
+2021-04-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Added the missing QLayout.setAlignment() overload.
+	[e49adf63dc0e]
+
+2021-04-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed __rmul__ for QSize and QSizeF.
+	[d9cfdf83c8f5]
+
+	* qpy/QtCore/qpycore_chimera.cpp:
+	Fixed the handling of QFlag properties.
+	[6f61dacb0579]
+
+2021-04-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updated for Qt v6.1.0rc.
+	[51097cc1d2c8]
+
+	* NEWS, qpy/QtCore/qflags.sip:
+	Fixed the conversion of QFlags.
+	[9f0d75e7e5dd]
+
+2021-04-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Fixed the automatic conversion of a QEasingCurve.Type to a
+	QEasingCurve.
+	[db75ac715a51]
+
+2021-04-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed the base type of Qt.WindowFlag.
+	[9a82622d34d3]
+
+2021-04-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Allow QEvent and QChildEvent to be created using an int event type.
+	[590701bb226e]
+
+2021-04-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Added the resource provider support for QTextDocument.
+	[bdbf71443638]
+
+	* PyQt6.msp:
+	Implemented the resource provider support for QLabel.
+	[ce14b46f9be1]
+
+2021-04-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/designer/pluginloader.cpp, extras/qmlscene/pluginloader.cpp:
+	Fixes for the plugin loaders.
+	[fd3365056f64]
+
+	* PyQt6.msp, qpy/QtNetwork/qpynetwork_qlist.sip:
+	Completed the QtNetwork changes for Qt v6.1.
+	[78306f7b92f3]
+
+	* NEWS, PyQt6.msp, qpy/QtCore/qpycore_qlist.sip:
+	Updated QColorSpec for Qt v6.1.
+	[102dcde6cb12]
+
+2021-04-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	First pass through Qt v6.1.
+	[f953fc79b5e5]
+
+	* NEWS, PyQt6.msp:
+	Added a base version.
+	[8e4326d7bcf4]
+
+	* DevelopersNotes.txt:
+	The developer notes are no longer required.
+	[d39c4c8a1065]
+
+2021-04-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* unsupported/PyQt6-Unsupported.msp:
+	Another forward port for QtWebEngine from PyQt5.
+	[5216e3e10fad]
+
+	* unsupported/PyQt6-Unsupported.msp:
+	Forward ported the latest QtWebEngine changes from PyQt5.
+	[db5459a18a78]
+
+2021-03-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtDataVisualization/qpydatavisualization_qlist.sip:
+	Removed the last vestiges of QtDataVisualization.
+	[ef3513699255]
+
+	* PyQt6.msp:
+	Fixed the base type of Qt.Key.
+	[45ed8f417097]
+
+2021-03-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6.msp:
+	Allow an integer ARGB value to be used whenever a QColor is
+	expected.
+	[3534999634cd]
+
+	* unsupported/PyQt6-Unsupported.msp:
+	Tidied up the "unsupported" project.
+	[673cd94e1f26]
+
+	* test/misc/test_pickle.py:
+	Fixed the unit tests for the renamed flags.
+	[a6069cc88f20]
+
+	* unsupported/PyQt6-Charts/NEWS, unsupported/PyQt6-Charts/README,
+	unsupported/PyQt6-Charts/mksccode/QtCharts.versions,
+	unsupported/PyQt6-Charts/pyproject.toml,
+	unsupported/PyQt6-DataVisualization/NEWS,
+	unsupported/PyQt6-DataVisualization/README, unsupported/PyQt6-DataVi
+	sualization/mksccode/QtDataVisualization.versions,
+	unsupported/PyQt6-DataVisualization/pyproject.toml,
+	unsupported/PyQt6-Purchasing/pyproject.toml,
+	unsupported/PyQt6-Unsupported.msp,
+	unsupported/PyQt6-WebEngine/pyproject.toml:
+	Removed PyQt6-Charts and PyQt6-DataVisualization "unsupported"
+	projects.
+	[8d1a612af2a0]
+
+2021-03-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file.
+	[b6c90242cc6a]
+
+	* PyQt6.msp, examples/designer/calculatorform/ui_calculatorform.py,
+	examples/designer/plugins/widgets/analogclock.py,
+	examples/designer/plugins/widgets/bubbleswidget.py,
+	examples/designer/plugins/widgets/counterlabel.py,
+	examples/designer/plugins/widgets/helloglwidget.py,
+	examples/designer/plugins/widgets/polygonwidget.py,
+	examples/desktop/screenshot.py,
+	examples/dialogs/configdialog/configdialog.py,
+	examples/dialogs/extension.py, examples/dialogs/findfiles.py,
+	examples/dialogs/standarddialogs.py, examples/dialogs/tabdialog.py,
+	examples/draganddrop/delayedencoding/delayedencoding.py,
+	examples/draganddrop/draggableicons/draggableicons.py,
+	examples/draganddrop/draggabletext/draggabletext.py,
+	examples/draganddrop/dropsite.py,
+	examples/draganddrop/fridgemagnets/fridgemagnets.py,
+	examples/draganddrop/puzzle/puzzle.py, examples/quick/tutorials/exte
+	nding/chapter1-basics/chapter1-basics.py, examples/quick/tutorials/e
+	xtending/chapter2-methods/chapter2-methods.py, examples/quick/tutori
+	als/extending/chapter3-bindings/chapter3-bindings.py, examples/quick
+	/tutorials/extending/chapter4-customPropertyTypes/chapter4-customPro
+	pertyTypes.py, examples/quick/tutorials/extending/chapter5-listprope
+	rties/chapter5-listproperties.py, examples/quick/tutorials/extending
+	/chapter6-plugins/Charts/pieslice.py, extras/uic/enum_map.py,
+	extras/uic/uiparser.py:
+	Removed all the renaming of flag based enums so that they use the
+	enum name.
+	[ceddf66fcfeb]
+
+	* Merged the 6.0-maint branch.
+	[3921624a6c57]
+
+2021-03-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, extras/uic/enum_map.py:
+	Fixed pyuic's handling of the QLayout.SizeConstraint enum.
+	[0fc1a8dd2534] <6.0-maint>
+
+2021-03-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.0.3 for changeset b53bfff704f6
+	[1c8e346871e4] <6.0-maint>
+
+	* NEWS:
+	Released as v6.0.3.
+	[b53bfff704f6] [6.0.3] <6.0-maint>
+
+	* qpy/QtCore/qpycore_qt_conf.cpp:
+	Fixed the embedded conf file.
+	[4a33096c52bc] <6.0-maint>
+
+2021-03-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* project.py:
+	Fixed the Qt subdirectory in __init__.py.
+	[ae45dbef9d89] <6.0-maint>
+
+2021-03-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/Compiler/qtproxies.py:
+	Fixed QAction and QActionGroup in pyuic.
+	[44ab6ba3f031] <6.0-maint>
+
+	* NEWS:
+	Updated the NEWS file.
+	[9512b5ae9fa6] <6.0-maint>
+
+	* PyQt6.msp:
+	Fixed the base type of QDialog.DialogCode.
+	[4b95c1e2881e] <6.0-maint>
+
+2021-02-27  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyproject.toml:
+	Fixed the project dependencies.
+	[05b9aa1414bd] <6.0-maint>
+
+2021-02-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Changed the base type of QMessageBox.StandardButtons so that exec()
+	can return a button as an int.
+	[fc6309f743ac] <6.0-maint>
+
+2021-02-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/uiparser.py:
+	Fixed the handling of DockWidgetAreas in pyuic.
+	[cc8eb5b0e586] <6.0-maint>
+
+2021-02-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.0.2 for changeset 79c47417a960
+	[d3c2ea0144c1] <6.0-maint>
+
+	* NEWS:
+	Released as v6.0.2.
+	[79c47417a960] [6.0.2] <6.0-maint>
+
+	* NEWS:
+	Updated the NEWS file.
+	[54dfec551415] <6.0-maint>
+
+2021-02-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/dbus/dbus.cpp:
+	Fixed a compile error in the Python-dbus support.
+	[f06de706de94] <6.0-maint>
+
+2021-02-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* project.py, pyproject.toml:
+	Rely on PyQt-builder v1.9 to set the minimum glibc and macOS
+	versions.
+	[14c3445834d0] <6.0-maint>
+
+	* PyQt6.msp:
+	Fixed a number of potential deadlocks in QSettings and
+	QLibraryInfo.path().
+	[f47905c60c0a] <6.0-maint>
+
+2021-02-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Removed the internal QQmlExtensionPlugin class.
+	[3a0a1e415b25] <6.0-maint>
+
+	* PyQt6.msp:
+	Removed the internal qIsGray().
+	[4c94569c3333] <6.0-maint>
+
+2021-02-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Removed the internal qSharedBuild().
+	[398c68ef66af] <6.0-maint>
+
+	* PyQt6.msp:
+	Removed the internal qIsNull().
+	[a989cc9346ad] <6.0-maint>
+
+	* PyQt6.msp:
+	Removed the internal qErrnoWarning().
+	[1bd5053693fe] <6.0-maint>
+
+	* PyQt6.msp:
+	Added the missing QTextStream-related functions defined in the Qt
+	namespace.
+	[7c1bcb927b2d] <6.0-maint>
+
+	* PyQt6.msp:
+	Removed QT_TR_NOOP_UTF8.
+	[543b1cbdd133] <6.0-maint>
+
+2021-02-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Restored the PyQt5 behaviour of QIODevice.readLine().
+	[a80b9cb45289] <6.0-maint>
+
+2021-02-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/enum_map.py:
+	Fixed the handling of QSizePolicy by uic.loadUi().
+	[50ec168b7758] <6.0-maint>
+
+2021-02-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_chimera.cpp:
+	Fixed the parsing of pointers to non-QObject types.
+	[f6e1ff4d1b58] <6.0-maint>
+
+2021-02-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.0.1 for changeset ccd0fa4fc522
+	[3f2f1fb12ef0] <6.0-maint>
+
+	* NEWS:
+	Released as v6.0.1.
+	[ccd0fa4fc522] [6.0.1] <6.0-maint>
+
+	* extras/designer/pluginloader.cpp, extras/qmlscene/pluginloader.cpp:
+	Fixed build problems on Windows.
+	[4ffbc71fc950] <6.0-maint>
+
+2021-02-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file.
+	[9801e803f723] <6.0-maint>
+
+	* NEWS:
+	Updated the NEWS file.
+	[ae8da9d65e30] <6.0-maint>
+
+	* examples/draganddrop/delayedencoding/delayedencoding.py,
+	examples/draganddrop/delayedencoding/images/drag.png,
+	examples/draganddrop/delayedencoding/images/example.svg,
+	examples/draganddrop/draggableicons/draggableicons.py,
+	examples/draganddrop/draggableicons/images/boat.png,
+	examples/draganddrop/draggableicons/images/car.png,
+	examples/draganddrop/draggableicons/images/house.png,
+	examples/draganddrop/draggabletext/draggabletext.py,
+	examples/draganddrop/draggabletext/words.txt,
+	examples/draganddrop/dropsite.py,
+	examples/draganddrop/fridgemagnets/fridgemagnets.py,
+	examples/draganddrop/fridgemagnets/words.txt,
+	examples/draganddrop/puzzle/example.jpg,
+	examples/draganddrop/puzzle/puzzle.py:
+	Ported the drag'n'drop examples.
+	[20e0d10de086] <6.0-maint>
+
+	* PyQt6.msp:
+	Fixed the type of Qt.TextFlag.
+	[2dfa82fa2f22] <6.0-maint>
+
+2021-02-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* examples/dialogs/classwizard/classwizard.py,
+	examples/dialogs/classwizard/images/background.png,
+	examples/dialogs/classwizard/images/banner.png,
+	examples/dialogs/classwizard/images/logo1.png,
+	examples/dialogs/classwizard/images/logo2.png,
+	examples/dialogs/classwizard/images/logo3.png,
+	examples/dialogs/classwizard/images/watermark1.png,
+	examples/dialogs/classwizard/images/watermark2.png,
+	examples/dialogs/configdialog/configdialog.py,
+	examples/dialogs/configdialog/images/config.png,
+	examples/dialogs/configdialog/images/query.png,
+	examples/dialogs/configdialog/images/update.png,
+	examples/dialogs/extension.py, examples/dialogs/findfiles.py,
+	examples/dialogs/standarddialogs.py, examples/dialogs/tabdialog.py,
+	examples/dialogs/trivialwizard.py:
+	Ported the dialogs examples.
+	[469e6900995c] <6.0-maint>
+
+	* PyQt6.msp:
+	Fix the types of the Shape and Shadow enums of QFrame.
+	[2cd6dd0666f3] <6.0-maint>
+
+	* examples/desktop/screenshot.py,
+	examples/desktop/systray/images/bad.png,
+	examples/desktop/systray/images/heart.png,
+	examples/desktop/systray/images/trash.png,
+	examples/desktop/systray/systray.py:
+	Ported the desktop examples.
+	[f416d1380d4d] <6.0-maint>
+
+2021-01-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* examples/quick/scenegraph/customgeometry/customgeometry.py, examples
+	/quick/tutorials/extending/chapter1-basics/chapter1-basics.py, examp
+	les/quick/tutorials/extending/chapter2-methods/chapter2-methods.py,
+	e
+	xamples/quick/tutorials/extending/chapter3-bindings/chapter3-binding
+	s.py, examples/quick/tutorials/extending/chapter4-customPropertyType
+	s/chapter4-customPropertyTypes.py, examples/quick/tutorials/extendin
+	g/chapter5-listproperties/chapter5-listproperties.py, examples/quick
+	/tutorials/extending/chapter6-plugins/Charts/chartsplugin.py:
+	Don't specify the QML name unncessarily in the QtQuick examples.
+	[0bc143ed9ed6] <6.0-maint>
+
+2021-01-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/qmlscene/pluginloader.cpp:
+	Ported Designer plugin changes to the qmlscene plugin.
+	[8391d88f9c70] <6.0-maint>
+
+	* extras/designer/pluginloader.cpp:
+	Remove redundant code from the Designer plugin.
+	[f5f241310d79] <6.0-maint>
+
+	* extras/designer/pluginloader.cpp:
+	The Designer plugin now handles being run from a venv.
+	[5695e5c98db4] <6.0-maint>
+
+	* examples/designer/calculatorform/calculatorform.py,
+	examples/designer/calculatorform/calculatorform.ui,
+	examples/designer/calculatorform/ui_calculatorform.py,
+	examples/designer/plugins/plugins.py,
+	examples/designer/plugins/python/analogclockplugin.py,
+	examples/designer/plugins/python/bubbleswidgetplugin.py,
+	examples/designer/plugins/python/counterlabelplugin.py,
+	examples/designer/plugins/python/datetimeeditplugin.py,
+	examples/designer/plugins/python/helloglwidgetplugin.py,
+	examples/designer/plugins/python/multipagewidgetplugin.py,
+	examples/designer/plugins/python/polygonwidgetplugin.py,
+	examples/designer/plugins/python/pydemoplugin.py,
+	examples/designer/plugins/python/pythonconsoleplugin.py,
+	examples/designer/plugins/widgets/analogclock.py,
+	examples/designer/plugins/widgets/bubbleswidget.py,
+	examples/designer/plugins/widgets/counterlabel.py,
+	examples/designer/plugins/widgets/datetimeedit.py,
+	examples/designer/plugins/widgets/helloglwidget.py,
+	examples/designer/plugins/widgets/multipagewidget.py,
+	examples/designer/plugins/widgets/polygonwidget.py,
+	examples/designer/plugins/widgets/pydemo.py,
+	examples/designer/plugins/widgets/pythonconsolewidget.py:
+	Added the designer examples.
+	[7c145449f6c2] <6.0-maint>
+
+	* PyQt6.msp:
+	Fixed the QFontMetrics and QFontMetricsF ctors.
+	[62828ed053a6] <6.0-maint>
+
+2021-01-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* examples/quick/animation/animation.py,
+	examples/quick/animation/animation.qml,
+	examples/quick/animation/basics/color-animation.qml,
+	examples/quick/animation/basics/images/face-smile.png,
+	examples/quick/animation/basics/images/moon.png,
+	examples/quick/animation/basics/images/shadow.png,
+	examples/quick/animation/basics/images/star.png,
+	examples/quick/animation/basics/images/sun.png,
+	examples/quick/animation/basics/property-animation.qml,
+	examples/quick/animation/behaviors/SideRect.qml,
+	examples/quick/animation/behaviors/behavior-example.qml,
+	examples/quick/animation/behaviors/tvtennis.qml,
+	examples/quick/animation/behaviors/wigglytext.qml,
+	examples/quick/animation/easing/easing.qml,
+	examples/quick/animation/pathanimation/pathanimation.qml,
+	examples/quick/animation/pathinterpolator/pathinterpolator.qml,
+	examples/quick/animation/states/qt-logo.png,
+	examples/quick/animation/states/states.qml,
+	examples/quick/animation/states/transitions.qml,
+	examples/quick/canvas/bezierCurve/bezierCurve.qml,
+	examples/quick/canvas/canvas.py, examples/quick/canvas/canvas.qml,
+	examples/quick/canvas/clip/clip.qml,
+	examples/quick/canvas/contents/Button.qml,
+	examples/quick/canvas/contents/ScrollBar.qml,
+	examples/quick/canvas/contents/Slider.qml,
+	examples/quick/canvas/contents/TitleBar.qml,
+	examples/quick/canvas/contents/ToolBar.qml,
+	examples/quick/canvas/contents/images/button-pressed.png,
+	examples/quick/canvas/contents/images/button.png,
+	examples/quick/canvas/contents/images/default.svg,
+	examples/quick/canvas/contents/images/gloss.png,
+	examples/quick/canvas/contents/images/lineedit.png,
+	examples/quick/canvas/contents/images/lineedit.sci,
+	examples/quick/canvas/contents/images/quit.png,
+	examples/quick/canvas/contents/images/stripes.png,
+	examples/quick/canvas/contents/images/titlebar.png,
+	examples/quick/canvas/contents/images/titlebar.sci,
+	examples/quick/canvas/contents/images/toolbutton.png,
+	examples/quick/canvas/contents/images/toolbutton.sci,
+	examples/quick/canvas/contents/qt-logo.png,
+	examples/quick/canvas/quadraticCurveTo/quadraticCurveTo.qml,
+	examples/quick/canvas/roundedrect/roundedrect.qml,
+	examples/quick/canvas/smile/smile.qml,
+	examples/quick/canvas/squircle/squircle.png,
+	examples/quick/canvas/squircle/squircle.qml,
+	examples/quick/canvas/tiger/tiger.js,
+	examples/quick/canvas/tiger/tiger.qml,
+	examples/quick/models/abstractitemmodel/abstractitemmodel.py,
+	examples/quick/models/abstractitemmodel/view.qml,
+	examples/quick/models/objectlistmodel/objectlistmodel.py,
+	examples/quick/models/objectlistmodel/view.qml,
+	examples/quick/models/stringlistmodel/stringlistmodel.py,
+	examples/quick/models/stringlistmodel/view.qml,
+	examples/quick/scenegraph/customgeometry/customgeometry.py,
+	examples/quick/scenegraph/customgeometry/main.qml,
+	examples/quick/shared/Button.qml,
+	examples/quick/shared/LauncherList.qml,
+	examples/quick/shared/SimpleLauncherDelegate.qml,
+	examples/quick/shared/images/back.png,
+	examples/quick/shared/images/next.png,
+	examples/quick/tutorials/extending/chapter1-basics/app.qml, examples
+	/quick/tutorials/extending/chapter1-basics/chapter1-basics.py,
+	examples/quick/tutorials/extending/chapter2-methods/app.qml, example
+	s/quick/tutorials/extending/chapter2-methods/chapter2-methods.py,
+	examples/quick/tutorials/extending/chapter3-bindings/app.qml, exampl
+	es/quick/tutorials/extending/chapter3-bindings/chapter3-bindings.py,
+	examples/quick/tutorials/extending/chapter4-customPropertyTypes/app.
+	qml, examples/quick/tutorials/extending/chapter4-customPropertyTypes
+	/chapter4-customPropertyTypes.py,
+	examples/quick/tutorials/extending/chapter5-listproperties/app.qml,
+	e
+	xamples/quick/tutorials/extending/chapter5-listproperties/chapter5-l
+	istproperties.py, examples/quick/tutorials/extending/chapter6-plugin
+	s/Charts/chartsplugin.py, examples/quick/tutorials/extending/chapter
+	6-plugins/Charts/piechart.py, examples/quick/tutorials/extending/cha
+	pter6-plugins/Charts/pieslice.py,
+	examples/quick/tutorials/extending/chapter6-plugins/Charts/qmldir,
+	examples/quick/tutorials/extending/chapter6-plugins/app.qml:
+	Ported the QtQuick examples from PyQt5.
+	[94dd3c5f9a15] <6.0-maint>
+
+	* PyQt6.msp:
+	Fixed the '*' operator between QPoint and QPointF and floats.
+	[6ac2e72a68a4] <6.0-maint>
+
+	* PyQt6.msp:
+	Fixed the QSGGeometry.DrawingMode enum.
+	[8860f30c90ba] <6.0-maint>
+
+2021-01-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtBluetooth/qpybluetooth_qlist.sip,
+	qpy/QtCore/qpycore_qlist.sip,
+	qpy/QtDataVisualization/qpydatavisualization_qlist.sip,
+	qpy/QtGui/qpygui_qlist.sip,
+	qpy/QtMultimedia/qpymultimedia_qlist.sip,
+	qpy/QtOpenGL/qpyopengl_qlist.sip,
+	qpy/QtPrintSupport/qpyprintsupport_qlist.sip,
+	qpy/QtWidgets/qpywidgets_qlist.sip:
+	iUpdates all of the QList mapped type convertors to ignore bytes
+	objects (as they currently ignore unicode objects).
+	[c84b4dbb8259] <6.0-maint>
+
+	* examples/richtext/textobject/heart.svg,
+	examples/richtext/textobject/textobject.py:
+	Ported the textobject.py example.
+	[f9c710c2ab38] <6.0-maint>
+
+	* PyQt6.msp:
+	Fix the QTextFormat enums that allow the user to define additional
+	values.
+	[98f2f67e93b2] <6.0-maint>
+
+2021-01-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* README, pyproject.toml, unsupported/PyQt6-Charts/README,
+	unsupported/PyQt6-Charts/pyproject.toml,
+	unsupported/PyQt6-DataVisualization/README,
+	unsupported/PyQt6-DataVisualization/pyproject.toml,
+	unsupported/PyQt6-Purchasing/README,
+	unsupported/PyQt6-Purchasing/pyproject.toml,
+	unsupported/PyQt6-WebEngine/README,
+	unsupported/PyQt6-WebEngine/pyproject.toml:
+	Wheels depend on an external Qt wheel rather than bundle Qt.
+	[99e49fea1bd5] <6.0-maint>
+
+2021-01-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	QMetaType.name() now returns a bytes object to be consistent with
+	QMetaType.fromName().
+	[aff2c62bfdd1] <6.0-maint>
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h,
+	qpy/QtCore/qpycore_types.cpp, test/classes/test_QVariant.py,
+	test/metaobject/test_pyqtproperty.py:
+	It is no longer necessary to fudge the meta-type of wrapped enums as
+	they all have their own Qt meta-type id.
+	[c87603357133] <6.0-maint>
+
+	* qpy/QtCore/qpycore_chimera.cpp:
+	Fixed the type parsing of enum properties.
+	[c840be8e65cf] <6.0-maint>
+
+2021-01-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed the QKeySequence() ctor and type convertor.
+	[e116b55c87bf] <6.0-maint>
+
+	* PyQt6.msp:
+	Reverted the behaviour of the QImage ctors to that of PyQt5 so that
+	unnecessary restrictions (eg. the number of dimensions) were not
+	imposed.
+	[3ebeab7b321e] <6.0-maint>
+
+	* NEWS, PyQt6.msp:
+	Added QSocketNotifier.
+	[383f828d5269] <6.0-maint>
+
+2021-01-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/pylupdate.py:
+	Fixed a pylupdate regression.
+	[ae3cac2d629c] <6.0-maint>
+
+	* extras/lupdate/pylupdate.py, extras/uic/pyuic.py:
+	Further tweaks to the pyuic and pylupdate main() functions.
+	[c2e09795240a] <6.0-maint>
+
+	* extras/lupdate/pylupdate.py:
+	Fix the return code handling of pylupdate.
+	[6c29337a0644] <6.0-maint>
+
+	* extras/uic/pyuic.py:
+	Make sure the pyuic return code is retruned properly.
+	[ac6152d35c63] <6.0-maint>
+
+2021-01-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/uiparser.py:
+	Complete the pyuic fixes for QActionGroup.
+	[f721d31c0e63] <6.0-maint>
+
+2021-01-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Restored the readString() and writeString() methods of QDataStream.
+	Fixed QDataStream.writeBytes() and added support for writing any
+	object that implements the buffer protocol.
+	[6ad6a175283f] <6.0-maint>
+
+	* PyQt6.msp:
+	QDataStream.Version is now an IntEnum because
+	QDataStrean.setVersion() has an int argument.
+	[8ab112f4dd64] <6.0-maint>
+
+	* PyQt6.msp:
+	QEvent.type() now returns an int and QEvent.Type is now sub-classed
+	from IntEnum. These changes are required to a) cope with internal
+	event types and b) user defined event types.
+	[dc39bbd4c986] <6.0-maint>
+
+	* extras/uic/icon_cache.py:
+	Fixed pyuic handling of QIcon.
+	[f375f1cedb46] <6.0-maint>
+
+2021-01-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Don't define the OpenGL enums in QtQuick and use the provided
+	alternatives in the handwritten code.
+	[222b4dc0f424] <6.0-maint>
+
+2021-01-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/uiparser.py, rb-product.toml:
+	Fix QActionGroup in pyuic.
+	[0e778d0bffe9] <6.0-maint>
+
+2021-01-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.0.0 for changeset f34d70fe36f2
+	[771d5d2132e3]
+
+	* NEWS:
+	Released as v6.0.0.
+	[f34d70fe36f2] [6.0.0]
+
+	* pyproject.toml:
+	Require Python v3.6.1 because PyUnicode_GetLength() is missing from
+	the limited API in v3.6.0.
+	[3c657f034069]
+
+	* NEWS:
+	Updated the NEWS file.
+	[c5f56d16fdcb]
+
+2021-01-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed a type hint typo.
+	[7457f9bec24b]
+
+	* PyQt6.msp:
+	More type hint improvments.
+	[a44b127d851f]
+
+	* PyQt6.msp:
+	No longer allow a QPoint when a QPointF is expected.
+	[29784d4497a7]
+
+	* PyQt6.msp:
+	Reorder a couple of methods to remove a mypy error.
+	[036ef03abd5a]
+
+	* PyQt6.msp, qpy/QtQml/qmlregistertype.sip:
+	More type hint fixes.
+	[d467a5493bf2]
+
+	* PyQt6.msp:
+	Fixed a couple of type hints.
+	[22bd87864223]
+
+2021-01-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtQml/qmlregistertype.sip:
+	More type hint fixes.
+	[eb64d6fcb08e]
+
+	* PyQt6.msp, qpy/QtQml/qmlregistertype.sip:
+	Fixed many type hints.
+	[af5f13a27189]
+
+2020-12-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* DevelopersNotes.txt:
+	Added DevelopersNotes.txt.
+	[a8034a952af2]
+
+	* NEWS, PyQt6.msp, README, config-tests/cfgtest_QtCore.cpp, config-
+	tests/cfgtest_QtGui.cpp, config-tests/cfgtest_QtNetwork.cpp, config-
+	tests/cfgtest_QtPrintSupport.cpp, misc/__init__.py,
+	misc/license.dat.commercial, misc/license.dat.internal, misc/pyqt-
+	commercial.sip, misc/pyqt-gpl.sip, misc/pyqt-internal.sip,
+	mksccode/QtCore.versions, mksccode/QtGui.versions,
+	mksccode/QtNetwork.versions, mksccode/QtPrintSupport.versions,
+	project.py, projects/PyQt6-Charts/NEWS,
+	projects/PyQt6-Charts/README,
+	projects/PyQt6-Charts/mksccode/QtCharts.versions,
+	projects/PyQt6-Charts/pyproject.toml,
+	projects/PyQt6-DataVisualization/NEWS,
+	projects/PyQt6-DataVisualization/README, projects/PyQt6-DataVisualiz
+	ation/mksccode/QtDataVisualization.versions,
+	projects/PyQt6-DataVisualization/pyproject.toml,
+	projects/PyQt6-Purchasing/NEWS, projects/PyQt6-Purchasing/README,
+	projects/PyQt6-Purchasing/pyproject.toml,
+	projects/PyQt6-WebEngine/NEWS, projects/PyQt6-WebEngine/README,
+	projects/PyQt6-WebEngine/pyproject.toml, projects/PyQt6/Modules,
+	projects/PyQt6/NEWS, projects/PyQt6/QtCore.versions,
+	projects/PyQt6/QtGui.versions, projects/PyQt6/QtNetwork.versions,
+	projects/PyQt6/QtPrintSupport.versions, projects/PyQt6/README,
+	projects/PyQt6/__init__.py, projects/PyQt6/config-
+	tests/cfgtest_QtCore.cpp, projects/PyQt6/config-
+	tests/cfgtest_QtGui.cpp, projects/PyQt6/config-
+	tests/cfgtest_QtNetwork.cpp, projects/PyQt6/config-
+	tests/cfgtest_QtPrintSupport.cpp,
+	projects/PyQt6/license.dat.commercial,
+	projects/PyQt6/license.dat.internal, projects/PyQt6/project.py,
+	projects/PyQt6/pyproject.toml, projects/PyQt6/pyqt-commercial.sip,
+	projects/PyQt6/pyqt-gpl.sip, projects/PyQt6/pyqt-internal.sip,
+	pyproject.toml, unsupported/PyQt6-Charts/NEWS,
+	unsupported/PyQt6-Charts/README,
+	unsupported/PyQt6-Charts/mksccode/QtCharts.versions,
+	unsupported/PyQt6-Charts/pyproject.toml,
+	unsupported/PyQt6-DataVisualization/NEWS,
+	unsupported/PyQt6-DataVisualization/README, unsupported/PyQt6-DataVi
+	sualization/mksccode/QtDataVisualization.versions,
+	unsupported/PyQt6-DataVisualization/pyproject.toml,
+	unsupported/PyQt6-Purchasing/NEWS,
+	unsupported/PyQt6-Purchasing/README,
+	unsupported/PyQt6-Purchasing/pyproject.toml,
+	unsupported/PyQt6-Unsupported.msp, unsupported/PyQt6-WebEngine/NEWS,
+	unsupported/PyQt6-WebEngine/README,
+	unsupported/PyQt6-WebEngine/pyproject.toml:
+	Restructued the repo layout now that we know the long term project
+	structure.
+	[ed58c869cfac]
+
+	* PyQt6.msp:
+	Qt.ItemDataRole is now int based.
+	[1d254e41b191]
+
+2020-12-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* projects/PyQt6-Charts/Modules,
+	projects/PyQt6-Charts/mksccode/QtCharts.versions,
+	projects/PyQt6-DataVisualization/Modules, projects/PyQt6-DataVisuali
+	zation/mksccode/QtDataVisualization.versions,
+	projects/PyQt6-Purchasing/Modules, projects/PyQt6-WebEngine/Modules:
+	Tidy ups of the (as yet unsupported) sub-projects.
+	[192a82c99649]
+
+	* PyQt6.msp:
+	The charts module is QtCharts in PyQt6.
+	[957c7ea5a4d9]
+
+	* PyQt6.msp, projects/PyQt6-3D/Modules, projects/PyQt6-3D/NEWS,
+	projects/PyQt6-3D/README, projects/PyQt6-3D/pyproject.toml,
+	qpy/Qt3DCore/qsharedpointer.sip, qpy/Qt3DRender/qvector.sip:
+	Removed the Qt3D modules as they now have their own product.
+	[12224511c465]
+
+2020-12-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* tools/adlib.py:
+	Removed adlib.py as the additional libraries can easily be built
+	with qmake.
+	[df5c3ac7b7be]
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Removed QtNetworkAuth as it is now a separate product.
+	[f5385c7df11e]
+
+	* projects/PyQt6-3D/pyproject.toml,
+	projects/PyQt6-Charts/pyproject.toml,
+	projects/PyQt6-DataVisualization/pyproject.toml,
+	projects/PyQt6-Purchasing/pyproject.toml,
+	projects/PyQt6-WebEngine/pyproject.toml:
+	Fixed typos in the sub-project pyproject.toml files.
+	[222ea0e173ef]
+
+	* projects/PyQt6-3D/pyproject.toml,
+	projects/PyQt6-Charts/pyproject.toml,
+	projects/PyQt6-DataVisualization/pyproject.toml,
+	projects/PyQt6-Purchasing/pyproject.toml,
+	projects/PyQt6-WebEngine/pyproject.toml:
+	Specify the minimum GLIBC and macOS versions for the sub-projects.
+	[06a5b4b15797]
+
+	* projects/PyQt6-3D/pyproject.toml,
+	projects/PyQt6-Charts/pyproject.toml,
+	projects/PyQt6-DataVisualization/pyproject.toml,
+	projects/PyQt6-Purchasing/pyproject.toml,
+	projects/PyQt6-WebEngine/pyproject.toml:
+	Hardcode the PyQt6 dependency as we are not going to synch minor
+	version numbers.
+	[dc0923611afc]
+
+	* projects/PyQt3D6/Modules, projects/PyQt3D6/NEWS,
+	projects/PyQt3D6/README, projects/PyQt3D6/pyproject.toml,
+	projects/PyQt6-3D/Modules, projects/PyQt6-3D/NEWS,
+	projects/PyQt6-3D/README, projects/PyQt6-3D/pyproject.toml,
+	projects/PyQt6-Charts/Modules, projects/PyQt6-Charts/NEWS,
+	projects/PyQt6-Charts/README, projects/PyQt6-Charts/pyproject.toml,
+	projects/PyQt6-DataVisualization/Modules,
+	projects/PyQt6-DataVisualization/NEWS,
+	projects/PyQt6-DataVisualization/README,
+	projects/PyQt6-DataVisualization/pyproject.toml,
+	projects/PyQt6-Purchasing/Modules, projects/PyQt6-Purchasing/NEWS,
+	projects/PyQt6-Purchasing/README,
+	projects/PyQt6-Purchasing/pyproject.toml,
+	projects/PyQt6-WebEngine/Modules, projects/PyQt6-WebEngine/NEWS,
+	projects/PyQt6-WebEngine/README,
+	projects/PyQt6-WebEngine/pyproject.toml,
+	projects/PyQtChart6/Modules, projects/PyQtChart6/NEWS,
+	projects/PyQtChart6/README, projects/PyQtChart6/pyproject.toml,
+	projects/PyQtDataVisualization6/Modules,
+	projects/PyQtDataVisualization6/NEWS,
+	projects/PyQtDataVisualization6/README,
+	projects/PyQtDataVisualization6/pyproject.toml,
+	projects/PyQtPurchasing6/Modules, projects/PyQtPurchasing6/NEWS,
+	projects/PyQtPurchasing6/README,
+	projects/PyQtPurchasing6/pyproject.toml,
+	projects/PyQtWebEngine6/Modules, projects/PyQtWebEngine6/NEWS,
+	projects/PyQtWebEngine6/README,
+	projects/PyQtWebEngine6/pyproject.toml:
+	Renamed the (as yet unsupported) additional library projects
+	according to the new naming convention.
+	[179ae818b445]
+
+2020-12-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed the QByteArray type hint.
+	[66aecd4316bd]
+
+2020-12-27  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* tools/adlib.py:
+	Fixed a missing import in adlib.py.
+	[b7e67504f12b]
+
+	* tools/adlib.py:
+	Windows fixes for adlib.py.
+	[caf0ef3e0549]
+
+	* tools/adlib.py:
+	Don't rely on conan being on PATH.
+	[caf3390c65fd]
+
+	* tools/adlib.py:
+	Added the adlib.py tool for handling the qtimageformats additional
+	library.
+	[04543ec809d3]
+
+	* tools/mksccode.py:
+	Updated the argument parser of the mksccode.py tool.
+	[eaf5788bdfba]
+
+2020-12-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/python_source.py:
+	Fixed the disambiguation for NOOP translations.
+	[e7c5a1fae5eb]
+
+	* extras/lupdate/python_source.py, extras/lupdate/translation_file.py:
+	Fix the handling of disambiguation comments.
+	[0081ddee87fc]
+
+2020-12-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/translation_file.py:
+	Don't refer to duplicates of new messages as existing messages.
+	[31c947366e1b]
+
+	* extras/lupdate/translation_file.py:
+	Improved the layout of the pylupdate summary.
+	[6547208726b2]
+
+	* extras/lupdate/designer_source.py:
+	Properly handle 'string' tag in a .ui file.
+	[993587caab3f]
+
+2020-12-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Disable default ctors for all QtGui events.
+	[aafee11e4e11]
+
+	* PyQt6.msp:
+	QtCore QEvent sub-classes have no default ctors.
+	[78c8029521bd]
+
+	* PyQt6.msp:
+	More readData() and writeData() fixes.
+	[5d5e55086619]
+
+	* PyQt6.msp:
+	Fixed readData() and writeData() handwritten code.
+	[a9517b9e3b93]
+
+	* PyQt6.msp:
+	Remove some PyQt5 Windows-specific methods.
+	[5d153a6d8ca8]
+
+	* PyQt6.msp:
+	Use Py_hash_t and Py_ssize_t where required.
+	[349f062273ae]
+
+2020-12-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/translation_file.py:
+	Fix pylupdate when comparing messages. Indent the .ts file XML when
+	using Python v3.9 and later.
+	[9bc99ae6c985]
+
+	* extras/lupdate/designer_source.py, extras/lupdate/python_source.py:
+	Ignore empty strings in .py and .ui files.
+	[ca36f83cc200]
+
+2020-12-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/python_source.py:
+	pylupdate fixes for handling the third argument to tr().
+	[2cb451473d69]
+
+2020-12-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* projects/PyQt3D6/pyproject.toml, projects/PyQt6/pyproject.toml,
+	projects/PyQtChart6/pyproject.toml,
+	projects/PyQtDataVisualization6/pyproject.toml,
+	projects/PyQtPurchasing6/pyproject.toml,
+	projects/PyQtWebEngine6/pyproject.toml:
+	PyQt-builder v1.7 will be required.
+	[52b5da7e6bc5]
+
+	* test/metaobject/test_pyqtproperty.py:
+	Restored the test of using the property system for enums now that
+	SIP generates the necessary calls to qMetaTypeId().
+	[c186ae30acf7]
+
+2020-12-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* test/metaobject/test_pyqtproperty.py,
+	test/metaobject/test_qvariantmap.py:
+	Fixed the outstanding tests.
+	[ef8f637e7e04]
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h,
+	test/classes/test_QVariant.py:
+	Fixed the conversions of QVariantMap, QVariantList etc. to Python.
+	[4ae02d5f28c7]
+
+2020-12-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_chimera.cpp:
+	Refactored the mapped type convertors.
+	[6aed0cfc99eb]
+
+	* PyQt6.msp, qpy/QtCore/qpycore_qvector.sip:
+	Removed all uses of QVector.
+	[0c7ecfe2445b]
+
+	* qpy/QtCore/qpycore_chimera.cpp, test/classes/test_QVariant.py:
+	Fixed the convert of dict to QVariant with a non-string key.
+	[05f3e9d38191]
+
+	* extras/uic/enum_map.py, extras/uic/properties.py,
+	test/pyuic/QWidget/Widget03.ui:
+	More pyuic fixes.
+	[1e6a643a923f]
+
+	* PyQt6.msp:
+	Qt::Alignment has to be IntFlag because the various
+	setTextAlignment() methods expect an int argument.
+	[a25cba5fd69b]
+
+	* PyQt6.msp:
+	QFont.StyleStrategy contains flags.
+	[b87c02c16962]
+
+	* PyQt6.msp:
+	QFont.setWeight() will now accept an int and a QFont.Weight.
+	QFont.weight() returns an int.
+	[1b235c631f79]
+
+	* extras/uic/enum_map.py, extras/uic/properties.py,
+	test/pyuic/test_pyuic.py:
+	pyuic fixes.
+	[70f4487e467a]
+
+2020-12-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* test/classes/test_QVariant.py, test/dbus/test_multibus.py,
+	test/mapped_types/test_QList.py,
+	test/metaobject/test_pyqtproperty.py,
+	test/metaobject/test_qvariantmap.py, test/misc/test_repr.py,
+	test/pyuic/test_pyuic.py:
+	Initial pass through the unit tests.
+	[b462ad16d2dc]
+
+	* projects/PyQt6/project.py:
+	Specify the minimum versions of glibc and macOS.
+	[d3934fa19d77]
+
+	* qpy/QtQml/qmlregistertype.sip, qpy/QtQml/qpyqml_register_type.cpp:
+	Removed some code needed by (unsupported) versions of GCC.
+	[303bea01c4c8]
+
+	* qpy/QtQml/qmlregistertype.sip, qpy/QtQml/qpyqml_api.h,
+	qpy/QtQml/qpyqml_register_type.cpp:
+	Implemented qmlRegisterAnonymousType() and
+	qmlRegisterSingletonInstance().
+	[d4822fe422bd]
+
+	* qpy/QtQml/qmlattachedpropertiesobject.sip,
+	qpy/QtQml/qmlregistertype.sip, qpy/QtQml/qpyqml_api.h,
+	qpy/QtQml/qpyqml_register_type.cpp:
+	Fixed support for attached properties.
+	[7132f63b9927]
+
+	* examples/qml/referenceexamples/binding.py,
+	examples/qml/referenceexamples/valuesource.py:
+	QMl example fixes.
+	[9e9c4e5ce94d]
+
+2020-12-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* examples/qml/referenceexamples/default.py:
+	Fixed the default.py QML example.
+	[7b737e4d1cdb]
+
+	* qpy/QtQml/qpyqml_post_init.cpp:
+	Fix QML list properties.
+	[9d9536278e60]
+
+	* qpy/QtQml/qpyqml_post_init.cpp:
+	Removed a legacy cast.
+	[cc23f3eb651a]
+
+2020-12-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/python_source.py:
+	Gracefully handle syntax errors in Python source files.
+	[7edaf6316381]
+
+	* extras/lupdate/lupdate.py, extras/lupdate/pylupdate.py,
+	extras/lupdate/translation_file.py:
+	Existing translations will be used where possible. A summary
+	(suppressable using the --no-summary option) is displayed.
+	[1c3fb51b4aa3]
+
+	* extras/lupdate/lupdate.py, extras/lupdate/pylupdate.py,
+	extras/lupdate/translation_file.py:
+	Added support for the --no-obsolete option and obsolete messages.
+	[efd4f9451f59]
+
+2020-12-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* modules/QtAndroidExtras/QtAndroidExtrasmod.sip,
+	modules/QtAndroidExtras/qandroidjniobject.sip,
+	modules/QtAndroidExtras/qtandroid.sip,
+	modules/QtMacExtras/QtMacExtrasmod.sip,
+	modules/QtMacExtras/qmacpasteboardmime.sip,
+	modules/QtMacExtras/qmactoolbar.sip,
+	modules/QtMacExtras/qmactoolbaritem.sip,
+	modules/QtMacExtras/qtmac.sip,
+	modules/QtWinExtras/QtWinExtrasmod.sip,
+	modules/QtWinExtras/qwinfunctions.sip,
+	modules/QtWinExtras/qwinjumplist.sip,
+	modules/QtWinExtras/qwinjumplistcategory.sip,
+	modules/QtWinExtras/qwinjumplistitem.sip,
+	modules/QtWinExtras/qwintaskbarbutton.sip,
+	modules/QtWinExtras/qwintaskbarprogress.sip,
+	modules/QtWinExtras/qwinthumbnailtoolbar.sip,
+	modules/QtWinExtras/qwinthumbnailtoolbutton.sip,
+	modules/QtX11Extras/QtX11Extrasmod.sip,
+	modules/QtX11Extras/qx11info_x11.sip, projects/PyQt6/project.py:
+	Removed the legacy "Extras" modules.
+	[774b4acf6f22]
+
+	* qpy/QtCore/qpycore_api.h, qpy/QtCore/qpycore_init.cpp,
+	qpy/QtCore/qpycore_public_api.cpp:
+	Don't call the QCoreApplication dtor if we didn't call the ctor.
+	[d947284f2b92]
+
+2020-12-11  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updated for Qt v6.0.0.
+	[179cebdaa175]
+
+2020-12-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/enum_map.py, extras/uic/properties.py:
+	Completed the pyuic changes.
+	[01faaf18f852]
+
+	* PyQt6.msp:
+	Removed some internal enum members. Enums no longer have to be
+	constrained.
+	[13c2f924f71d]
+
+2020-12-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/Compiler/qtproxies.py, extras/uic/enum_map.py,
+	extras/uic/properties.py:
+	pyuic fixes.
+	[b01d8894edc7]
+
+	* PyQt6.msp:
+	Removed a couple of internal enum members.
+	[d7873d822d39]
+
+	* PyQt6.msp:
+	Fixed creating a QColor from a GlobalColor.
+	[63928f38b8a0]
+
+	* PyQt6.msp:
+	Fixed the creation of a QCursor from a CursorShape.
+	[a58b5cbd3860]
+
+2020-12-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Added QImage.setAlphaChannel().
+	[6df3e04649ef]
+
+2020-12-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/properties.py:
+	Fixed scoped types in pyuic when loading a .ui file.
+	[c7bec57b9d88]
+
+	* PyQt6.msp:
+	Removed the QT_MAC_WANTS_LAYER workaround as it's not needed with
+	Qt6.
+	[ac7bd5f81f99]
+
+	* extras/uic/compile_ui.py, extras/uic/enum_map.py,
+	extras/uic/properties.py, extras/uic/uiparser.py:
+	Initial support for fully scoped enums in pyuic.
+	[3545be202518]
+
+	* extras/uic/uiparser.py:
+	Fixed pyuic handling of size policies.
+	[9cbd62c0f5ec]
+
+	* extras/uic/uiparser.py:
+	pyuic fixes for form layouts.
+	[145e473b3550]
+
+2020-12-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, examples/qml/referenceexamples/attached.py,
+	examples/qml/referenceexamples/binding.py,
+	examples/qml/referenceexamples/default.py,
+	examples/qml/referenceexamples/grouped.py,
+	examples/qml/referenceexamples/signal.py,
+	examples/qml/referenceexamples/valuesource.py,
+	qpy/QtCore/qpycore_classinfo.cpp,
+	test/metaobject/test_qclassinfo.py:
+	Changed the signature of pyqtClassInfo() because QML uses characters
+	that cannot be used in a Python identifier.
+	[19103b6b0443]
+
+	* PyQt6.msp:
+	Updated for Qt v6.0.0rc2.
+	[71d325f6834f]
+
+2020-12-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* examples/qml/referenceexamples/adding.py,
+	examples/qml/referenceexamples/attached.py,
+	examples/qml/referenceexamples/binding.py,
+	examples/qml/referenceexamples/coercion.py,
+	examples/qml/referenceexamples/default.py,
+	examples/qml/referenceexamples/grouped.py,
+	examples/qml/referenceexamples/methods.py,
+	examples/qml/referenceexamples/properties.py,
+	examples/qml/referenceexamples/signal.py,
+	examples/qml/referenceexamples/valuesource.py:
+	Added the QML examples.
+	[9adff8784705]
+
+	* qpy/QtCore/qpycore_qmetaobjectbuilder.h,
+	qpy/QtCore/qpycore_types.cpp, qpy/QtQml/qmlregistertype.sip,
+	qpy/QtQml/qpyqml_register_singleton_type.cpp,
+	qpy/QtQml/qpyqml_register_type.cpp,
+	qpy/QtQml/qpyqmllistproperty.cpp:
+	The QML registration functions now have the name as the last, and
+	optional, argument. The default name is taken from the type being
+	registered.
+	[faebb54b01c6]
+
+2020-12-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Fixed the fully qualified names of the sip builtin types.
+	[f970363f81be]
+
+	* PyQt6.msp:
+	Removed the resource system hooks.
+	[c6125be2d315]
+
+	* PyQt6.msp, projects/PyQt6/config-tests/cfgtest_QtCore.cpp,
+	projects/PyQt6/config-tests/cfgtest_QtNetwork.cpp,
+	projects/PyQt6/config-tests/cfgtest_QtPrintSupport.cpp:
+	Updated the feature configuration tests.
+	[07499ea2808f]
+
+2020-11-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Ported QtQuick3D and QtQuickWidgets.
+	[24558dbbb5ba]
+
+	* PyQt6.msp, qpy/QtQuick/qpyquick_chimera_helpers.cpp,
+	qpy/QtQuick/qpyquick_chimera_helpers.h,
+	qpy/QtQuick/qpyquickframebufferobject.cpp,
+	qpy/QtQuick/qpyquickitem.cpp, qpy/QtQuick/qpyquickpainteditem.cpp,
+	qpy/QtQuick/qpyquickview.cpp, qpy/QtQuick/qpyquickwindow.cpp:
+	Completed QtQuick (for now).
+	[82cd622c8b75]
+
+2020-11-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py,
+	qpy/QtCore/qbytearraylist.sip:
+	First pass through QtQuick.
+	[b08ce1c79954]
+
+	* PyQt6.msp, extras/qmlscene/pluginloader.cpp, projects/PyQt6/Modules,
+	projects/PyQt6/project.py,
+	qpy/QtQml/qmlattachedpropertiesobject.sip,
+	qpy/QtQml/qmlregistertype.sip, qpy/QtQml/qpyqml_api.h,
+	qpy/QtQml/qpyqml_register_singleton_type.cpp,
+	qpy/QtQml/qpyqml_register_type.cpp,
+	qpy/QtQml/qpyqmllistproperty.cpp:
+	Ported QtQml.
+	[d77190c8d22c]
+
+2020-11-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qpycore_qlist.sip,
+	qpy/QtCore/qpycore_qpair.sip, qpy/QtCore/qpycore_std_pair.sip,
+	qpy/QtGui/opengl_types.sip, qpy/QtOpenGL/qpyopengl_api.h,
+	qpy/QtOpenGL/qpyopengl_array_convertors.cpp,
+	qpy/QtOpenGL/qpyopengl_data_cache.h,
+	qpy/QtOpenGL/qpyopengl_std_pair.sip,
+	qpy/QtOpenGL/qpyopengl_value_array.cpp,
+	qpy/QtOpenGL/qpyopengl_version_functions.cpp:
+	Completed the port of QtOpenGL.
+	[5c4bbe555837]
+
+2020-11-27  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/QtGui.versions,
+	projects/PyQt6/config-tests/cfgtest_QtGui.cpp,
+	projects/PyQt6/project.py, qpy/QtCore/qpycore_qlist.sip,
+	qpy/QtGui/opengl_types.sip,
+	qpy/QtOpenGL/qpyopengl_add_constants.cpp,
+	qpy/QtOpenGL/qpyopengl_api.h,
+	qpy/QtOpenGL/qpyopengl_array_convertors.cpp,
+	qpy/QtOpenGL/qpyopengl_attribute_array.cpp,
+	qpy/QtOpenGL/qpyopengl_data_cache.cpp,
+	qpy/QtOpenGL/qpyopengl_data_cache.h, qpy/QtOpenGL/qpyopengl_get.cpp,
+	qpy/QtOpenGL/qpyopengl_init.cpp, qpy/QtOpenGL/qpyopengl_qlist.sip,
+	qpy/QtOpenGL/qpyopengl_qpair.sip,
+	qpy/QtOpenGL/qpyopengl_qvector.sip,
+	qpy/QtOpenGL/qpyopengl_std_pair.sip,
+	qpy/QtOpenGL/qpyopengl_uniform_value_array.cpp,
+	qpy/QtOpenGL/qpyopengl_value_array.cpp,
+	qpy/QtOpenGL/qpyopengl_version_functions.cpp,
+	tools/OpenGL/gen_opengl_constants.py:
+	Initial pass through the port of QtOpenGL.
+	[9758fa02a55c]
+
+2020-11-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Ported QtXml.
+	[34d6ae39f52a]
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Ported QtTest.
+	[f659109b0fd0]
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Ported QtSvg.
+	[492a7a4e2f60]
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Ported QtSql.
+	[283705efb009]
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/QtCore.versions,
+	projects/PyQt6/QtGui.versions,
+	projects/PyQt6/QtPrintSupport.versions, projects/PyQt6/project.py,
+	qpy/QtPrintSupport/qpyprintsupport_qlist.sip:
+	Ported QtPrintSupport.
+	[7200dec0095d]
+
+	* PyQt6.msp:
+	Updated for Qt v6.0.0rc.
+	[22d7178b9d61]
+
+2020-11-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Eliminated all remaining warning messages.
+	[ffddad72bcfe]
+
+	* PyQt6.msp, projects/PyQt6/project.py:
+	Ensure that the buffer protocol can be used for all writeData()
+	implementations.
+	[8b67fd2bc643]
+
+	* PyQt6.msp, projects/PyQt6/Modules,
+	projects/PyQt6/QtNetwork.versions, projects/PyQt6/project.py:
+	Ported QtNetwork.
+	[4f350f4cdc7c]
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Ported QtHelp.
+	[f93cd8d1b207]
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Ported QtDesigner.
+	[3233b05fde65]
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Ported QtDBus.
+	[e1491e940d08]
+
+	* PyQt6.msp, qpy/QtWidgets/qmaccocoaviewcontainer.sip:
+	QtWidgets now builds without warnings.
+	[44f1bc2ac21e]
+
+2020-11-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Completed the porting of QtWidgets.
+	[7b141726025e]
+
+2020-11-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Work on QtWidgets.
+	[9b3edac520d2]
+
+2020-11-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	QImage fixes.
+	[f74c666a81d5]
+
+2020-11-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Completed the QtGui implementation.
+	[2d14a1a4c258]
+
+	* PyQt6.msp:
+	Added the QObject sub-class code for QtGui.
+	[31609a1eb40f]
+
+	* PyQt6.msp:
+	Completed the QEvent support in QtGui.
+	[959c175bdc0d]
+
+2020-11-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Don't generate .sip files for modules not yet ported.
+	[c7cba18d2b0c]
+
+	* PyQt6.msp, projects/PyQt6/Modules, projects/PyQt6/project.py:
+	Removed the internal version-specific OpenGL modules.
+	[45b963fea98c]
+
+	* PyQt6.msp:
+	QtGui now builds without warnings.
+	[ab05d3ffc6af]
+
+	* PyQt6.msp, projects/PyQt6/project.py, qpy/QtCore/qpycore_qlist.sip,
+	qpy/QtGui/opengl_types.sip, qpy/QtGui/qpygui_qpair.sip,
+	qpy/QtGui/qpygui_qvector.sip, qpy/QtOpenGL/opengl_types.sip,
+	qpy/QtOpenGL/qpyopengl_qpair.sip,
+	qpy/QtOpenGL/qpyopengl_qvector.sip:
+	Fixes so that SIP parses QtGui.
+	[d6787031f3f4]
+
+	* PyQt6.msp, qpy/QtGui/opengl_types.sip,
+	qpy/QtGui/qpyopengl_add_constants.cpp, qpy/QtGui/qpyopengl_api.h,
+	qpy/QtGui/qpyopengl_array_convertors.cpp,
+	qpy/QtGui/qpyopengl_attribute_array.cpp,
+	qpy/QtGui/qpyopengl_data_cache.cpp,
+	qpy/QtGui/qpyopengl_data_cache.h, qpy/QtGui/qpyopengl_get.cpp,
+	qpy/QtGui/qpyopengl_init.cpp, qpy/QtGui/qpyopengl_misc.h,
+	qpy/QtGui/qpyopengl_uniform_value_array.cpp,
+	qpy/QtGui/qpyopengl_value_array.cpp,
+	qpy/QtGui/qpyopengl_version_functions.cpp,
+	qpy/QtOpenGL/opengl_types.sip,
+	qpy/QtOpenGL/qpyopengl_add_constants.cpp,
+	qpy/QtOpenGL/qpyopengl_api.h,
+	qpy/QtOpenGL/qpyopengl_array_convertors.cpp,
+	qpy/QtOpenGL/qpyopengl_attribute_array.cpp,
+	qpy/QtOpenGL/qpyopengl_data_cache.cpp,
+	qpy/QtOpenGL/qpyopengl_data_cache.h, qpy/QtOpenGL/qpyopengl_get.cpp,
+	qpy/QtOpenGL/qpyopengl_init.cpp, qpy/QtOpenGL/qpyopengl_misc.h,
+	qpy/QtOpenGL/qpyopengl_uniform_value_array.cpp,
+	qpy/QtOpenGL/qpyopengl_value_array.cpp,
+	qpy/QtOpenGL/qpyopengl_version_functions.cpp:
+	Moved the OpenGL stuff from QtGui to QtOpenGL.
+	[da79c41d0698]
+
+2020-11-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Completed the initial run through of QtGui.
+	[4f49b6ee5b8c]
+
+	* PyQt6.msp:
+	Moe work on QtGui.
+	[fea98385a350]
+
+	* PyQt6.msp:
+	More work on QtGui.
+	[5b033bc6d3f0]
+
+2020-11-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Work on QtGui.
+	[81e9984ec299]
+
+	* PyQt6.msp:
+	Removed some redundant %MethodCode.
+	[6218efb96825]
+
+	* PyQt6.msp:
+	Added the QObject sub-class convertor code.
+	[cedfb4d930d4]
+
+	* tools/mksccode.py:
+	Fixed the script for generating sub-class convertor code.
+	[fb15c90fb5ce]
+
+	* PyQt6.msp:
+	Implemented the operator|() overloads that create a QKeyCombination.
+	[8f4131e92e48]
+
+2020-11-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qmutexlocker.sip,
+	qpy/QtCore/qpycore_pyqtmutexlocker.cpp,
+	qpy/QtCore/qpycore_pyqtmutexlocker.h:
+	Implemented QMutexLocker.
+	[72c25137e386]
+
+2020-11-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Finish QMutex.
+	[f6c686dc795a]
+
+	* PyQt6.msp:
+	Fixed some minor TODOs.
+	[1f6556f41d57]
+
+	* PyQt6.msp:
+	Updated QCborStreamWriter.
+	[e84c4ca54da3]
+
+	* PyQt6.msp:
+	Updated QCborStreamReader.
+	[dc0d7dcf5cc8]
+
+	* PyQt6.msp, qpy/QtCore/qpycore_api.h, qpy/QtCore/qpycore_chimera.cpp,
+	qpy/QtCore/qpycore_qvariantmap.cpp,
+	qpy/QtCore/qpycore_qvariantmap.sip:
+	Removed the old QVariantMap support.
+	[960789898bc5]
+
+	* qpy/QtCore/qpycore_chimera.cpp:
+	Refactored the QVariantMap support.
+	[1d3795e9e8ad]
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h:
+	Refactored the QVariantHash support.
+	[f23c4e26dc86]
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h:
+	Refactored the QVariantList support.
+	[11504464fe75]
+
+	* PyQt6.msp, qpy/QtCore/qpycore_chimera.cpp,
+	qpy/QtCore/qpycore_chimera.h:
+	Added support for QVariantPair.
+	[2c8990b62862]
+
+2020-11-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_chimera.cpp:
+	Added support for QMetaType::Nullptr.
+	[fa10c713aedf]
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h:
+	Added support for QMetaType::Char16 and QMetaType::Char32.
+	[b382e36d4a51]
+
+	* qpy/QtCore/qpycore_chimera.cpp:
+	Don't handle a 'char *' as a QString (or as a bytes object as PyQt5)
+	when parsing a C++ type specified as a string.
+	[204855e7571e]
+
+	* PyQt6.msp:
+	Updated for Qt v6.0.0.0beta5.
+	[c51cc6316690]
+
+2020-11-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h,
+	qpy/QtCore/qpycore_chimera_storage.cpp,
+	qpy/QtCore/qpycore_post_init.cpp.in,
+	qpy/QtCore/qpycore_public_api.cpp, qpy/QtCore/qpycore_public_api.h,
+	qpy/QtCore/qpycore_pyqtboundsignal.cpp,
+	qpy/QtCore/qpycore_pyqtpyobject.cpp,
+	qpy/QtCore/qpycore_pyqtpyobject.h,
+	qpy/QtCore/qpycore_qvariant_value.cpp, qpy/QtCore/qpycore_types.cpp:
+	QtCore now builds without compiler warnings.
+	[5c62dfc70218]
+
+2020-11-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qpycore_chimera.cpp,
+	qpy/QtCore/qpycore_pyqtsignal.cpp, qpy/QtCore/qpycore_pyqtslot.cpp,
+	qpy/QtCore/qpycore_qstring.cpp,
+	qpy/QtCore/qpycore_qvariant_value.cpp:
+	Remove deprecated API elements.
+	[4355f4316eba]
+
+2020-11-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updated for Qt v6.0.0.0beta4.
+	[ddf87413aa33]
+
+	* PyQt6.msp, qpy/QtCore/qpycore_post_init.cpp.in,
+	qpy/QtCore/qpycore_public_api.cpp,
+	qpy/QtCore/qpycore_pyqtslotproxy.cpp,
+	qpy/QtCore/qpycore_pyqtslotproxy.h,
+	qpy/QtCore/qpycore_qobject_helpers.cpp:
+	The QtCore module now builds and can be imported.
+	[4c45e3aa0d68]
+
+	* PyQt6.msp:
+	Bug fixes.
+	[ea3efdf4c3a2]
+
+2020-11-11  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qbytearrayview.sip,
+	qpy/QtCore/qpycore_chimera.cpp,
+	qpy/QtCore/qpycore_chimera_storage.cpp, qpy/QtCore/qsysinfo.sip:
+	Bug fixes.
+	[d1733bcde2d0]
+
+	* PyQt6.msp:
+	Removed QModelRoleDataSpan because it is inappropriate in a Python
+	context.
+	[f29867eac956]
+
+	* PyQt6.msp:
+	The QtCore code is now generated.
+	[325f92fe27dc]
+
+2020-11-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, projects/PyQt6/project.py, qpy/QtCore/qbytearrayview.sip,
+	qpy/QtCore/qpycore_qlist.sip, qpy/QtCore/qpycore_qvector.sip,
+	qpy/QtCore/qstring.sip, qpy/QtCore/qstringview.sip:
+	More work on QtCore.
+	[3bf0bb52a577]
+
+2020-11-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updated QtCore for Qt v6.0.0beta3.
+	[8fc0f04e50de]
+
+2020-11-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Refactored the QIODevice methods in QtCore.
+	[41825eabd9ef]
+
+2020-11-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	QIODevice updates.
+	[b29cf9904968]
+
+	* PyQt6.msp:
+	Completed the initial pass of QtCore.
+	[be3d02b2c14a]
+
+	* PyQt6.msp:
+	More work on QtCore.
+	[a7d1ca9ba59d]
+
+2020-11-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qchar.sip:
+	More work on QtCore.
+	[abaae2bba4aa]
+
+2020-11-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qbytearrayview.sip:
+	Re-factored the QByteArray support.
+	[98b7277f1167]
+
+2020-10-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qstring.sip:
+	Move qstring.sip out of the project.
+	[01aeac0b5e87]
+
+	* PyQt6.msp:
+	More work on QtCore.
+	[2025096ebd84]
+
+2020-10-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Updating of some QtCore classes.
+	[df82a8e5f31c]
+
+2020-10-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* projects/PyQt3D6/pyproject.toml, projects/PyQtChart6/pyproject.toml,
+	projects/PyQtDataVisualization6/pyproject.toml,
+	projects/PyQtPurchasing6/pyproject.toml,
+	projects/PyQtWebEngine6/pyproject.toml:
+	Updated the pyproject.toml files now that Qt6 is being used.
+	[333636927a25]
+
+	* PyQt6.msp, projects/PyQt6/project.py:
+	Scan QtCore from Qt v6.0.0beta removing the .sip files for the
+	corresponding removed .h files.
+	[6ee9b41573b9]
+
+2020-10-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/designer_source.py:
+	Provided a comment about the <stringlist> element.
+	[0b27ecd8b925]
+
+	* extras/lupdate/translation_file.py:
+	.ts files created from .ui files now contain location information.
+	[7783517e0365]
+
+	* extras/lupdate/designer_source.py, extras/uic/ui_file.py:
+	pylupdate now handles the attributes of a string element in a .ui
+	file.
+	[9a55e5300725]
+
+	* extras/lupdate/designer_source.py, extras/lupdate/lupdate.py,
+	extras/lupdate/pylupdate.py, extras/lupdate/python_source.py,
+	extras/lupdate/source_file.py, extras/lupdate/translation_file.py,
+	extras/uic/compile_ui.py, extras/uic/ui_file.py,
+	extras/uic/uiparser.py:
+	pylupdate will now handle .ui files.
+	[551b6804f90c]
+
+2020-10-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/uic/__init__.py, extras/uic/exceptions.py,
+	extras/uic/pyuic.py, extras/uic/ui_file.py, extras/uic/uiparser.py:
+	Refactor the parsing of a .ui file so it can be reused by pylupdate.
+	[27ae3f8ba09e]
+
+2020-10-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	QObject.tr() is now implemented as a class method so it can be
+	called with an explicit context.
+	[a6af3664d65a]
+
+2020-10-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/python_source.py, extras/lupdate/translation_file.py,
+	extras/lupdate/translations.py:
+	Added support for embedded translator comments to pylupdate.
+	[36e006df69cb]
+
+2020-10-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/translation_file.py:
+	Added the 'numerusform' tag when required.
+	[a08ac34a887e]
+
+	* extras/lupdate/lupdate.py, extras/lupdate/pylupdate.py,
+	extras/lupdate/python_source.py:
+	A directory can be specified as well as the name of a Python file.
+	[1181e4c8cd61]
+
+	* extras/lupdate/translation_file.py:
+	Contexts are now sorted by their name.
+	[7458543602c6]
+
+	* extras/lupdate/translation_file.py:
+	There is no need to use escape() as etree handles it automatically.
+	[31e3a843636a]
+
+	* extras/lupdate/python_source.py, extras/lupdate/translation_file.py:
+	Context names now include any scoping class.
+	[1c753b1b3c2c]
+
+	* extras/lupdate/translation_file.py:
+	Fixed the updating of a message location.
+	[6b151a4e4c6e]
+
+	* extras/lupdate/translation_file.py, extras/lupdate/user.py:
+	Improve the dispay of source text in progress messages.
+	[d81c802ed873]
+
+	* extras/lupdate/translation_file.py:
+	The Python source filename is relative to the .ts filename.
+	[3db8d5efaeae]
+
+	* extras/lupdate/pylupdate.py:
+	Improvements to the error report text.
+	[8fa461638929]
+
+	* extras/lupdate/exceptions.py, extras/lupdate/lupdate.py,
+	extras/lupdate/messages.py, extras/lupdate/pylupdate.py,
+	extras/lupdate/python_source.py, extras/lupdate/translation_file.py,
+	extras/lupdate/user.py:
+	Added the --verbose flag to pylupdate.
+	[bebff95dab1d]
+
+2020-10-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/exceptions.py, extras/lupdate/lupdate.py,
+	extras/lupdate/messages.py, extras/lupdate/pylupdate.py,
+	extras/lupdate/python_source.py, extras/lupdate/translation_file.py:
+	Added the messaging and error handling infrastructure.
+	[0bb5ca9f9a86]
+
+	* extras/lupdate/python_source.py, extras/lupdate/translation_file.py,
+	extras/lupdate/translations.py:
+	Completed the initial implementation of pylupdate.
+	[3cda34ff4e37]
+
+2020-10-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/lupdate/__init__.py, extras/lupdate/lupdate.py,
+	extras/lupdate/pylupdate.py, extras/lupdate/python_source.py,
+	extras/lupdate/translation_file.py,
+	extras/pylupdate/lupdate/__init__.py,
+	extras/pylupdate/lupdate/lupdate.py,
+	extras/pylupdate/lupdate/pylupdate.py,
+	extras/pylupdate/lupdate/python_source.py,
+	extras/pylupdate/lupdate/translation_file.py,
+	extras/pyuic/uic/Compiler/__init__.py,
+	extras/pyuic/uic/Compiler/as_string.py,
+	extras/pyuic/uic/Compiler/compiler.py,
+	extras/pyuic/uic/Compiler/indenter.py,
+	extras/pyuic/uic/Compiler/misc.py,
+	extras/pyuic/uic/Compiler/proxy_metaclass.py,
+	extras/pyuic/uic/Compiler/qobjectcreator.py,
+	extras/pyuic/uic/Compiler/qtproxies.py,
+	extras/pyuic/uic/Loader/__init__.py,
+	extras/pyuic/uic/Loader/loader.py,
+	extras/pyuic/uic/Loader/qobjectcreator.py,
+	extras/pyuic/uic/__init__.py, extras/pyuic/uic/compile_ui.py,
+	extras/pyuic/uic/exceptions.py, extras/pyuic/uic/icon_cache.py,
+	extras/pyuic/uic/load_ui.py, extras/pyuic/uic/objcreator.py,
+	extras/pyuic/uic/properties.py, extras/pyuic/uic/pyuic.py,
+	extras/pyuic/uic/uiparser.py, extras/pyuic/uic/widget-
+	plugins/qaxcontainer.py, extras/pyuic/uic/widget-
+	plugins/qscintilla.py, extras/pyuic/uic/widget-plugins/qtcharts.py,
+	extras/pyuic/uic/widget-plugins/qtprintsupport.py,
+	extras/pyuic/uic/widget-plugins/qtquickwidgets.py,
+	extras/pyuic/uic/widget-plugins/qtwebenginewidgets.py,
+	extras/uic/Compiler/__init__.py, extras/uic/Compiler/as_string.py,
+	extras/uic/Compiler/compiler.py, extras/uic/Compiler/indenter.py,
+	extras/uic/Compiler/misc.py, extras/uic/Compiler/proxy_metaclass.py,
+	extras/uic/Compiler/qobjectcreator.py,
+	extras/uic/Compiler/qtproxies.py, extras/uic/Loader/__init__.py,
+	extras/uic/Loader/loader.py, extras/uic/Loader/qobjectcreator.py,
+	extras/uic/__init__.py, extras/uic/compile_ui.py,
+	extras/uic/exceptions.py, extras/uic/icon_cache.py,
+	extras/uic/load_ui.py, extras/uic/objcreator.py,
+	extras/uic/properties.py, extras/uic/pyuic.py,
+	extras/uic/uiparser.py, extras/uic/widget-plugins/qaxcontainer.py,
+	extras/uic/widget-plugins/qscintilla.py, extras/uic/widget-
+	plugins/qtcharts.py, extras/uic/widget-plugins/qtprintsupport.py,
+	extras/uic/widget-plugins/qtquickwidgets.py, extras/uic/widget-
+	plugins/qtwebenginewidgets.py, projects/PyQt6/project.py:
+	Simplified the directory structure of pyuic and pylupdate.
+	[65479b8446aa]
+
+	* extras/pylupdate/lupdate/__init__.py,
+	extras/pylupdate/lupdate/lupdate.py,
+	extras/pylupdate/lupdate/pylupdate.py,
+	extras/pylupdate/lupdate/python_source.py,
+	extras/pylupdate/lupdate/translation_file.py,
+	extras/pylupdate/pylupdate_main.py,
+	extras/pylupdate/pylupdatemod.sip, projects/PyQt6/project.py:
+	Added the stub of the pylupdate6 implementation.
+	[4922d727e586]
+
+	* extras/pyuic/uic/pyuic.py:
+	Fixed the name of pyuic6.
+	[9e2d19ebf2bb]
+
+	* extras/designer/pluginloader.cpp, extras/qmlscene/pluginloader.cpp:
+	Eliminate deprecation warnings from Python v3.9.
+	[ed7abf162983]
+
+	* PyQt6.msp:
+	Ensure QtQuick will build without OpenGL.
+	[a70f17b8c38c]
+
+2020-10-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qpycore_enums_flags.cpp:
+	pyqtEnum() now makes use of SIP_PYENUM and sipIsEnumFlag().
+	[02632981bade]
+
+	* qpy/QtCore/qpycore_enums_flags.cpp,
+	qpy/QtCore/qpycore_enums_flags.h, qpy/QtCore/qpycore_types.cpp:
+	Use a better data type for holding parsed enum members.
+	[5a1bc01a7c46]
+
+	* qpy/QtCore/qpycore_classinfo.cpp, qpy/QtCore/qpycore_classinfo.h,
+	qpy/QtCore/qpycore_decorators.cpp,
+	qpy/QtCore/qpycore_enums_flags.cpp, qpy/QtCore/qpycore_misc.cpp,
+	qpy/QtCore/qpycore_misc.h, qpy/QtCore/qpycore_pyqtboundsignal.cpp,
+	qpy/QtCore/qpycore_pyqtconfigure.cpp,
+	qpy/QtCore/qpycore_pyqtsignal.cpp,
+	qpy/QtCore/qpycore_qmetaobject_helpers.cpp,
+	qpy/QtCore/qpycore_types.cpp:
+	Check the arguments of pyqtClassInfo when they are passed rather
+	than when they are used.
+	[7286db7eec67]
+
+	* PyQt6.msp, qpy/QtCore/qpycore_api.h,
+	qpy/QtCore/qpycore_classinfo.cpp,
+	qpy/QtCore/qpycore_enums_flags.cpp,
+	qpy/QtCore/qpycore_enums_flags.h, qpy/QtCore/qpycore_types.cpp,
+	test/metaobject/test_qenum.py:
+	Replaced Q_ENUM and Q_FLAG with pyqtEnum.
+	[f6df9d5af282]
+
+2020-10-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_pyqtboundsignal.cpp,
+	qpy/QtCore/qpycore_pyqtconfigure.cpp,
+	qpy/QtCore/qpycore_qobject_helpers.cpp,
+	qpy/QtCore/qpycore_types.cpp:
+	Improved the method of ensuring the QMetaObject is created in time.
+	[a386fa108f2c]
+
+	* qpy/QtCore/qpycore_pyqtboundsignal.cpp,
+	qpy/QtCore/qpycore_qobject_helpers.cpp,
+	qpy/QtCore/qpycore_types.cpp, qpy/QtCore/qpycore_types.h:
+	Ensure the QMetaObject is created in time.
+	[1f0154cd9c57]
+
+	* PyQt6.msp, qpy/QtCore/qpycore_api.h,
+	qpy/QtCore/qpycore_classinfo.cpp, qpy/QtCore/qpycore_classinfo.h,
+	qpy/QtCore/qpycore_post_init.cpp.in, qpy/QtCore/qpycore_types.cpp,
+	qpy/QtCore/qpycore_types.h, test/metaobject/test_qclassinfo.py:
+	A QMetaObject is now created when referenced rather than when the
+	QObject sub-class is defined. Replaced Q_CLASSINFO with the
+	pyqtClassInfo class decorator.
+	[478204118318]
+
+2020-10-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qpycore_api.h, qpy/QtCore/qpycore_chimera.h,
+	qpy/QtCore/qpycore_enums_flags.cpp,
+	qpy/QtCore/qpycore_enums_flags.h, test/metaobject/test_qenum.py:
+	Removed support for Q_ENUMS and Q_FLAGS.
+	[04924904e31b]
+
+	* test/metaobject/test_qclassinfo.py:
+	Added the Q_CLASSINFO unit test.
+	[1780fdda45b8]
+
+2020-09-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Removed the unused qsql.h file.
+	[14ff91794411]
+
+	* PyQt6.msp:
+	Added a missing /TransferBack/ annotation to QLayout.removeWidget().
+	[a98e3346fddd]
+
+2020-09-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* projects/PyQt3D6/pyproject.toml, projects/PyQtChart6/pyproject.toml,
+	projects/PyQtDataVisualization6/pyproject.toml,
+	projects/PyQtPurchasing6/pyproject.toml,
+	projects/PyQtWebEngine6/pyproject.toml:
+	Fixed the temporary specification of the ABI version.
+	[1e66bd83ae93]
+
+	* test/pyuic/test_pyuic.py:
+	All unit tests now pass (except for the one pyuic expected failure).
+	[5bc0c7ad9c31]
+
+	* extras/pyuic/uic/Compiler/compiler.py,
+	extras/pyuic/uic/Loader/loader.py, extras/pyuic/uic/__init__.py,
+	extras/pyuic/uic/compile_ui.py, extras/pyuic/uic/driver.py,
+	extras/pyuic/uic/load_ui.py, extras/pyuic/uic/pyuic.py,
+	extras/pyuic/uic/uiparser.py:
+	Refactored pyuic and removed support for resource files.
+	[ced4605bfb06]
+
+2020-09-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qpycore_api.h,
+	qpy/QtCore/qpycore_pyqtconfigure.cpp,
+	qpy/QtCore/qpycore_qvariant.cpp,
+	test/metaobject/test_pyqtproperty.py:
+	QMetaProperty.read() now correctly handles enum properties.
+	[baf5b002d176]
+
+	* test/misc/test_pickle.py:
+	Fixed the unit test for pickling enums.
+	[e35c7596760d]
+
+	* qpy/QtCore/qpycore_chimera.cpp, test/classes/test_QVariant.py:
+	Fixes for converting enums to QVariants.
+	[a58086482403]
+
+	* test/classes/test_QFlags.py:
+	Removed the QFlags unit test as it would only be testing standard
+	Python enums.
+	[1b59859b92d0]
+
+	* PyQt6.msp:
+	Renamed the enums implementing QFlags.
+	[24360bd5c4ef]
+
+	* PyQt6.msp:
+	Don't use /PyName/ to handle clashes with Python keywords now that
+	SIP v6 will handle it automatically.
+	[b7050df954a7]
+
+	* PyQt6.msp, qpy/QtCore/qflags.sip:
+	QFlags is now implemented as enum.Flag.
+	[1e6401e9e31e]
+
+2020-09-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Update the PyQt annotations on QUrlTwoFlags.
+	[0acd56a19476]
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_chimera.h,
+	qpy/QtCore/qpycore_pyqtsignal.cpp,
+	qpy/QtCore/qpycore_qobject_helpers.cpp,
+	qpy/QtCore/qpycore_types.cpp:
+	Don't assume that there is plugin data for a type. The QFlags flag
+	is now part of the mapped type plugin.
+	[0758332c5800]
+
+	* qpy/QtCore/qpycore_chimera.cpp, qpy/QtCore/qpycore_misc.cpp,
+	qpy/QtCore/qpycore_misc.h, qpy/QtCore/qpycore_qobject_helpers.cpp,
+	qpy/QtCore/qpycore_types.cpp:
+	Renamed qpycore_is_pyqt_class() to qpycore_is_pyqt_type().
+	[094cb8d31f38]
+
+	* qpy/QtCore/qflags.sip:
+	Reimplemented QFlags as a mapped type.
+	[9a06be216246]
+
+	* PyQt6.msp, qpy/QtCore/qflags.sip:
+	Moved the QFlags implementation out of the project file.
+	[8a6cea906ea0]
+
+	* extras/pyuic/uic/Loader/loader.py:
+	Fix pyuic.
+	[b621768247ea]
+
+2020-09-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* projects/PyQt6/project.py:
+	Fixed a regression in the name of the sip module to be used.
+	[3a242e9b4743]
+
+2020-09-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* projects/PyQt6/project.py:
+	Check the version of Qt is supported.
+	[f71b7e5daa26]
+
+2020-09-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* projects/PyQt3D6/pyproject.toml, projects/PyQt6/project.py,
+	projects/PyQtChart6/pyproject.toml,
+	projects/PyQtDataVisualization6/pyproject.toml,
+	projects/PyQtPurchasing6/pyproject.toml,
+	projects/PyQtWebEngine6/pyproject.toml:
+	Explicity set the ABI version until we start using Qt6.
+	[b9f688d9255f]
+
+	* projects/PyQt3D6/pyproject.toml, projects/PyQt6/project.py,
+	projects/PyQt6/pyproject.toml, projects/PyQtChart6/pyproject.toml,
+	projects/PyQtDataVisualization6/pyproject.toml,
+	projects/PyQtPurchasing6/pyproject.toml,
+	projects/PyQtWebEngine6/pyproject.toml:
+	Require PyQt-builder v1.6 as we no longer specify the sip module and
+	ABI.
+	[1ed491e43ee4]
+
+	* PyQt6.msp:
+	Added the QT_MAC_WANTS_LAYER workaround for missing paint events.
+	[d89c9fad5d09]
+
+2020-09-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* qpy/QtCore/qpycore_pyqtboundsignal.cpp,
+	test/metaobject/test_pyqtboundsignal.py:
+	Bound signals are now hashable.
+	[6fe95eb8c9ca]
+
+2020-09-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Removed some legacy casts.
+	[fd0e56cd4bc7]
+
+	* PyQt6.msp:
+	Removed qApp.
+	[7abdd4517679]
+
+	* test/classes/test_QQmlComponent.py, test/classes/test_QSignalSpy.py,
+	test/mapped_types/__init__.py, test/mapped_types/test_QList.py,
+	test/metaobject/__init__.py, test/metaobject/test_connections.py,
+	test/metaobject/test_connectslotsbyname.py,
+	test/metaobject/test_gc_slots.py, test/metaobject/test_invoke.py,
+	test/metaobject/test_pyqtproperty.py,
+	test/metaobject/test_pyqtsignal.py,
+	test/metaobject/test_pyqtslot.py, test/metaobject/test_qenum.py,
+	test/metaobject/test_qvariantmap.py, test/metaobject/test_sender.py,
+	test/misc/__init__.py, test/misc/test_pickle.py,
+	test/misc/test_repr.py, test/pyuic/QMainWindow/MainWindow00.ui,
+	test/pyuic/QToolBox/ToolBox00.ui, test/pyuic/QToolBox/ToolBox01.ui,
+	test/pyuic/QWidget/Widget00.ui, test/pyuic/QWidget/Widget01.ui,
+	test/pyuic/QWidget/Widget02.ui, test/pyuic/QWidget/Widget03.ui,
+	test/pyuic/QWidget/Widget04.ui, test/pyuic/QWidget/Widget05.ui,
+	test/pyuic/__init__.py, test/pyuic/test_pyuic.py,
+	test/tests/mapped_types/__init__.py,
+	test/tests/mapped_types/test_QList.py,
+	test/tests/metaobject/__init__.py,
+	test/tests/metaobject/test_connections.py,
+	test/tests/metaobject/test_connectslotsbyname.py,
+	test/tests/metaobject/test_gc_slots.py,
+	test/tests/metaobject/test_invoke.py,
+	test/tests/metaobject/test_pyqtproperty.py,
+	test/tests/metaobject/test_pyqtsignal.py,
+	test/tests/metaobject/test_pyqtslot.py,
+	test/tests/metaobject/test_qenum.py,
+	test/tests/metaobject/test_qvariantmap.py,
+	test/tests/metaobject/test_sender.py, test/tests/misc/__init__.py,
+	test/tests/misc/test_pickle.py, test/tests/misc/test_repr.py,
+	test/tests/pyuic/QMainWindow/MainWindow00.ui,
+	test/tests/pyuic/QToolBox/ToolBox00.ui,
+	test/tests/pyuic/QToolBox/ToolBox01.ui,
+	test/tests/pyuic/QWidget/Widget00.ui,
+	test/tests/pyuic/QWidget/Widget01.ui,
+	test/tests/pyuic/QWidget/Widget02.ui,
+	test/tests/pyuic/QWidget/Widget03.ui,
+	test/tests/pyuic/QWidget/Widget04.ui,
+	test/tests/pyuic/QWidget/Widget05.ui, test/tests/pyuic/__init__.py,
+	test/tests/pyuic/test_pyuic.py:
+	Completed the initial refactoring of the unit tests.
+	[eb200713c25e]
+
+2020-09-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* test/classes/__init__.py, test/classes/test_QByteArray.py,
+	test/classes/test_QFlags.py, test/classes/test_QObject.py,
+	test/classes/test_QQmlComponent.py, test/classes/test_QSettings.py,
+	test/classes/test_QSignalSpy.py, test/classes/test_QVariant.py,
+	test/dbus/test_multibus.py, test/runtests.py,
+	test/tests/__init__.py, test/tests/classes/__init__.py,
+	test/tests/classes/test_QByteArray.py,
+	test/tests/classes/test_QFlags.py,
+	test/tests/classes/test_QObject.py,
+	test/tests/classes/test_QQmlComponent.py,
+	test/tests/classes/test_QSettings.py,
+	test/tests/classes/test_QSignalSpy.py,
+	test/tests/classes/test_QVariant.py:
+	Parial refactoring of the unit tests.
+	[7244f37eb2a2]
+
+2020-09-11  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	QSGNode fixes from PyQt5.
+	[572b4061a97a]
+
+	* projects/PyQt6/project.py:
+	Fixed a typo in the handling of platform tags.
+	[11cbef1a82d1]
+
+	* projects/PyQt6/project.py:
+	The full set of platforms tags can now be derived from py_platform.
+	[7e814ddb9952]
+
+2020-09-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/pyuic/uic/Compiler/compiler.py,
+	extras/pyuic/uic/Compiler/qtproxies.py,
+	extras/pyuic/uic/Loader/qobjectcreator.py,
+	extras/pyuic/uic/__init__.py, extras/pyuic/uic/driver.py,
+	extras/pyuic/uic/pyuic.py, extras/pyuic/uic/uiparser.py,
+	extras/pyuic/uic/widget-plugins/qaxcontainer.py,
+	extras/pyuic/uic/widget-plugins/qscintilla.py,
+	extras/pyuic/uic/widget-plugins/qtcharts.py,
+	extras/pyuic/uic/widget-plugins/qtprintsupport.py,
+	extras/pyuic/uic/widget-plugins/qtquickwidgets.py,
+	extras/pyuic/uic/widget-plugins/qtwebenginewidgets.py,
+	extras/pyuic/uic/widget-plugins/qtwebkit.py:
+	Updated pyuic for PyQt6.
+	[7ce320fb7235]
+
+	* extras/pyuic/uic/Compiler/as_string.py,
+	extras/pyuic/uic/Compiler/qobjectcreator.py,
+	extras/pyuic/uic/Compiler/qtproxies.py,
+	extras/pyuic/uic/__init__.py, extras/pyuic/uic/driver.py,
+	extras/pyuic/uic/port_v2/__init__.py,
+	extras/pyuic/uic/port_v2/as_string.py,
+	extras/pyuic/uic/port_v2/ascii_upper.py,
+	extras/pyuic/uic/port_v2/proxy_base.py,
+	extras/pyuic/uic/port_v2/string_io.py,
+	extras/pyuic/uic/port_v3/__init__.py,
+	extras/pyuic/uic/port_v3/as_string.py,
+	extras/pyuic/uic/port_v3/ascii_upper.py,
+	extras/pyuic/uic/port_v3/proxy_base.py,
+	extras/pyuic/uic/port_v3/string_io.py,
+	extras/pyuic/uic/properties.py:
+	Removed the Python v2 support from pyuic.
+	[42116b5282a0]
+
+	* PyQt6.msp:
+	Handle the wrapping of the project version attributes consistently.
+	[74e630b207d0]
+
+	* projects/PyQt6/project.py:
+	Fixed the handling of the .sip handling the license.
+	[c6c896d0db2e]
+
+	* projects/PyQt6/pyqt-commercial.sip:
+	Updated an error message.
+	[cd90da846e38]
+
+	* projects/PyQt6/project.py:
+	Remove the redundant code to create the Qt composite module.
+	[84f08ad54745]
+
+	* PyQt6.msp, qpy/QtCore/qpycore_chimera.cpp,
+	qpy/QtCore/qpycore_post_init.cpp.in,
+	qpy/QtCore/qpycore_pyqtsignal.cpp, qpy/QtCore/qpycore_pyqtsignal.h,
+	qpy/QtCore/qpycore_qobject_helpers.cpp,
+	qpy/QtCore/qpycore_types.cpp:
+	Use the PyQt6 %Plugin.
+	[6fd31e04b6e4]
+
+	* rb-product, rb-product.toml, test/dbus/test_multibus.py,
+	test/runtests.py, test/tests/__init__.py,
+	test/tests/classes/__init__.py,
+	test/tests/classes/test_QByteArray.py,
+	test/tests/classes/test_QFlags.py,
+	test/tests/classes/test_QObject.py,
+	test/tests/classes/test_QQmlComponent.py,
+	test/tests/classes/test_QSettings.py,
+	test/tests/classes/test_QSignalSpy.py,
+	test/tests/classes/test_QVariant.py,
+	test/tests/mapped_types/__init__.py,
+	test/tests/mapped_types/test_QList.py,
+	test/tests/metaobject/__init__.py,
+	test/tests/metaobject/test_connections.py,
+	test/tests/metaobject/test_connectslotsbyname.py,
+	test/tests/metaobject/test_gc_slots.py,
+	test/tests/metaobject/test_invoke.py,
+	test/tests/metaobject/test_pyqtproperty.py,
+	test/tests/metaobject/test_pyqtsignal.py,
+	test/tests/metaobject/test_pyqtslot.py,
+	test/tests/metaobject/test_qenum.py,
+	test/tests/metaobject/test_qvariantmap.py,
+	test/tests/metaobject/test_sender.py, test/tests/misc/__init__.py,
+	test/tests/misc/test_pickle.py, test/tests/misc/test_repr.py,
+	test/tests/pyuic/QMainWindow/MainWindow00.ui,
+	test/tests/pyuic/QToolBox/ToolBox00.ui,
+	test/tests/pyuic/QToolBox/ToolBox01.ui,
+	test/tests/pyuic/QWidget/Widget00.ui,
+	test/tests/pyuic/QWidget/Widget01.ui,
+	test/tests/pyuic/QWidget/Widget02.ui,
+	test/tests/pyuic/QWidget/Widget03.ui,
+	test/tests/pyuic/QWidget/Widget04.ui,
+	test/tests/pyuic/QWidget/Widget05.ui, test/tests/pyuic/__init__.py,
+	test/tests/pyuic/test_pyuic.py:
+	Add the PyQt5 tests.
+	[e58465fae79f]
+
+2020-09-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* projects/PyQt3D/METADATA.in, projects/PyQt3D/Modules,
+	projects/PyQt3D/NEWS, projects/PyQt3D/README,
+	projects/PyQt3D/pyproject.toml, projects/PyQt3D6/Modules,
+	projects/PyQt3D6/NEWS, projects/PyQt3D6/README,
+	projects/PyQt3D6/pyproject.toml, projects/PyQt6/METADATA.in,
+	projects/PyQtChart/METADATA.in, projects/PyQtChart/Modules,
+	projects/PyQtChart/NEWS, projects/PyQtChart/README,
+	projects/PyQtChart/pyproject.toml, projects/PyQtChart6/Modules,
+	projects/PyQtChart6/NEWS, projects/PyQtChart6/README,
+	projects/PyQtChart6/pyproject.toml,
+	projects/PyQtDataVisualization/METADATA.in,
+	projects/PyQtDataVisualization/Modules,
+	projects/PyQtDataVisualization/NEWS,
+	projects/PyQtDataVisualization/README,
+	projects/PyQtDataVisualization/pyproject.toml,
+	projects/PyQtDataVisualization6/Modules,
+	projects/PyQtDataVisualization6/NEWS,
+	projects/PyQtDataVisualization6/README,
+	projects/PyQtDataVisualization6/pyproject.toml,
+	projects/PyQtPurchasing/METADATA.in,
+	projects/PyQtPurchasing/Modules, projects/PyQtPurchasing/NEWS,
+	projects/PyQtPurchasing/README,
+	projects/PyQtPurchasing/pyproject.toml,
+	projects/PyQtPurchasing6/Modules, projects/PyQtPurchasing6/NEWS,
+	projects/PyQtPurchasing6/README,
+	projects/PyQtPurchasing6/pyproject.toml,
+	projects/PyQtWebEngine/METADATA.in, projects/PyQtWebEngine/Modules,
+	projects/PyQtWebEngine/NEWS, projects/PyQtWebEngine/README,
+	projects/PyQtWebEngine/pyproject.toml,
+	projects/PyQtWebEngine6/Modules, projects/PyQtWebEngine6/NEWS,
+	projects/PyQtWebEngine6/README,
+	projects/PyQtWebEngine6/pyproject.toml:
+	Gave the subprojects a '6' suffix so that they can be installed side
+	by side with the PyQt5 versions.
+	[8c6d04c537ef]
+
+	* projects/PyQt3D/METADATA.in, projects/PyQt3D/Modules,
+	projects/PyQt3D/NEWS, projects/PyQt3D/README,
+	projects/PyQt3D/pyproject.toml, projects/PyQt6/pyproject.toml,
+	projects/PyQtChart/METADATA.in, projects/PyQtChart/Modules,
+	projects/PyQtChart/NEWS, projects/PyQtChart/README,
+	projects/PyQtChart/pyproject.toml,
+	projects/PyQtDataVisualization/METADATA.in,
+	projects/PyQtDataVisualization/Modules,
+	projects/PyQtDataVisualization/NEWS,
+	projects/PyQtDataVisualization/README,
+	projects/PyQtDataVisualization/pyproject.toml,
+	projects/PyQtPurchasing/pyproject.toml,
+	projects/PyQtWebEngine/METADATA.in, projects/PyQtWebEngine/Modules,
+	projects/PyQtWebEngine/NEWS, projects/PyQtWebEngine/README,
+	projects/PyQtWebEngine/pyproject.toml:
+	Added the remaining PyQt sub-projects.
+	[77362503963b]
+
+	* qpy/QtDataVisualization/qpydatavisualization_qlist.sip:
+	More SIP_SSIZE_T removals.
+	[b3ee41e1e684]
+
+	* PyQt6.msp:
+	Removed SIP_SSIZE_T.
+	[59c1c6367e48]
+
+	* PyQt6.msp:
+	Fixed a legacy macro.
+	[2df55da1386c]
+
+	* PyQt6.msp:
+	Removed an old timeline.
+	[8cf15fb9f795]
+
+	* projects/PyQt6/pyproject.toml:
+	Fixed a type in the PyQt6 metadata.
+	[df71929ed61f]
+
+	* qpy/QtCore/qpycore_post_init.cpp.in:
+	Remove the reference to sipEnableOverflowChecking().
+	[056baebe726e]
+
+	* qpy/Qt3DCore/qsharedpointer.sip,
+	qpy/QtCore/qpycore_chimera_signature.cpp,
+	qpy/QtCore/qpycore_qmetaobject.cpp,
+	qpy/QtGui/qpyopengl_attribute_array.cpp,
+	qpy/QtGui/qpyopengl_uniform_value_array.cpp:
+	Removed all references to SIP_USE_PYCAPSULE.
+	[cb708d30e5d9]
+
+	* projects/PyQt6/license.dat.commercial,
+	projects/PyQt6/license.dat.internal, projects/PyQt6/project.py:
+	Updates to the PyQt6 project build system.
+	[dd2edf3eae7c]
+
+	* PyQt6.msp:
+	For the moment treat WebAssembly the same as Linux.
+	[aafdd15f84e3]
+
+2020-09-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* extras/dbus/dbus.cpp, extras/dbus/helper.h,
+	extras/designer/designer.pro-in, extras/designer/pluginloader.cpp,
+	extras/designer/pluginloader.h, extras/pylupdate/pylupdate_main.py,
+	extras/pylupdate/pylupdatemod.sip,
+	extras/pyuic/uic/Compiler/__init__.py,
+	extras/pyuic/uic/Compiler/compiler.py,
+	extras/pyuic/uic/Compiler/indenter.py,
+	extras/pyuic/uic/Compiler/misc.py,
+	extras/pyuic/uic/Compiler/proxy_metaclass.py,
+	extras/pyuic/uic/Compiler/qobjectcreator.py,
+	extras/pyuic/uic/Compiler/qtproxies.py,
+	extras/pyuic/uic/Loader/__init__.py,
+	extras/pyuic/uic/Loader/loader.py,
+	extras/pyuic/uic/Loader/qobjectcreator.py,
+	extras/pyuic/uic/__init__.py, extras/pyuic/uic/driver.py,
+	extras/pyuic/uic/exceptions.py, extras/pyuic/uic/icon_cache.py,
+	extras/pyuic/uic/objcreator.py,
+	extras/pyuic/uic/port_v2/__init__.py,
+	extras/pyuic/uic/port_v2/as_string.py,
+	extras/pyuic/uic/port_v2/ascii_upper.py,
+	extras/pyuic/uic/port_v2/proxy_base.py,
+	extras/pyuic/uic/port_v2/string_io.py,
+	extras/pyuic/uic/port_v3/__init__.py,
+	extras/pyuic/uic/port_v3/as_string.py,
+	extras/pyuic/uic/port_v3/ascii_upper.py,
+	extras/pyuic/uic/port_v3/proxy_base.py,
+	extras/pyuic/uic/port_v3/string_io.py,
+	extras/pyuic/uic/properties.py, extras/pyuic/uic/pyuic.py,
+	extras/pyuic/uic/uiparser.py, extras/pyuic/uic/widget-
+	plugins/qaxcontainer.py, extras/pyuic/uic/widget-
+	plugins/qscintilla.py, extras/pyuic/uic/widget-plugins/qtcharts.py,
+	extras/pyuic/uic/widget-plugins/qtprintsupport.py,
+	extras/pyuic/uic/widget-plugins/qtquickwidgets.py,
+	extras/pyuic/uic/widget-plugins/qtwebenginewidgets.py,
+	extras/pyuic/uic/widget-plugins/qtwebkit.py,
+	extras/qmlscene/pluginloader.cpp, extras/qmlscene/pluginloader.h,
+	extras/qmlscene/qmlscene.pro-in:
+	Added the extra stuff from PyQt5.
+	[46613e339d46]
+
+	* modules/QAxContainer/QAxContainermod.sip,
+	modules/QAxContainer/qaxbase.sip,
+	modules/QAxContainer/qaxobject.sip,
+	modules/QAxContainer/qaxwidget.sip,
+	modules/QtAndroidExtras/QtAndroidExtrasmod.sip,
+	modules/QtAndroidExtras/qandroidjniobject.sip,
+	modules/QtAndroidExtras/qtandroid.sip,
+	modules/QtMacExtras/QtMacExtrasmod.sip,
+	modules/QtMacExtras/qmacpasteboardmime.sip,
+	modules/QtMacExtras/qmactoolbar.sip,
+	modules/QtMacExtras/qmactoolbaritem.sip,
+	modules/QtMacExtras/qtmac.sip,
+	modules/QtWinExtras/QtWinExtrasmod.sip,
+	modules/QtWinExtras/qwinfunctions.sip,
+	modules/QtWinExtras/qwinjumplist.sip,
+	modules/QtWinExtras/qwinjumplistcategory.sip,
+	modules/QtWinExtras/qwinjumplistitem.sip,
+	modules/QtWinExtras/qwintaskbarbutton.sip,
+	modules/QtWinExtras/qwintaskbarprogress.sip,
+	modules/QtWinExtras/qwinthumbnailtoolbar.sip,
+	modules/QtWinExtras/qwinthumbnailtoolbutton.sip,
+	modules/QtX11Extras/QtX11Extrasmod.sip,
+	modules/QtX11Extras/qx11info_x11.sip:
+	Added the platform-specific handwritten modules from PyQt5.
+	[db1fd2139285]
+
+	* .hgignore, projects/PyQt6/Modules, projects/PyQtPurchasing/Modules:
+	Added the Modules files for the currently implemented projects.
+	[49e21155f9e4]
+
+	* projects/PyQt6/METADATA.in, projects/PyQt6/NEWS,
+	projects/PyQtPurchasing/METADATA.in, projects/PyQtPurchasing/NEWS,
+	projects/PyQtPurchasing/README,
+	projects/PyQtPurchasing/pyproject.toml:
+	Updated project build systems.
+	[3d0e682b0503]
+
+	* tools/OpenGL/gen_opengl_constants.py, tools/OpenGL/gl.xml,
+	tools/mksccode.py:
+	Added some tools from PyQt5.
+	[0736add6b699]
+
+	* projects/PyQt6/README, projects/PyQt6/__init__.py,
+	projects/PyQt6/config-tests/cfgtest_QtCore.cpp,
+	projects/PyQt6/config-tests/cfgtest_QtGui.cpp,
+	projects/PyQt6/config-tests/cfgtest_QtNetwork.cpp,
+	projects/PyQt6/config-tests/cfgtest_QtPrintSupport.cpp,
+	projects/PyQt6/project.py, projects/PyQt6/pyproject.toml,
+	projects/PyQt6/pyqt-commercial.sip, projects/PyQt6/pyqt-gpl.sip,
+	projects/PyQt6/pyqt-internal.sip:
+	Added the initial build system for the PyQt6 project.
+	[ea310826f59a]
+
+	* rb-product:
+	Added the rb-product file.
+	[8c1ccc17e43b]
+
+	* qpy/QtCore/qpycore_post_init.cpp.in:
+	Removed QtCore.PYQT_CONFIGURATION.
+	[243be8a8f9af]
+
+	* qpy/QtCore/qpycore_pyqtslot.cpp, qpy/QtCore/qpycore_pyqtslot.h,
+	qpy/QtCore/qpycore_pyqtslotproxy.cpp, qpy/QtCore/qpycore_types.cpp:
+	Refactor the PyQtSlot ctors.
+	[6e87b0219b71]
+
+2020-09-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp, qpy/QtCore/qpycore_chimera.cpp,
+	qpy/QtCore/qpycore_public_api.cpp,
+	qpy/QtCore/qpycore_pyqtpyobject.cpp, qpy/QtCore/qpycore_qhash.sip,
+	qpy/QtCore/qpycore_qlist.sip, qpy/QtCore/qpycore_qmap.sip,
+	qpy/QtCore/qpycore_qmessagelogger.cpp,
+	qpy/QtCore/qpycore_qvector.sip, qpy/QtCore/qpycore_types.cpp,
+	qpy/QtGui/qpyopengl_array_convertors.cpp:
+	Removed calls to SIPLong_*() and SIPBytes_()*.
+	[9f8927c1a7aa]
+
+	* PyQt6.msp, qpy/Qt3DRender/qvector.sip, qpy/QtCore/qpycore_init.cpp,
+	qpy/QtCore/qpycore_misc.cpp, qpy/QtCore/qpycore_post_init.cpp.in,
+	qpy/QtCore/qpycore_public_api.cpp, qpy/QtCore/qpycore_public_api.h,
+	qpy/QtCore/qpycore_pyqtboundsignal.cpp,
+	qpy/QtCore/qpycore_pyqtmethodproxy.cpp,
+	qpy/QtCore/qpycore_pyqtproperty.cpp,
+	qpy/QtCore/qpycore_pyqtpyobject.cpp,
+	qpy/QtCore/qpycore_pyqtsignal.cpp,
+	qpy/QtCore/qpycore_pyqtslotproxy.cpp, qpy/QtCore/qpycore_qlist.sip,
+	qpy/QtCore/qpycore_qmessagelogger.cpp,
+	qpy/QtCore/qpycore_qmetaobject_helpers.cpp,
+	qpy/QtCore/qpycore_qobject_helpers.cpp,
+	qpy/QtCore/qpycore_qt_conf.cpp,
+	qpy/QtCore/qpycore_qvariant_value.cpp,
+	qpy/QtCore/qpycore_virtual_error_handler.sip,
+	qpy/QtCore/qstringlist.sip, qpy/QtDBus/qpydbus_post_init.cpp,
+	qpy/QtDBus/qpydbuspendingreply.cpp, qpy/QtDBus/qpydbusreply.cpp,
+	qpy/QtDataVisualization/qpydatavisualization_qlist.sip,
+	qpy/QtGui/qpyopengl_data_cache.cpp, qpy/QtGui/qpyopengl_init.cpp,
+	qpy/QtGui/qpyopengl_version_functions.cpp,
+	qpy/QtQml/qmlattachedpropertiesobject.sip,
+	qpy/QtQml/qmlregistertype.sip, qpy/QtQml/qpyqml_api.h,
+	qpy/QtQml/qpyqml_post_init.cpp,
+	qpy/QtQml/qpyqml_register_singleton_type.cpp,
+	qpy/QtQml/qpyqml_register_type.cpp,
+	qpy/QtQml/qpyqmllistproperty.cpp,
+	qpy/QtQml/qpyqmllistpropertywrapper.cpp, qpy/QtQml/qpyqmlobject.cpp,
+	qpy/QtQml/qpyqmlsingletonobject.cpp, qpy/QtQml/qpyqmlvalidator.cpp,
+	qpy/QtQuick/qpyquick_api.h, qpy/QtQuick/qpyquick_post_init.cpp,
+	qpy/QtQuick/qpyquickframebufferobject.cpp,
+	qpy/QtQuick/qpyquickitem.cpp, qpy/QtQuick/qpyquickpainteditem.cpp,
+	qpy/QtQuick/qpyquickview.cpp, qpy/QtQuick/qpyquickwindow.cpp,
+	qpy/QtWidgets/qpywidgets_post_init.cpp:
+	Removed references to PyQt5 and pyqt5.
+	[797c8a7cb2fe]
+
+	* qpy/Qt3DCore/qsharedpointer.sip, qpy/Qt3DRender/qvector.sip,
+	qpy/QtBluetooth/qpybluetooth_qlist.sip,
+	qpy/QtBluetooth/qpybluetooth_quint128.sip,
+	qpy/QtCore/qjsonarray.sip, qpy/QtCore/qjsonobject.sip,
+	qpy/QtCore/qpycore_api.h, qpy/QtCore/qpycore_chimera.cpp,
+	qpy/QtCore/qpycore_chimera.h,
+	qpy/QtCore/qpycore_chimera_signature.cpp,
+	qpy/QtCore/qpycore_chimera_storage.cpp,
+	qpy/QtCore/qpycore_classinfo.cpp, qpy/QtCore/qpycore_classinfo.h,
+	qpy/QtCore/qpycore_decorators.cpp,
+	qpy/QtCore/qpycore_enums_flags.cpp,
+	qpy/QtCore/qpycore_enums_flags.h,
+	qpy/QtCore/qpycore_event_handlers.cpp,
+	qpy/QtCore/qpycore_event_handlers.h, qpy/QtCore/qpycore_init.cpp,
+	qpy/QtCore/qpycore_misc.cpp, qpy/QtCore/qpycore_misc.h,
+	qpy/QtCore/qpycore_namespace.h,
+	qpy/QtCore/qpycore_objectified_strings.h,
+	qpy/QtCore/qpycore_post_init.cpp.in,
+	qpy/QtCore/qpycore_public_api.cpp, qpy/QtCore/qpycore_public_api.h,
+	qpy/QtCore/qpycore_pyqtboundsignal.cpp,
+	qpy/QtCore/qpycore_pyqtboundsignal.h,
+	qpy/QtCore/qpycore_pyqtconfigure.cpp,
+	qpy/QtCore/qpycore_pyqtmethodproxy.cpp,
+	qpy/QtCore/qpycore_pyqtmethodproxy.h,
+	qpy/QtCore/qpycore_pyqtproperty.cpp,
+	qpy/QtCore/qpycore_pyqtproperty.h,
+	qpy/QtCore/qpycore_pyqtpyobject.cpp,
+	qpy/QtCore/qpycore_pyqtpyobject.h,
+	qpy/QtCore/qpycore_pyqtsignal.cpp, qpy/QtCore/qpycore_pyqtsignal.h,
+	qpy/QtCore/qpycore_pyqtslot.cpp, qpy/QtCore/qpycore_pyqtslot.h,
+	qpy/QtCore/qpycore_pyqtslotproxy.cpp,
+	qpy/QtCore/qpycore_pyqtslotproxy.h, qpy/QtCore/qpycore_qhash.sip,
+	qpy/QtCore/qpycore_qjsonvalue.cpp, qpy/QtCore/qpycore_qlist.sip,
+	qpy/QtCore/qpycore_qmap.sip, qpy/QtCore/qpycore_qmessagelogger.cpp,
+	qpy/QtCore/qpycore_qmetaobject.cpp,
+	qpy/QtCore/qpycore_qmetaobject_helpers.cpp,
+	qpy/QtCore/qpycore_qmetaobjectbuilder.h,
+	qpy/QtCore/qpycore_qobject_getattr.cpp,
+	qpy/QtCore/qpycore_qobject_helpers.cpp,
+	qpy/QtCore/qpycore_qobject_helpers.h, qpy/QtCore/qpycore_qpair.sip,
+	qpy/QtCore/qpycore_qset.sip, qpy/QtCore/qpycore_qstring.cpp,
+	qpy/QtCore/qpycore_qt_conf.cpp, qpy/QtCore/qpycore_qvariant.cpp,
+	qpy/QtCore/qpycore_qvariant_value.cpp,
+	qpy/QtCore/qpycore_qvariantmap.cpp,
+	qpy/QtCore/qpycore_qvariantmap.sip, qpy/QtCore/qpycore_qvector.sip,
+	qpy/QtCore/qpycore_types.cpp, qpy/QtCore/qpycore_types.h,
+	qpy/QtCore/qpycore_virtual_error_handler.sip,
+	qpy/QtCore/qstringlist.sip, qpy/QtCore/qsysinfo.sip,
+	qpy/QtCore/qwineventnotifier.sip, qpy/QtDBus/qpydbus_api.h,
+	qpy/QtDBus/qpydbus_chimera_helpers.cpp,
+	qpy/QtDBus/qpydbus_chimera_helpers.h,
+	qpy/QtDBus/qpydbus_post_init.cpp,
+	qpy/QtDBus/qpydbuspendingreply.cpp,
+	qpy/QtDBus/qpydbuspendingreply.h,
+	qpy/QtDBus/qpydbuspendingreply.sip, qpy/QtDBus/qpydbusreply.cpp,
+	qpy/QtDBus/qpydbusreply.h, qpy/QtDBus/qpydbusreply.sip,
+	qpy/QtDataVisualization/qpydatavisualization_qlist.sip,
+	qpy/QtDesigner/qpydesignercontainerextension.h,
+	qpy/QtDesigner/qpydesignercontainerextension.sip,
+	qpy/QtDesigner/qpydesignercustomwidgetcollectionplugin.h,
+	qpy/QtDesigner/qpydesignercustomwidgetcollectionplugin.sip,
+	qpy/QtDesigner/qpydesignercustomwidgetplugin.h,
+	qpy/QtDesigner/qpydesignercustomwidgetplugin.sip,
+	qpy/QtDesigner/qpydesignermembersheetextension.h,
+	qpy/QtDesigner/qpydesignermembersheetextension.sip,
+	qpy/QtDesigner/qpydesignerpropertysheetextension.h,
+	qpy/QtDesigner/qpydesignerpropertysheetextension.sip,
+	qpy/QtDesigner/qpydesignertaskmenuextension.h,
+	qpy/QtDesigner/qpydesignertaskmenuextension.sip,
+	qpy/QtGui/opengl_types.sip, qpy/QtGui/qpygui_qlist.sip,
+	qpy/QtGui/qpygui_qpair.sip, qpy/QtGui/qpygui_qvector.sip,
+	qpy/QtGui/qpyopengl_add_constants.cpp, qpy/QtGui/qpyopengl_api.h,
+	qpy/QtGui/qpyopengl_array_convertors.cpp,
+	qpy/QtGui/qpyopengl_attribute_array.cpp,
+	qpy/QtGui/qpyopengl_data_cache.cpp,
+	qpy/QtGui/qpyopengl_data_cache.h, qpy/QtGui/qpyopengl_get.cpp,
+	qpy/QtGui/qpyopengl_init.cpp, qpy/QtGui/qpyopengl_misc.h,
+	qpy/QtGui/qpyopengl_uniform_value_array.cpp,
+	qpy/QtGui/qpyopengl_value_array.cpp,
+	qpy/QtGui/qpyopengl_version_functions.cpp,
+	qpy/QtMultimedia/qpymultimedia_qlist.sip,
+	qpy/QtNetwork/qpynetwork_qhash.sip,
+	qpy/QtNetwork/qpynetwork_qmap.sip,
+	qpy/QtPrintSupport/qpyprintsupport_qlist.sip,
+	qpy/QtQml/qmlattachedpropertiesobject.sip,
+	qpy/QtQml/qmlregistertype.sip, qpy/QtQml/qpyqml_api.h,
+	qpy/QtQml/qpyqml_listdata.cpp, qpy/QtQml/qpyqml_listdata.h,
+	qpy/QtQml/qpyqml_post_init.cpp, qpy/QtQml/qpyqml_qjsvalue.cpp,
+	qpy/QtQml/qpyqml_register_singleton_type.cpp,
+	qpy/QtQml/qpyqml_register_type.cpp,
+	qpy/QtQml/qpyqmllistproperty.cpp, qpy/QtQml/qpyqmllistproperty.h,
+	qpy/QtQml/qpyqmllistproperty.sip,
+	qpy/QtQml/qpyqmllistpropertywrapper.cpp,
+	qpy/QtQml/qpyqmllistpropertywrapper.h, qpy/QtQml/qpyqmlobject.cpp,
+	qpy/QtQml/qpyqmlobject.h, qpy/QtQml/qpyqmlsingletonobject.cpp,
+	qpy/QtQml/qpyqmlsingletonobject.h, qpy/QtQml/qpyqmlvalidator.cpp,
+	qpy/QtQml/qpyqmlvalidator.h, qpy/QtQuick/qpyquick_api.h,
+	qpy/QtQuick/qpyquick_chimera_helpers.cpp,
+	qpy/QtQuick/qpyquick_chimera_helpers.h,
+	qpy/QtQuick/qpyquick_post_init.cpp,
+	qpy/QtQuick/qpyquick_register_type.cpp,
+	qpy/QtQuick/qpyquick_register_type.h,
+	qpy/QtQuick/qpyquickframebufferobject.cpp,
+	qpy/QtQuick/qpyquickframebufferobject.h,
+	qpy/QtQuick/qpyquickitem.cpp, qpy/QtQuick/qpyquickitem.h,
+	qpy/QtQuick/qpyquickpainteditem.cpp,
+	qpy/QtQuick/qpyquickpainteditem.h, qpy/QtQuick/qpyquickview.cpp,
+	qpy/QtQuick/qpyquickview.h, qpy/QtQuick/qpyquickwindow.cpp,
+	qpy/QtQuick/qpyquickwindow.h,
+	qpy/QtWidgets/qmaccocoaviewcontainer.sip,
+	qpy/QtWidgets/qpywidgets_api.h,
+	qpy/QtWidgets/qpywidgets_chimera_helpers.cpp,
+	qpy/QtWidgets/qpywidgets_chimera_helpers.h,
+	qpy/QtWidgets/qpywidgets_post_init.cpp,
+	qpy/QtWidgets/qpywidgets_qlist.sip:
+	Added the qpy support code from PyQt5 but with most redundant code
+	removed.
+	[27152732c630]
+
+	* PyQt6.msp:
+	Removal of more Python v2 handwritten code.
+	[3541f134d6cc]
+
+	* PyQt6.msp:
+	Removed any reference to old Qt timelines.
+	[04f530adec6d]
+
+	* PyQt6.msp:
+	Removed all Qt version dependent code.
+	[76eafef36ace]
+
+	* PyQt6.msp:
+	Updated the platform definitions.
+	[32f373a5ff13]
+
+	* PyQt6.msp:
+	Removed all Python v2 handwritten code.
+	[ee05a90c906a]
+
+	* PyQt6.msp:
+	Removed the Py_v3 feature. Removed all implementations of exec_()
+	and print_().
+	[f7489cd39d11]
+
+	* PyQt6.msp:
+	Imported the other sub-projects.
+	[b228f7b24140]
+
+	* PyQt6.msp:
+	Removed all old versions and unsupported modules.
+	[0855d708b41f]
+
+2020-09-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6.msp:
+	Added the current PyQt5 project file as the basis of PyQt6.
+	[77889d649aa0]
+
+	* .hgignore:
+	Added .hgignore.
+	[232375a0de55]

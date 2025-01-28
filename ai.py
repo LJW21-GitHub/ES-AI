@@ -23,9 +23,10 @@ class MainWindow(qtw.QMainWindow):
 		textLabel = qtw.QLabel(
 			"Bonjour ! Comment puis-je vous aidez sur le tableau périodique ?")
 		textLabel.setStyleSheet("background: #32373c")
-		self.avatar = qtg.QPixmap("avatar.png")
+		textLabel.setWordWrap(True)
+		self.avatar = qtg.QPixmap("assets/avatar.png")
 		self.avatar = self.avatar.scaled(qtc.QSize(25, 25))
-		self.ai = qtg.QPixmap("ai.png")
+		self.ai = qtg.QPixmap("assets/ai.png")
 		self.ai = self.ai.scaled(qtc.QSize(25, 25))
 		imageLabel.setPixmap(self.ai)
 		textLabel.setMinimumHeight(35)
@@ -62,6 +63,7 @@ class MainWindow(qtw.QMainWindow):
 		inputLabel = qtw.QLabel(self.input.text())
 		inputLabel.setMinimumHeight(35)
 		inputLabel.setMargin(10)
+		inputLabel.setWordWrap(True)
 		avatarLabel = qtw.QLabel()
 		avatarLabel.setPixmap(self.avatar)
 		self.convGrid.addWidget(
@@ -81,6 +83,7 @@ class MainWindow(qtw.QMainWindow):
 		answerLabel.setStyleSheet("background: #32373c")
 		answerLabel.setMinimumHeight(35)
 		answerLabel.setMargin(10)
+		answerLabel.setWordWrap(True)
 		aiLabel = qtw.QLabel()
 		aiLabel.setPixmap(self.ai)
 		self.convGrid.addWidget(
