@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import sys
+from assets.database import elemDict, varDict
+
 try:
 	import PyQt6.QtGui as qtg
 	import PyQt6.QtCore as qtc
