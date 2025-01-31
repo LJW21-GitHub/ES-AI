@@ -213,17 +213,17 @@ def treatment(question):
 						- value
 					)
 				print(diff)
-				if 0 in diff.values():
-					ans = "".join(list(
-						i for i, x in diff.items() if min(diff.values()) == x))
-					return (
-						"l'élément avec une "
-						+ variable
-						+ " de "
-						+ str(value)
-						+ (" est l'" if ans[0] in "aeiouyh" else " est le ")
-						+ elemDict[ans][0]
-					)
+				ans = "".join(list(
+					i for i, x in diff.items() if min(diff.values()) == x))
+				return (
+					"l'élément avec une "
+					+ varDict[variable][0]
+					+ " de "
+					+ f"{str(elemDict[ans][varDict[variable][2]])} "
+					+ varDict[variable][1]
+					+ (" est l'" if ans[0] in "aeiouyh" else " est le ")
+					+ elemDict[ans][0]
+				)
 
 
 app = qtw.QApplication(sys.argv)
