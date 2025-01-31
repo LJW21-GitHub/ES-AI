@@ -109,18 +109,6 @@ class MainWindow(qtw.QMainWindow):
 		self.input.clear()
 
 
-elemDict = {
-	"helium": ["Hélium", 20.3, 3],
-	"oxygene": ["Oxygène", 50, 4],
-	"carbone": ["Carbone", 30, 5]
-}
-
-varDict = {
-	"masse molaire": ["masse molaire", "g/mol", 1, "f"],
-	"numero atomique": ["numéro atomique", "", 2, "m"]
-}
-
-
 def analyze(x):
 	analysis = {
 		"elements": [],
