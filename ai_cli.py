@@ -1,10 +1,10 @@
-from assets.database import elemDict, varDict
+from assets.database import elemDict, varDict, keyWords
 def analyze(x):
 	analysis = {
 		"elements": [],
 		"variables": [],
 		"values": [],
-		"typeOfSent": "",
+		"type": "",
 	}
 	x = x.lower()
 	x = x.replace("é", "e")
@@ -42,16 +42,16 @@ def analyze(x):
 		(len(analysis["elements"]) == 0)
 		!= (len(analysis["values"]) == 0)
 	):
-		analysis["typeOfSent"] = "question"
+		analysis["type"] = "question"
 	return analysis
 
 
 def treatment():
 	question = input("")
+	# print(question)
+	# question = analyze(question)
 	print(question)
-	question = analyze(question)
-	print(question)
-	if question["typeOfSent"] == "question":
+	if question["type"] == "question":
 		for variable in question["variables"]:
 			for element in question["elements"]:
 				return (
@@ -70,18 +70,25 @@ def treatment():
 						- value
 					)
 				print(diff)
-				if 0 in diff.values():
-					ans = "".join(list(
-						i for i, x in diff.items() if min(diff.values()) == x))
-					return (
-						"l'élément avec une "
-						+ variable
-						+ " de "
-						+ str(value)
-						+ (" est l'" if ans[0] in "aeiouyh" else " est le ")
-						+ elemDict[ans][0]
-					)
+				ans = "".join(list(
+					i for i, x in diff.items() if min(diff.values()) == x))
+				return (
+					"l'élément avec une "
+					+ variable
+					+ " de "
+					+ str(elemDict[ans][varDict[variable][2]])
+					+ (" est l'" if ans[0] in "aeiouyh" else " est le ")
+					+ elemDict[ans][0]
+				)
 
-print("Nyaah~ uwu")
+
+print("""Bienvenue dans la version CLI de ce programme.
+----------
+Keywords :
+train : passer en mode entraînement.
+stop : arréter l'entrainement, retourner en apprentissage.
+exit : arréter le programme
+----------
+comment puis-je vous aider ?""")
 while True:
 	print(treatment())
