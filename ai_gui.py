@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import sys
 from assets.database import elemDict, varDict
 try:
@@ -6,10 +5,13 @@ try:
 	import PyQt6.QtCore as qtc
 	import PyQt6.QtWidgets as qtw
 except ImportError:
-	print("Error : Unable to load or install graphical interface library, "
-	      + "switching to command line interface. "
-	      + "Please make sure that pip is installed, "
-	      + "and try to import PyQt6, PyQt5, PySide2 or PySide6 by yourself.")
+	print("""Error : Unable to load or install graphical interface library,
+switching to command line interface.
+Please make sure that pip is installed,
+and try to import PyQt6, PyQt5, PySide2 or PySide6 by yourself.""")
+	input("Press enter to continue in CLI")
+	import ai_cli.py
+	sys.exit()
 
 
 class MainWindow(qtw.QMainWindow):
@@ -154,9 +156,6 @@ def analyze(x):
 	):
 		analysis["typeOfSent"] = "question"
 	return analysis
-
-
-print("Nyaah~ uwu")
 
 
 def treatment(question):
