@@ -1,6 +1,6 @@
-#!/usr/bin/python3
 import sys
 import pip
+from assets.database import elemDict, varDict
 try:
 	import PyQt6.QtGui as qtg
 	import PyQt6.QtCore as qtc
@@ -47,7 +47,13 @@ except ImportError:
 							import PySide6.QtWidgets as qtw
 							print("PyQt6 loaded")
 						except ImportError:
-							pass
+							print("""Error : Unable to load or install graphical interface library,
+switching to command line interface.
+Please make sure that pip is installed,
+and try to import PyQt6, PyQt5, PySide2 or PySide6 by yourself.""")
+							input("Press enter to continue in CLI")
+							import ai_cli.py
+							sys.exit()
 
 
 class MainWindow(qtw.QMainWindow):
@@ -136,18 +142,6 @@ class MainWindow(qtw.QMainWindow):
 		self.input.clear()
 
 
-elemDict = {
-	"helium": ["Hélium", 20.3, 3],
-	"oxygene": ["Oxygène", 50, 4],
-	"carbone": ["Carbone", 30, 5]
-}
-
-varDict = {
-	"masse molaire": ["masse molaire", "g/mol", 1, "f"],
-	"numero atomique": ["numéro atomique", "", 2, "m"]
-}
-
-
 def analyze(x):
 	analysis = {
 		"elements": [],
@@ -193,9 +187,6 @@ def analyze(x):
 	):
 		analysis["typeOfSent"] = "question"
 	return analysis
-
-
-print("Nyaah~ uwu")
 
 
 def treatment(question):
