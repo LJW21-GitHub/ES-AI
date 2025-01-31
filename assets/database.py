@@ -41,3 +41,5 @@ varDict = {
 	"masse molaire": ["masse molaire", "g/mol", 1, "f"],
 	"numero atomique": ["numéro atomique", "", 2, "m"]
 }
+
+keyWords = ["train", "stop", "exit"]
