@@ -1,8 +1,53 @@
 #!/usr/bin/python3
 import sys
-import PyQt6.QtGui as qtg
-import PyQt6.QtCore as qtc
-import PyQt6.QtWidgets as qtw
+import pip
+try:
+	import PyQt6.QtGui as qtg
+	import PyQt6.QtCore as qtc
+	import PyQt6.QtWidgets as qtw
+	print("PyQt6 loaded")
+except ImportError:
+	try:
+		import PyQt5.QtGui as qtg
+		import PyQt5.QtCore as qtc
+		import PyQt5.QtWidgets as qtw
+		print("PyQt5 loaded")
+	except ImportError:
+		try:
+			import PySide6.QtGui as qtg
+			import PySide6.QtCore as qtc
+			import PySide6.QtWidgets as qtw
+			print("PySide6 loaded")
+		except ImportError:
+			try:
+				import PySide2.QtGui as qtg
+				import PySide2.QtCore as qtc
+				import PySide2.QtWidgets as qtw
+				print("PySide2 loaded")
+			except ImportError:
+				print("no Qt python libraries on your device ! trying to install one...")
+				pip.main(['install', "PyQt6"])
+				try:
+					import PyQt6.QtGui as qtg
+					import PyQt6.QtCore as qtc
+					import PyQt6.QtWidgets as qtw
+					print("PyQt6 loaded")
+				except ImportError:
+					pip.main(['install', "PyQt5"])
+					try:
+						import PyQt5.QtGui as qtg
+						import PyQt5.QtCore as qtc
+						import PyQt5.QtWidgets as qtw
+						print("PyQt5 loaded")
+					except ImportError:
+						pip.main(['install', "PySide6"])
+						try:
+							import PySide6.QtGui as qtg
+							import PySide6.QtCore as qtc
+							import PySide6.QtWidgets as qtw
+							print("PyQt6 loaded")
+						except ImportError:
+							pass
 
 
 class MainWindow(qtw.QMainWindow):
@@ -58,46 +103,35 @@ class MainWindow(qtw.QMainWindow):
 
 		self.input.returnPressed.connect(self.add_a_row)
 
-	def add_a_row(self):
-		self.convGrid.setRowStretch(self.convGrid.rowCount() - 1, 0)
-		inputLabel = qtw.QLabel(self.input.text())
-		inputLabel.setMinimumHeight(35)
-		inputLabel.setMargin(10)
-		inputLabel.setWordWrap(True)
-		avatarLabel = qtw.QLabel()
-		avatarLabel.setPixmap(self.avatar)
+	def add_image_label(self, x, y):
+		x.setMinimumHeight(35)
+		x.setMargin(10)
+		x.setWordWrap(True)
 		self.convGrid.addWidget(
-			inputLabel,
-			self.convGrid.rowCount() - 1,
-			1,
-			qtc.Qt.AlignmentFlag.AlignVCenter
-		)
-		self.convGrid.addWidget(
-			avatarLabel,
-			self.convGrid.rowCount() - 1,
-			0,
-			qtc.Qt.AlignmentFlag.AlignCenter
-		)
-		answer = treatment(self.input.text())
-		answerLabel = qtw.QLabel(answer)
-		answerLabel.setStyleSheet("background: #32373c")
-		answerLabel.setMinimumHeight(35)
-		answerLabel.setMargin(10)
-		answerLabel.setWordWrap(True)
-		aiLabel = qtw.QLabel()
-		aiLabel.setPixmap(self.ai)
-		self.convGrid.addWidget(
-			answerLabel,
+			x,
 			self.convGrid.rowCount(),
 			1,
 			qtc.Qt.AlignmentFlag.AlignVCenter
 		)
 		self.convGrid.addWidget(
-			aiLabel,
+			y,
 			self.convGrid.rowCount() - 1,
 			0,
 			qtc.Qt.AlignmentFlag.AlignCenter
 		)
+
+	def add_a_row(self):
+		self.convGrid.setRowStretch(self.convGrid.rowCount() - 1, 0)
+		inputLabel = qtw.QLabel(self.input.text())
+		avatarLabel = qtw.QLabel()
+		avatarLabel.setPixmap(self.avatar)
+		self.add_image_label(inputLabel, avatarLabel)
+		answer = treatment(self.input.text())
+		answerLabel = qtw.QLabel(answer)
+		answerLabel.setStyleSheet("background: #32373c")
+		aiLabel = qtw.QLabel()
+		aiLabel.setPixmap(self.ai)
+		self.add_image_label(answerLabel, aiLabel)
 		self.convGrid.setRowStretch(self.convGrid.rowCount() + 1, 1)
 		self.input.clear()
 
