@@ -1,5 +1,4 @@
-from assets.database import elemDict
-from assets.database import varDict
+from assets.database import elemDict, varDict
 def analyze(x):
 	analysis = {
 		"elements": [],
