@@ -1,5 +1,8 @@
-from assets.database import elemDict, varDict, keyWords
+from assets.database import elemDict, varDict
 
+isTraining = False
+history = []
+iterHistory = []
 
 def analyze(x):
 	analysis = {
@@ -49,13 +52,15 @@ def analyze(x):
 
 
 def treatment(question):
-	# question = input("")
-	# print(question)
-	question = analyze(question)
-	# print(question)
-	if question["type"] == "question":
+	global history
+	global iterHistory
+	print(isTraining)
+	if not isTraining:
+		iterHistory = []
+		question = analyze(question)
 		for variable in question["variables"]:
 			for element in question["elements"]:
+				history.append(f"{variable}/{element}")
 				return (
 					("la " if varDict[variable][3] == "f" else "le ")
 					+ f"{varDict[variable][0]} "
@@ -65,6 +70,7 @@ def treatment(question):
 					+ (varDict[variable][1])
 				)
 			for value in question["values"]:
+				history.append(f"{variable}/{value}")
 				diff = {}
 				for i, x in elemDict.items():
 					diff[str(i)] = abs(
@@ -80,6 +86,27 @@ def treatment(question):
 					+ " de "
 					+ f"{str(elemDict[ans][varDict[variable][2]])} "
 					+ varDict[variable][1]
-					+ (" est l'" if ans[0] in "aeiouyh" else " est le ")
+					+ " est l'" if ans[0] in "aeiouyh" else " est le "
 					+ elemDict[ans][0]
 				)
+	elif isTraining:
+		if iterHistory == []:
+			iterHistory = iter(history)
+		print(history)
+		print(iterHistory)
+		x = next(iterHistory)
+		x = x.split("/")
+		return (
+			("Quelle " if varDict[x[0]][3] == "f" else "Quel ")
+			+ ("est l'" if x[0][0] in "aeiouyh" else (
+				"est la " if varDict[x[0]][3] == "f" else "est le "))
+			+ varDict[x[0]][0]
+			+ (" de l'" if x[1][0] in "aeiouyh" else " du ")
+			+ elemDict[x[1]][0]
+			+ " ?"
+		)
+
+
+def train():
+	global isTraining
+	isTraining = True

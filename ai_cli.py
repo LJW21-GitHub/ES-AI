@@ -1,4 +1,5 @@
-from ai import treatment, analyze
+from ai import treatment, isTraining, history, iterHistory, train
+import sys
 
 print("""----------
 Bienvenue dans la version CLI de ce programme.
@@ -13,4 +14,12 @@ while True:
 	print("----------")
 	question = input("[USER] : ")
 	print("----------")
-	print(f"[BOT] : {treatment(question)}")
+	if question == "train":
+		train()
+		print(f"[BOT] : {treatment("")}")
+	elif question == "stop":
+		isTraining = False
+	elif question == "exit":
+		sys.exit()
+	else:
+		print(f"[BOT] : {treatment(question)}")

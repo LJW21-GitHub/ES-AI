@@ -1,7 +1,6 @@
 import sys
 import pip
-from assets.database import elemDict, varDict
-from ai import treatment, analyze
+from ai import treatment
 
 try:
 	import PyQt6.QtGui as qtg
