@@ -1,6 +1,6 @@
-import sys
+import os
 import pip
-from ai import treatment
+from ai import treatment, train, pltUseQt
 
 try:
 	import PyQt6.QtGui as qtg
@@ -54,18 +54,23 @@ Please make sure that pip is installed,
 and try to import PyQt6, PyQt5, PySide2 or PySide6 by yourself.""")
 							input("Press enter to continue in CLI")
 							import ai_cli
-							sys.exit()
+							os.sys.exit()
 
 
 class MainWindow(qtw.QMainWindow):
 	def __init__(self):
 		super().__init__()
+		self.setStyleSheet("background: #2a2e32")
 
 		self.widget = qtw.QWidget()
 		overallLayout = qtw.QVBoxLayout(self.widget)
 		scroll = qtw.QScrollArea()
 		convGridWidget = qtw.QWidget()
+		bottomWidget = qtw.QWidget()
+		bottomLayout = qtw.QHBoxLayout(bottomWidget)
 		self.convGrid = qtw.QGridLayout(convGridWidget)
+		self.input = qtw.QLineEdit()
+		self.switch = qtw.QPushButton("entraîne-moi !")
 
 		convGridWidget.setSizePolicy(
 			qtw.QSizePolicy.Policy.Expanding,
@@ -74,7 +79,7 @@ class MainWindow(qtw.QMainWindow):
 		imageLabel = qtw.QLabel()
 		textLabel = qtw.QLabel(
 			"Bonjour ! Comment puis-je vous aidez sur le tableau périodique ?")
-		textLabel.setStyleSheet("background: #32373c")
+		textLabel.setStyleSheet("background: #32373c; color: #ffffff")
 		textLabel.setWordWrap(True)
 		self.avatar = qtg.QPixmap("assets/avatar.png")
 		self.avatar = self.avatar.scaled(qtc.QSize(25, 25))
@@ -98,19 +103,21 @@ class MainWindow(qtw.QMainWindow):
 		scroll.setSizePolicy(
 			qtw.QSizePolicy.Policy.Expanding, qtw.QSizePolicy.Policy.Expanding)
 
-		self.input = qtw.QLineEdit()
 		self.input.setMaximumHeight(50)
 
 		self.convGrid.setRowStretch(self.convGrid.rowCount(), 1)
 
+		bottomLayout.addWidget(self.input)
+		bottomLayout.addWidget(self.switch)
 		overallLayout.addWidget(scroll)
-		overallLayout.addWidget(self.input)
+		overallLayout.addWidget(bottomWidget)
 
 		self.setCentralWidget(self.widget)
 
-		self.input.returnPressed.connect(self.add_a_row)
+		self.input.returnPressed.connect(self.addARow)
+		self.switch.clicked.connect(self.initTraining)
 
-	def add_image_label(self, x, y):
+	def addImageLabel(self, x, y):
 		x.setMinimumHeight(35)
 		x.setMargin(10)
 		x.setWordWrap(True)
@@ -127,23 +134,43 @@ class MainWindow(qtw.QMainWindow):
 			qtc.Qt.AlignmentFlag.AlignCenter
 		)
 
-	def add_a_row(self):
+	def addARow(self):
 		self.convGrid.setRowStretch(self.convGrid.rowCount() - 1, 0)
 		inputLabel = qtw.QLabel(self.input.text())
 		avatarLabel = qtw.QLabel()
 		avatarLabel.setPixmap(self.avatar)
-		self.add_image_label(inputLabel, avatarLabel)
+		self.addImageLabel(inputLabel, avatarLabel)
 		answer = treatment(self.input.text())
 		answerLabel = qtw.QLabel(answer)
-		answerLabel.setStyleSheet("background: #32373c")
+		answerLabel.setStyleSheet("background: #32373c; color: #ffffff")
 		aiLabel = qtw.QLabel()
 		aiLabel.setPixmap(self.ai)
-		self.add_image_label(answerLabel, aiLabel)
+		self.addImageLabel(answerLabel, aiLabel)
+		self.convGrid.setRowStretch(self.convGrid.rowCount() + 1, 1)
+		self.input.clear()
+
+	def initTraining(self):
+		for i in range(0, self.convGrid.rowCount()):
+			try:
+				self.convGrid.removeWidget(self.convGrid.itemAtPosition(i, 0).widget())
+				self.convGrid.removeWidget(self.convGrid.itemAtPosition(i, 1).widget())
+			except AttributeError:
+				pass
+		train()
+		self.convGrid.setRowStretch(self.convGrid.rowCount() - 1, 0)
+		answer = treatment("")
+		answerLabel = qtw.QLabel(answer)
+		answerLabel.setStyleSheet("background: #32373c; color: #ffffff")
+		aiLabel = qtw.QLabel()
+		aiLabel.setPixmap(self.ai)
+		self.addImageLabel(answerLabel, aiLabel)
 		self.convGrid.setRowStretch(self.convGrid.rowCount() + 1, 1)
 		self.input.clear()
 
 
-app = qtw.QApplication(sys.argv)
+pltUseQt()
+
+app = qtw.QApplication(os.sys.argv)
 
 window = MainWindow()
 
