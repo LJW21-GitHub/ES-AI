@@ -13,7 +13,7 @@ except FileNotFoundError:
 	open("assets/history", "x")
 	history = []
 iterHistory = []
-print(history)
+
 
 def analyze(x):
 	analysis = {
