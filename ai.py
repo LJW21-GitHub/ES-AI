@@ -4,6 +4,57 @@ import matplotlib
 import matplotlib.pyplot as plt
 import os
 
+"""
+	NOTE: 
+	Noms de fonctions : plus clair et plus long
+	> analyze -> analyze_usr_string_chatbox
+
+	Commentaires : 
+	> Ajouter plus de commentaires sur quoi fait quoi.
+	> Ajouter docstrings, type d'entrée et sortie.
+
+	Noms de variables: plus clair et plus long 
+	> Exemple : analyse : x, pas intuitif, plutôt indiquer :
+	> x->usr_input_string
+
+	try/except : 
+	> Ne pas hésiter à utiliser le mot-clé raise.
+
+	lisibilité : 
+	> Espace ton code 
+
+	(PS : Je parle mal, mais c'est quand même très très cool, les autres de ma promos
+	ils utilisent tous ChatGPT comme des merdes.)
+
+	Pistes d'amélioration : 
+	- Éclaicit ton code, que ce soit côté commentaires ou docstrings.
+	C'est, en soit peu important si tu gardes tout en local, mais si tu es sur un Repo Github, alors d'autres
+	sont suceptibles de le voir.
+
+	- Possibilité : utilise un fichier .bat pour faciliter le lancement de l'application par un autre utilisateur.
+	ATTENTION : le chemin de tes fichiers reisque d'être cassé, utilise qqch du genre : 
+	icon_path = os.path.join(os.path.dirname(__file__), '..',  'media', 'icons', 'app_icon.png')
+	Car l'emplacement d'utilisation n'est plus le même.
+
+	- Possibilité : Met à jour dynamiquement la taille de la fenêtre.
+	Soit screen_height,screen_wide la hauteur et largeur d'écran.
+	Utilise des multiplicateurs pour n%.
+
+	- Possibilité : sur un côté esthétique plus simple, change le nom de la fenêtre et met une icône.
+	Aussi, ajoute éventuellement un peu de son, c'est funny.
+	Et, tu peux ajouter un temps de réponse avec un effet comme si l'autre paysan écrivait.
+
+	- History : 
+	Utilise une fonction write_to_history()
+	qui écrit au propre ton message dans l'historique
+	Éventuellement, utilise une structure pile/file; si utilisé dans le code.
+	Voir  : https://www.ukonline.be/cours/python/apprendre-python/chapitre5-4
+	Bref, l'utilisation d'une structure de stockage native (ou objet) serait bien plus propre.
+
+	SI TU VEUX AVANCER :: https://www.france-ioi.org/algo/chapters.php
+	
+"""
+
 isTraining = False
 try:
 	history = (open("assets/history").read()).split("#")
@@ -15,7 +66,10 @@ except FileNotFoundError:
 iterHistory = []
 
 
-def analyze(x):
+def analyze(x:str)->dict:
+	"""
+	Analyse une entrée utilisateur, et renvoie le dictionnaire approprié.
+	"""
 	analysis = {
 		"elements": [],
 		"variables": [],
@@ -179,11 +233,14 @@ bonnes réponses : {correct}
 mauvaises réponses : {wrong}
 taux de bonne réponses : {correct100}%""")
 		else:
-			return "something wrong happened. not supposed to be possible tho."
+			return "something wrong happened. not supposed to be possible tho." #utilise le "Except as e", et print e en fsting : 'err_msg {e}'
 		return output
 
 
-def train():
+def train(): #fix de flemmard, peut-être faire un fichier
+	# qui contient tes globales, chargé avant ? 
+	# A toi de voir.
+	# + nom de fonction, plutôt change_training_state()->None:
 	global isTraining
 	isTraining = True
 

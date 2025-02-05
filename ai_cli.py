@@ -11,7 +11,7 @@ print("""---------------
 ---------------
 [BOT]    Comment puis-je vous aider sur le tableau periodique ?""")
 pltUseTk()
-while True:
+while not False: #while True, c'est pour les faibles.
 	print("---------------")
 	question = input("[USER]   ")
 	print("---------------")

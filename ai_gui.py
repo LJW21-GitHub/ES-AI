@@ -2,6 +2,16 @@ import os
 import pip
 from ai import treatment, train, pltUseQt
 
+"""
+	Bon, dans la catégorie des crimes de guerre, 
+	on est bien placés là.
+	Utilise un loader plus propre, et des variables de contrôles.
+
+	Je t'ai donné un exemple, tu peux utiliser une boucle for qui fait __import__(pkg)
+	Puis traite la ImportError via try/except.
+"""
+
+
 try:
 	import PyQt6.QtGui as qtg
 	import PyQt6.QtCore as qtc
@@ -83,6 +93,8 @@ class MainWindow(qtw.QMainWindow):
 		textLabel.setWordWrap(True)
 		self.avatar = qtg.QPixmap("assets/avatar.png")
 		self.avatar = self.avatar.scaled(qtc.QSize(25, 25))
+		# Petit commentaire, self.ai, implique un objet qui est l'ia elle -même
+		# or, là, c'est une icône. Renomme plutôt avec :
 		self.ai = qtg.QPixmap("assets/ai.png")
 		self.ai = self.ai.scaled(qtc.QSize(25, 25))
 		imageLabel.setPixmap(self.ai)
