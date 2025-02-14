@@ -117,7 +117,7 @@ def analyze(x:str)->dict:
 
 
 def treatment(entry):
-	global history, iterHistory, output, answer, average, correct, wrong
+	global history, iterHistory, output, answer, average, correct, wrong, isTraining
 	if not isTraining:
 		iterHistory = []
 		entry = analyze(entry)
@@ -128,7 +128,7 @@ def treatment(entry):
 				x = open("assets/history", "a")
 				x.write(f"e/{variable}/{element}/{ans}#")
 				x.close()
-				print(history)
+				# print(history)
 				return (
 					("la " if varDict[variable][3] == "f" else "le ")
 					+ f"{varDict[variable][0]} "
@@ -202,10 +202,10 @@ def treatment(entry):
 					+ " ?"
 				)
 				answer = float(x[3])
-				try:
-					answer = int(answer)
-				except ValueError:
-					pass
+				# try:
+				#	answer = int(answer)
+				# except ValueError:
+				#	pass
 			elif x[0] == "v":
 				output = (
 					output
@@ -223,17 +223,22 @@ def treatment(entry):
 				return "An error has occurred while trying to fetch history data. \
 					deleting history file."
 		elif x == "END":
+			history = []
+			x = open("assets/history", "w")
+			x = x.write("")
+			# x.close()
 			correct100 = round(correct * 100 / (wrong + correct))
 			fig, ax = plt.subplots()
 			ax.pie([correct, wrong], labels=["correct", "faux"])
 			plt.show()
+			isTraining = False
 			output = (output + f"""
 
 bonnes réponses : {correct}
 mauvaises réponses : {wrong}
 taux de bonne réponses : {correct100}%""")
 		else:
-			return "something wrong happened. not supposed to be possible tho." #utilise le "Except as e", et print e en fsting : 'err_msg {e}'
+			return "something wrong happened. not supposed to be possible tho." #utilise le "Except as e", et print e en fstring : 'err_msg {e}'
 		return output
 
 
