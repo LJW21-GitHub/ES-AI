@@ -64,6 +64,14 @@ except FileNotFoundError:
 	open("assets/history", "x")
 	history = []
 iterHistory = []
+try:
+	stats = (open("assets/statistics").read()).split("#")
+	while "" in stats:
+		stats.remove("")
+except FileNotFoundError:
+	open("assets/statistics", "x")
+	stats = []
+iterStats = []
 
 
 def analyze(x:str)->dict:
@@ -225,11 +233,15 @@ def treatment(entry):
 		elif x == "END":
 			history = []
 			x = open("assets/history", "w")
-			x = x.write("")
-			# x.close()
+			x.write("")
+			x.close()
+			x = open("assets/statistics", "a")
+			x.write(f"{correct}/{wrong}#")
+			x.close()
 			correct100 = round(correct * 100 / (wrong + correct))
 			fig, ax = plt.subplots()
-			ax.pie([correct, wrong], labels=["correct", "faux"])
+			ax.pie([correct, wrong], labels=["correct", "faux"], colors=["g", "r"])
+			bars = plt.pyplot
 			plt.show()
 			isTraining = False
 			output = (output + f"""
