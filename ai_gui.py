@@ -80,7 +80,9 @@ class MainWindow(qtw.QMainWindow):
 		bottomLayout = qtw.QHBoxLayout(bottomWidget)
 		self.convGrid = qtw.QGridLayout(convGridWidget)
 		self.input = qtw.QLineEdit()
+		self.input.setStyleSheet("background: #32373c; color: #ffffff")
 		self.switch = qtw.QPushButton("entraîne-moi !")
+		self.switch.setStyleSheet("background: #32373c; color: #ffffff")
 
 		convGridWidget.setSizePolicy(
 			qtw.QSizePolicy.Policy.Expanding,
@@ -149,6 +151,7 @@ class MainWindow(qtw.QMainWindow):
 	def addARow(self):
 		self.convGrid.setRowStretch(self.convGrid.rowCount() - 1, 0)
 		inputLabel = qtw.QLabel(self.input.text())
+		inputLabel.setStyleSheet("color: #ffffff")
 		avatarLabel = qtw.QLabel()
 		avatarLabel.setPixmap(self.avatar)
 		self.addImageLabel(inputLabel, avatarLabel)
