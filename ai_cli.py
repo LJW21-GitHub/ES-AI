@@ -1,4 +1,4 @@
-from ai import treatment, isTraining, history, iterHistory, train, pltUseTk
+from ai import treatment, train, pltUseTk
 import os
 
 print("""---------------
@@ -11,7 +11,7 @@ print("""---------------
 ---------------
 [BOT]    Comment puis-je vous aider sur le tableau periodique ?""")
 pltUseTk()
-while not False: #while True, c'est pour les faibles.
+while True:
 	print("---------------")
 	question = input("[USER]   ")
 	print("---------------")
@@ -20,7 +20,8 @@ while not False: #while True, c'est pour les faibles.
 		os.system('cls' if os.name == 'nt' else 'clear')
 		print(f"[BOT]    {treatment("")}")
 	elif question == "stop":
-		isTraining = False
+		train()
+		print("[BOT]    Retour en apprentissage.")
 	elif question == "exit":
 		os.sys.exit()
 	else:

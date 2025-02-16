@@ -3,11 +3,12 @@ import pip
 from ai import treatment, train, pltUseQt
 
 """
-	Bon, dans la catégorie des crimes de guerre, 
+	Bon, dans la catégorie des crimes de guerre
 	on est bien placés là.
 	Utilise un loader plus propre, et des variables de contrôles.
 
-	Je t'ai donné un exemple, tu peux utiliser une boucle for qui fait __import__(pkg)
+	Je t'ai donné un exemple,
+	tu peux utiliser une boucle for qui fait __import__(pkg)
 	Puis traite la ImportError via try/except.
 """
 

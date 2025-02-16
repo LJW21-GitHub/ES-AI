@@ -5,54 +5,62 @@ import matplotlib.pyplot as plt
 import os
 
 """
-	NOTE: 
+	NOTE:
 	Noms de fonctions : plus clair et plus long
 	> analyze -> analyze_usr_string_chatbox
 
-	Commentaires : 
+	Commentaires :
 	> Ajouter plus de commentaires sur quoi fait quoi.
 	> Ajouter docstrings, type d'entrée et sortie.
 
-	Noms de variables: plus clair et plus long 
+	Noms de variables: plus clair et plus long
 	> Exemple : analyse : x, pas intuitif, plutôt indiquer :
 	> x->usr_input_string
 
-	try/except : 
+	try/except :
 	> Ne pas hésiter à utiliser le mot-clé raise.
 
-	lisibilité : 
-	> Espace ton code 
+	lisibilité :
+	> Espace ton code
 
-	(PS : Je parle mal, mais c'est quand même très très cool, les autres de ma promos
+	(PS : Je parle mal, mais c'est quand même très très cool,
+	les autres de ma promos
 	ils utilisent tous ChatGPT comme des merdes.)
 
-	Pistes d'amélioration : 
+	Pistes d'amélioration :
 	- Éclaicit ton code, que ce soit côté commentaires ou docstrings.
-	C'est, en soit peu important si tu gardes tout en local, mais si tu es sur un Repo Github, alors d'autres
+	C'est, en soit peu important si tu gardes tout en local,
+	mais si tu es sur un Repo Github, alors d'autres
 	sont suceptibles de le voir.
 
-	- Possibilité : utilise un fichier .bat pour faciliter le lancement de l'application par un autre utilisateur.
-	ATTENTION : le chemin de tes fichiers reisque d'être cassé, utilise qqch du genre : 
-	icon_path = os.path.join(os.path.dirname(__file__), '..',  'media', 'icons', 'app_icon.png')
+	- Possibilité : utilise un fichier .bat pour faciliter
+	le lancement de l'application par un autre utilisateur.
+	ATTENTION : le chemin de tes fichiers reisque d'être cassé,
+	utilise qqch du genre :
+	icon_path = os.path.join(os.path.dirname(__file__),
+	'..',  'media', 'icons', 'app_icon.png')
 	Car l'emplacement d'utilisation n'est plus le même.
 
 	- Possibilité : Met à jour dynamiquement la taille de la fenêtre.
 	Soit screen_height,screen_wide la hauteur et largeur d'écran.
 	Utilise des multiplicateurs pour n%.
 
-	- Possibilité : sur un côté esthétique plus simple, change le nom de la fenêtre et met une icône.
+	- Possibilité : sur un côté esthétique plus simple,
+	change le nom de la fenêtre et met une icône.
 	Aussi, ajoute éventuellement un peu de son, c'est funny.
-	Et, tu peux ajouter un temps de réponse avec un effet comme si l'autre paysan écrivait.
+	Et, tu peux ajouter un temps de réponse avec un effet
+	comme si l'autre paysan écrivait.
 
-	- History : 
+	- History :
 	Utilise une fonction write_to_history()
 	qui écrit au propre ton message dans l'historique
 	Éventuellement, utilise une structure pile/file; si utilisé dans le code.
 	Voir  : https://www.ukonline.be/cours/python/apprendre-python/chapitre5-4
-	Bref, l'utilisation d'une structure de stockage native (ou objet) serait bien plus propre.
+	Bref, l'utilisation d'une structure de stockage native (ou objet)
+	serait bien plus propre.
 
 	SI TU VEUX AVANCER :: https://www.france-ioi.org/algo/chapters.php
-	
+
 """
 
 isTraining = False
@@ -74,7 +82,7 @@ except FileNotFoundError:
 iterStats = []
 
 
-def analyze(x:str)->dict:
+def analyze(x: str) -> dict:
 	"""
 	Analyse une entrée utilisateur, et renvoie le dictionnaire approprié.
 	"""
@@ -125,7 +133,8 @@ def analyze(x:str)->dict:
 
 
 def treatment(entry):
-	global history, iterHistory, output, answer, average, correct, wrong, isTraining
+	global history, iterHistory, output, answer, \
+		average, correct, wrong, isTraining
 	if not isTraining:
 		iterHistory = []
 		entry = analyze(entry)
@@ -199,9 +208,8 @@ def treatment(entry):
 		if not x == "END":
 			x = x.split("/")
 			if x[0] == "e":
-				output = (
-					output
-					+ ("Quelle " if varDict[x[1]][3] == "f" else "Quel ")
+				output += (
+					("Quelle " if varDict[x[1]][3] == "f" else "Quel ")
 					+ ("est l'" if x[1][0] in "aeiouyh" else (
 						"est la " if varDict[x[1]][3] == "f" else "est le "))
 					+ varDict[x[1]][0]
@@ -210,14 +218,9 @@ def treatment(entry):
 					+ " ?"
 				)
 				answer = float(x[3])
-				# try:
-				#	answer = int(answer)
-				# except ValueError:
-				#	pass
 			elif x[0] == "v":
-				output = (
-					output
-					+ (
+				output += (
+					(
 						"Quel élément a une " if varDict[x[1]][3] == "f"
 						else "Quel élément a un ")
 					+ varDict[x[1]][0]
@@ -229,7 +232,7 @@ def treatment(entry):
 			else:
 				os.remove("assets/history")
 				return "An error has occurred while trying to fetch history data. \
-					deleting history file."
+deleting history file."
 		elif x == "END":
 			history = []
 			x = open("assets/history", "w")
@@ -238,28 +241,46 @@ def treatment(entry):
 			x = open("assets/statistics", "a")
 			x.write(f"{correct}/{wrong}#")
 			x.close()
+			stats.append(f"{correct}/{wrong}#")
 			correct100 = round(correct * 100 / (wrong + correct))
 			fig, ax = plt.subplots()
 			ax.pie([correct, wrong], labels=["correct", "faux"], colors=["g", "r"])
-			bars = plt.pyplot
-			plt.show()
+			if len(stats) > 1:
+				fig, bars = plt.subplots()
+				stats1 = []
+				stats2 = []
+				for x in stats:
+					x = x.replace("#", "")
+					x = x.split("/")
+					stats1.append(float(x[0]))
+					stats2.append(float(x[1]))
+				bars.stackplot(range(len(stats)), stats1, stats2, colors=["g", "r"],)
+			else:
+				output += """
+
+Aucune statistiques sur le long terme à afficher."""
 			isTraining = False
-			output = (output + f"""
+			output += (f"""
 
 bonnes réponses : {correct}
 mauvaises réponses : {wrong}
 taux de bonne réponses : {correct100}%""")
+			plt.show()
 		else:
-			return "something wrong happened. not supposed to be possible tho." #utilise le "Except as e", et print e en fstring : 'err_msg {e}'
+			return "something wrong happened. not supposed to be possible tho."
+			# utilise le "Except as e", et print e en fstring : 'err_msg {e}'
 		return output
 
 
-def train(): #fix de flemmard, peut-être faire un fichier
-	# qui contient tes globales, chargé avant ? 
+def train():  # fix de flemmard, peut-être faire un fichier
+	# qui contient tes globales, chargé avant ?
 	# A toi de voir.
 	# + nom de fonction, plutôt change_training_state()->None:
 	global isTraining
-	isTraining = True
+	if not isTraining:
+		isTraining = True
+	else:
+		isTraining = False
 
 
 def pltUseQt():
