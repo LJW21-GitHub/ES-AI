@@ -179,7 +179,7 @@ def treatment(entry):
 	elif isTraining:
 		output = ""
 		if iterHistory == []:
-			history = list(set((history)))
+			history = list(set(history))
 			random.shuffle(history)
 			iterHistory = iter(history)
 			correct = 0
