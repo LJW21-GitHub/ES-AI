@@ -44,7 +44,6 @@ import os
 	- Possibilité : Met à jour dynamiquement la taille de la fenêtre.
 	Soit screen_height,screen_wide la hauteur et largeur d'écran.
 	Utilise des multiplicateurs pour n%.
-
 	- Possibilité : sur un côté esthétique plus simple,
 	change le nom de la fenêtre et met une icône.
 	Aussi, ajoute éventuellement un peu de son, c'est funny.
@@ -168,7 +167,6 @@ def treatment(entry):
 				x = open("assets/history", "a")
 				x.write(f"v/{variable}/{value}/{ans}#")
 				x.close()
-				elemDict[ans][0]
 				return (
 					"l'élément avec une "
 					+ varDict[variable][0]

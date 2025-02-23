@@ -17,7 +17,7 @@ while True:
 	print("---------------")
 	if question == "train":
 		train()
-		os.system('cls' if os.name == 'nt' else 'clear')
+		#os.system('cls' if os.name == 'nt' else 'clear')
 		print(f"[BOT]    {treatment("")}")
 	elif question == "stop":
 		train()
