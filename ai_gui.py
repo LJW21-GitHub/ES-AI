@@ -63,7 +63,7 @@ except ImportError:
 switching to command line interface.
 Please make sure that pip is installed,
 and try to import PyQt6, PyQt5, PySide2 or PySide6 by yourself.""")
-							input("Press enter to continue in CLI")
+							input("\n	Press enter to continue in CLI.")
 							import ai_cli
 							os.sys.exit()
 

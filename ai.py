@@ -67,160 +67,210 @@ try:
 	history = (open("assets/history").read()).split("#")
 	while "" in history:
 		history.remove("")
+
 except FileNotFoundError:
 	open("assets/history", "x")
 	history = []
+
 iterHistory = []
+
 try:
 	stats = (open("assets/statistics").read()).split("#")
 	while "" in stats:
 		stats.remove("")
+
 except FileNotFoundError:
 	open("assets/statistics", "x")
 	stats = []
+
 iterStats = []
 
 
-def analyze(x: str) -> dict:
-	"""
-	Analyse une entrée utilisateur, et renvoie le dictionnaire approprié.
-	"""
+def analyze(userInput: str) -> dict:
+	# Analyse une entrée utilisateur, et renvoie le dictionnaire approprié.
+
+	userInput = userInput.lower()
+	userInput = userInput.replace("é", "e")
+	userInput = userInput.replace("è", "e")
+	userInput = userInput.replace("'", " ")
+
 	analysis = {
 		"elements": [],
-		"variables": [],
 		"values": [],
-		"type": "",
+		"variables": [],
+		"type": []
 	}
-	x = x.lower()
-	x = x.replace("é", "e")
-	x = x.replace("è", "e")
-	x = x.replace("'", " ")
-	for i, c in enumerate(x):
+
+	for i, c in enumerate(userInput):
 		if (
 			c == ","
-			and ((x[i - 1]) in "0123456789" if i > 0 else False)
-			and ((x[i + 1]) in "0123456789" if i < len(x) - 1 else False)
+			and ((userInput[i - 1]) in "0123456789" if i > 0 else False)
+			and ((userInput[i + 1]) in "0123456789" if i < len(userInput) - 1 else False)
 		):
-			x = x.replace(c, ".")
-	splitQues = x.split(" ")
+			userInput = userInput.replace(c, ".")
+
+	splitQues = userInput.split(" ")
+
 	for i, word in enumerate(splitQues):
+
 		if word in elemDict:
 			analysis["elements"].append(word)
+
 		try:
 			analysis["values"].append(int(word))
+
 		except ValueError:
 			try:
 				analysis["values"].append(float(word))
+
 			except ValueError:
 				pass
+
 		if word in varDict:
 			analysis["variables"].append(word)
+
 		else:
-			wordAndNext = \
-				"".join(list(
+			wordAndNext = "".join(list(
 					word + " " + splitQues[i + 1]
-					if i < len(splitQues) - 1 else "")
-				)
+					if i < len(splitQues) - 1 else ""))
+
 			if wordAndNext in varDict:
 				analysis["variables"].append(wordAndNext)
+
 	if len(analysis["variables"]) and (
 		(len(analysis["elements"]) == 0)
 		!= (len(analysis["values"]) == 0)
 	):
 		analysis["type"] = "question"
+
 	return analysis
 
 
 def treatment(entry):
-	global history, iterHistory, output, answer, \
-		average, correct, wrong, isTraining
+
+	global history, iterHistory, output, answer, average, correct, wrong, isTraining
+
 	if not isTraining:
+
 		iterHistory = []
 		entry = analyze(entry)
+
 		for variable in entry["variables"]:
 			for element in entry["elements"]:
+
 				ans = elemDict[element][varDict[variable][2]]
+				# answer to the question. [varDict[variable][2]] gives the index for the variable in elemDict lists.
+
+				# update history and history file
 				history.append(f"e/{variable}/{element}/{ans}")
-				x = open("assets/history", "a")
-				x.write(f"e/{variable}/{element}/{ans}#")
-				x.close()
-				# print(history)
+				historyFile = open("assets/history", "a")
+				historyFile.write(f"e/{variable}/{element}/{ans}#")
+				historyFile.close()
+
 				return (
-					("la " if varDict[variable][3] == "f" else "le ")
-					+ f"{varDict[variable][0]} "
-					+ ("de l'" if element[0] in "aeiouyh" else "du ")
-					+ f"{elemDict[element][0]} est "
-					f"{ans} "
-					+ varDict[variable][1]
+					# le {variable} du {element} est {value, unit}
+
+					("la " if varDict[variable][3] == "f" else "le ") # french being annoying
+					+ f"{varDict[variable][0]} " # the variable
+					+ ("de l'" if element[0] in "aeiouyh" else "du ") # french...
+					+ f"{elemDict[element][0]} est " # the element
+					+ f"{ans} " # the answer to the question
+					+ varDict[variable][1] # the name of the variable !
 				)
+
 			for value in entry["values"]:
 				diff = {}
+
 				for i, x in elemDict.items():
+					# pick element with closest value
 					diff[str(i)] = abs(
 						x[varDict[variable][2]]
 						- value
 					)
-				# print(diff)
+				
+				# taking the élément's name from the diff key with the lowest diff
 				ans = "".join(list(
 					i for i, x in diff.items() if min(diff.values()) == x))
+
+				# update history and history file
 				history.append(f"v/{variable}/{value}/{ans}")
-				x = open("assets/history", "a")
-				x.write(f"v/{variable}/{value}/{ans}#")
-				x.close()
+				historyFile = open("assets/history", "a")
+				historyFile.write(f"v/{variable}/{value}/{ans}#")
+				historyFile.close()
+
 				return (
-					"l'élément avec une "
-					+ varDict[variable][0]
+					# l'élément avec un {variable} de {value, unit} est le {element}
+
+					"l'élément avec "
+					+ ("une " if varDict[variable][3] == "f" else "un ") # FUCK FRENCH
+					+ varDict[variable][0] # name of the variable
 					+ " de "
-					+ f"{str(elemDict[ans][varDict[variable][2]])} "
-					+ varDict[variable][1]
-					+ (" est l'" if ans[0] in "aeiouyh" else " est le ")
-					+ elemDict[ans][0]
+					+ f"{str(elemDict[ans][varDict[variable][2]])} " # value
+					+ varDict[variable][1] # unit
+					+ (" est l'" if ans[0] in "aeiouyh" else " est le ") # FRENCH AGAIN AAA
+					+ elemDict[ans][0] # name of element
 				)
 	elif isTraining:
+
 		output = ""
+
 		if iterHistory == []:
+			# ^ means first iteration -> prepare iterHistory for questions
+
 			history = list(set(history))
 			random.shuffle(history)
 			iterHistory = iter(history)
 			correct = 0
 			wrong = 0
+
 		else:
-			entry = analyze(entry)
+			entry = analyze(entry) # analyzing the user input
+
 			for i in entry.values():
 				for x in i:
 					try:
 						if answer in x:
 							output = "correct ! "
 							correct += 1
+
 						else:
 							output = "faux ! "
 							wrong += 1
+
 					except TypeError:
 						if answer in i:
 							output = "correct ! "
 							correct += 1
+
 						else:
 							output = "faux ! "
 							wrong += 1
+
 		x = next(iterHistory, "END")
+
 		if not x == "END":
+
 			x = x.split("/")
+
 			if x[0] == "e":
 				output += (
-					("Quelle " if varDict[x[1]][3] == "f" else "Quel ")
+					# Quel est le {variable} du {element} ?
+
+					("Quelle " if varDict[x[1]][3] == "f" else "Quel ") # french again...
 					+ ("est l'" if x[1][0] in "aeiouyh" else (
-						"est la " if varDict[x[1]][3] == "f" else "est le "))
-					+ varDict[x[1]][0]
-					+ (" de l'" if x[2][0] in "aeiouyh" else " du ")
-					+ elemDict[x[2]][0]
+						"est la " if varDict[x[1]][3] == "f" else "est le ")) # french...
+					+ varDict[x[1]][0] # variable
+					+ (" de l'" if x[2][0] in "aeiouyh" else " du ") # fr...
+					+ elemDict[x[2]][0] # element
 					+ " ?"
 				)
 				answer = float(x[3])
 			elif x[0] == "v":
 				output += (
-					(
-						"Quel élément a une " if varDict[x[1]][3] == "f"
-						else "Quel élément a un ")
+					# Quel élément a un {varibable} de {value, unit}
+
+					("Quel élément a une " if varDict[x[1]][3] == "f"
+					else "Quel élément a un ")
 					+ varDict[x[1]][0]
 					+ " de "
 					+ x[2]
@@ -229,44 +279,54 @@ def treatment(entry):
 				answer = x[3]
 			else:
 				os.remove("assets/history")
-				return "An error has occurred while trying to fetch history data. \
-deleting history file."
+				return "An error has occurred while trying to fetch history data. deleting history file."
+
 		elif x == "END":
+
+			# reset history
 			history = []
-			x = open("assets/history", "w")
-			x.write("")
-			x.close()
-			x = open("assets/statistics", "a")
-			x.write(f"{correct}/{wrong}#")
-			x.close()
+			historyFile = open("assets/history", "w")
+			historyFile.write("")
+			historyFile.close()
+
+			#append results to statistics
+			statisticsFile = open("assets/statistics", "a")
+			statisticsFile.write(f"{correct}/{wrong}#")
+			statisticsFile.close()
+
+			# same with buffer version
 			stats.append(f"{correct}/{wrong}#")
+
+			# % of correct answers
 			correct100 = round(correct * 100 / (wrong + correct))
+
 			fig, ax = plt.subplots()
 			ax.pie([correct, wrong], labels=["correct", "faux"], colors=["g", "r"])
+
 			if len(stats) > 1:
 				fig, bars = plt.subplots()
 				stats1 = []
 				stats2 = []
+
 				for x in stats:
 					x = x.replace("#", "")
 					x = x.split("/")
 					stats1.append(float(x[0]))
 					stats2.append(float(x[1]))
+
 				bars.stackplot(range(len(stats)), stats1, stats2, colors=["g", "r"],)
+
 			else:
-				output += """
+				output += "\n\nAucune statistiques sur le long terme à afficher."
 
-Aucune statistiques sur le long terme à afficher."""
 			isTraining = False
-			output += (f"""
-
-bonnes réponses : {correct}
-mauvaises réponses : {wrong}
-taux de bonne réponses : {correct100}%""")
+			output += (f"\n\nbonnes réponses : {correct}\nmauvaises réponses : {wrong}\ntaux de bonne réponses : {correct100}%")
 			plt.show()
+
 		else:
 			return "something wrong happened. not supposed to be possible tho."
 			# utilise le "Except as e", et print e en fstring : 'err_msg {e}'
+
 		return output
 
 
@@ -275,6 +335,7 @@ def train():  # fix de flemmard, peut-être faire un fichier
 	# A toi de voir.
 	# + nom de fonction, plutôt change_training_state()->None:
 	global isTraining
+	
 	if not isTraining:
 		isTraining = True
 	else:

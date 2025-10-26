@@ -13,16 +13,16 @@ print("""---------------
 pltUseTk()
 while True:
 	print("---------------")
-	question = input("[USER]   ")
+	userInput = input("[USER]   ")
 	print("---------------")
-	if question == "train":
+	if userInput == "train":
 		train()
-		#os.system('cls' if os.name == 'nt' else 'clear')
+		os.system('cls' if os.name == 'nt' else 'clear')
 		print(f"[BOT]    {treatment("")}")
-	elif question == "stop":
+	elif userInput == "stop":
 		train()
 		print("[BOT]    Retour en apprentissage.")
-	elif question == "exit":
+	elif userInput == "exit":
 		os.sys.exit()
 	else:
-		print(f"[BOT]    {treatment(question)}")
+		print(f"[BOT]    {treatment(userInput)}")
