@@ -158,8 +158,8 @@ def treatment(entry):
 		for variable in entry["variables"]:
 			for element in entry["elements"]:
 
-				ans = elemDict[element][varDict[variable][2]]
 				# answer to the question. [varDict[variable][2]] gives the index for the variable in elemDict lists.
+				ans = elemDict[element][varDict[variable][2]]
 
 				# update history and history file
 				history.append(f"e/{variable}/{element}/{ans}")
@@ -210,6 +210,7 @@ def treatment(entry):
 					+ (" est l'" if ans[0] in "aeiouyh" else " est le ") # FRENCH AGAIN AAA
 					+ elemDict[ans][0] # name of element
 				)
+
 	elif isTraining:
 
 		output = ""
@@ -265,6 +266,7 @@ def treatment(entry):
 					+ " ?"
 				)
 				answer = float(x[3])
+
 			elif x[0] == "v":
 				output += (
 					# Quel élément a un {varibable} de {value, unit}
@@ -277,6 +279,7 @@ def treatment(entry):
 					+ " ?"
 				)
 				answer = x[3]
+
 			else:
 				os.remove("assets/history")
 				return "An error has occurred while trying to fetch history data. deleting history file."
@@ -293,8 +296,6 @@ def treatment(entry):
 			statisticsFile = open("assets/statistics", "a")
 			statisticsFile.write(f"{correct}/{wrong}#")
 			statisticsFile.close()
-
-			# same with buffer version
 			stats.append(f"{correct}/{wrong}#")
 
 			# % of correct answers
@@ -335,7 +336,7 @@ def train():  # fix de flemmard, peut-être faire un fichier
 	# A toi de voir.
 	# + nom de fonction, plutôt change_training_state()->None:
 	global isTraining
-	
+
 	if not isTraining:
 		isTraining = True
 	else:
